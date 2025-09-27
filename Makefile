@@ -1,8 +1,14 @@
+setup:
+	sh ./bin/setup
+
+update_kernel:
+	julia --project=@. register_julia_kernel.jl
+
 build:
-	jupyter book build --all -v .
+	. .venv/bin/activate && jupyter book build --all -v .
 
 upload:	build
-	ghp-import -n -p -f _build/html
+	. .venv/bin/activate && ghp-import -n -p -f _build/html
 
 clean:
 	rm -rf _build

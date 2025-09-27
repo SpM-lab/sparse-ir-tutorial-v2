@@ -3,7 +3,7 @@ root: index
 parts:
 - caption: Basic theory
   chapters:
-  - file: src/IR_py
+  - file: src/IR_py.ipynb
   - file: src/sparse_sampling_py
   - file: src/DLR
   - file: src/matsubarasum
@@ -11,37 +11,35 @@ parts:
   chapters:
   - file: src/api
   - file: src/additional_material
-- caption: Sample codes
-  chapters:
-  - file: src/transformation_py
-  - file: src/sparse_sampling_demo_py
-  - file: src/DLR_py
-  - file: src/second_order_perturbation_py
-  - file: src/GW_py
-  - file: src/DMFT_IPT_py
-  - file: src/FLEX_py
-  - file: src/TPSC_py
-  - file: src/eliashberg_holstein_py
-  - file: src/orbital_magnetic_susceptibility_py
-  - file: src/liechtenstein_py
-- caption: Analytic continuation
-  chapters:
-  - file: src/analytic_continuation_py
-  - file: src/spm_py
-  #- file: src/nevanlinna
+#- caption: Sample codes
+  #chapters:
+  #- file: src/transformation_py
+  #- file: src/sparse_sampling_demo_py
+  #- file: src/DLR_py
+  #- file: src/second_order_perturbation_py
+  #- file: src/GW_py
+  #- file: src/DMFT_IPT_py
+  #- file: src/FLEX_py
+  #- file: src/TPSC_py
+  #- file: src/eliashberg_holstein_py
+  #- file: src/orbital_magnetic_susceptibility_py
+  #- file: src/liechtenstein_py
+#- caption: Analytic continuation
+  #chapters:
+  #- file: src/analytic_continuation_py
+  #- file: src/spm_py
 - caption: Sample codes (Julia)
   chapters:
-  - file: src/transformation_jl
-  - file: src/sparse_sampling_demo_jl
+  #- file: src/transformation_jl
+  #- file: src/sparse_sampling_demo_jl
   - file: src/DLR_jl
-  - file: src/DMFT_IPT_jl
-  - file: src/FLEX_jl
-  - file: src/BgG_jl
-- caption: Sample codes (Fortran)
-  chapters:
-  #- file: src/readme_fortran
-  - file: src/second_order_perturbation_fort
+  #- file: src/DMFT_IPT_jl
+  #- file: src/FLEX_jl
+  #- file: src/BgG_jl
+#- caption: Sample codes (Fortran)
+  #chapters:
+  #- file: src/second_order_perturbation_fort
 - caption: Reference
   chapters:
-  - file: src/citation
-  - file: src/bibliography
+  - file: src/citation.md
+  - file: src/bibliography.md
