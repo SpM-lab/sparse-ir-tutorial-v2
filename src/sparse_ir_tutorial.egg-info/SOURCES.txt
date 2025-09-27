@@ -1,0 +1,8 @@
+LICENSE.TXT
+README.md
+pyproject.toml
+src/sparse_ir_tutorial.egg-info/PKG-INFO
+src/sparse_ir_tutorial.egg-info/SOURCES.txt
+src/sparse_ir_tutorial.egg-info/dependency_links.txt
+src/sparse_ir_tutorial.egg-info/requires.txt
+src/sparse_ir_tutorial.egg-info/top_level.txt

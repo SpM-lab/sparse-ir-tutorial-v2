@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: sparse-ir-tutorial
+Version: 0.1.0
+License-File: LICENSE.TXT
+Requires-Dist: jupyter-book
+Requires-Dist: jupytext
+Requires-Dist: matplotlib
+Requires-Dist: ghp-import
+Requires-Dist: jupyterlab
+Requires-Dist: sparse-ir>=2.0.0a4
+Dynamic: license-file
