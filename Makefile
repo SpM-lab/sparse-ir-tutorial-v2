@@ -1,5 +1,6 @@
 setup:
 	sh ./bin/setup
+	@echo "Setup complete, activate the environment with 'source .venv/bin/activate'"
 
 update_kernel:
 	julia --project=@. register_julia_kernel.jl
