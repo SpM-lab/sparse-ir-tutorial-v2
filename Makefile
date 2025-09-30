@@ -1,11 +1,11 @@
-setup:
-	sh ./bin/setup
-	@echo "Setup complete, activate the environment with 'source .venv/bin/activate'"
-
-update_kernel:
-	julia --project=@. register_julia_kernel.jl
-
 build:
+	@echo "Installing Python packages..."
+	uv sync
+	@echo "Installing Julia packages..."
+	julia --project=./src -e "import Pkg;Pkg.instantiate()"
+	@echo "Registering kernel for Julia notebooks..."
+	julia --project=@. register_julia_kernel.jl
+	@echo "Building HTML files..."
 	. .venv/bin/activate && jupyter book build --all -v .
 
 upload:	build

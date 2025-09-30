@@ -134,8 +134,14 @@ end
 
 # Main execution
 if abspath(PROGRAM_FILE) == @__FILE__
-    # Register kernel with name "juliabook"
-    success = register_julia_kernel("juliabook")
+    # Get the absolute path to the project directory
+    project_dir = dirname(@__FILE__)
+    project_arg = "--project=$(project_dir)"
+    
+    @printf "Registering kernel with project directory: %s\n" project_dir
+    
+    # Register kernel with name "julia-1.11" to match the notebooks
+    success = register_julia_kernel("julia-1.11", "julia", project_arg)
     
     if success
         println("✓ Kernel registration completed successfully")
