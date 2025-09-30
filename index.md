@@ -6,6 +6,7 @@ You can run jupyter notebooks online on [mybinder](https://mybinder.org/v2/gh/Sp
 
 Please free to make a contact with the authors of each tutorial page if you have any questions!
 ## Contributors
+* Satoshi Terasaki (AtelierArith)
 * Markus Wallerberger (TU Wien)
 * Samuel Badr (TU Wien)
 * Shintaro Hoshino (Saitama Univ.)
