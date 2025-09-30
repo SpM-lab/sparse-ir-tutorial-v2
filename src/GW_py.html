@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>The GF2 &amp; GW method &#8212; sparse-ir</title>
   
@@ -15,46 +14,45 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -62,12 +60,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RD8N0K0C9Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/GW_py';</script>
@@ -84,19 +86,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,12 +124,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -138,6 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -146,10 +163,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">sparse-ir</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample codes (Fortran)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="second_order_perturbation_fort.html">Second-order perturbation</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
@@ -218,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -227,14 +252,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -309,26 +334,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -362,15 +389,15 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pl</span>
-<span class="kn">import</span> <span class="nn">sparse_ir</span>
-<span class="kn">import</span> <span class="nn">sys</span> 
-<span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sparse_ir</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </pre></div>
 </div>
 </div>
@@ -400,26 +427,26 @@ document.write(`
 
 <span class="n">basisb</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">)</span>
       
-<span class="n">matsb</span><span class="o">=</span><span class="n">sparse_ir</span><span class="o">.</span><span class="n">MatsubaraSampling</span><span class="p">(</span><span class="n">basisb</span><span class="p">)</span>
-<span class="n">tausb</span><span class="o">=</span><span class="n">sparse_ir</span><span class="o">.</span><span class="n">TauSampling</span><span class="p">(</span><span class="n">basisb</span><span class="p">)</span>
+<span class="n">matsb</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">MatsubaraSampling</span><span class="p">(</span><span class="n">basisb</span><span class="p">)</span>
+<span class="n">tausb</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">TauSampling</span><span class="p">(</span><span class="n">basisb</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rho</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rho</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">wmax</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">rho_l</span><span class="o">=</span><span class="n">basisf</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span>
+<span class="n">rho_l</span> <span class="o">=</span> <span class="n">basisf</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="o">-</span><span class="n">wmax</span><span class="p">,</span> <span class="n">wmax</span><span class="p">)</span>
 
-<span class="n">G_l_0</span><span class="o">=-</span><span class="n">basisf</span><span class="o">.</span><span class="n">s</span><span class="o">*</span><span class="n">rho_l</span>  
+<span class="n">G_l_0</span> <span class="o">=</span> <span class="o">-</span><span class="n">basisf</span><span class="o">.</span><span class="n">s</span><span class="o">*</span><span class="n">rho_l</span>  
 
 
 <span class="c1">#We compute G_iw two times as we will need G_iw_0 as a constant later on</span>
 
-<span class="n">G_iw_0</span><span class="o">=</span><span class="n">matsf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">G_l_0</span><span class="p">)</span>
-<span class="n">G_iw_f</span><span class="o">=</span><span class="n">matsf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">G_l_0</span><span class="p">)</span>
+<span class="n">G_iw_0</span> <span class="o">=</span> <span class="n">matsf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">G_l_0</span><span class="p">)</span>
+<span class="n">G_iw_f</span> <span class="o">=</span> <span class="n">matsf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">G_l_0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -436,7 +463,7 @@ document.write(`
 </div>
 </div>
 <section id="the-gf2-gw-method">
-<h1>The GF2 &amp; GW method<a class="headerlink" href="#the-gf2-gw-method" title="Permalink to this heading">#</a></h1>
+<h1>The GF2 &amp; GW method<a class="headerlink" href="#the-gf2-gw-method" title="Link to this heading">#</a></h1>
 <p>Above we have successfully derived <span class="math notranslate nohighlight">\(G^F(\bar{\tau}_k^F)\)</span> from <span class="math notranslate nohighlight">\(\hat {G}^F(i\bar{\omega}_n^F)\)</span> by first obtaining the Green’s function’s basis representation <span class="math notranslate nohighlight">\(G_l^F\)</span> and secondly evaluating <span class="math notranslate nohighlight">\(G_l^F\)</span> on the <span class="math notranslate nohighlight">\(\tau\)</span>-sampling points, which are given by the computations of sparse_ir. Here, the self-consistent second order Green’s function theory (GF2) and the self-consistent GW method are are based this very mechanism (and the so called Hedin equations).[5][7]</p>
 <p>The following image should give an overview on their iterative schemes[5]:</p>
 <br>
@@ -450,12 +477,12 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Calculation of G_l_f using Least-Squares Fitting</span>
 
-<span class="n">G_l_f</span><span class="o">=</span><span class="n">matsf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">G_iw_f</span><span class="p">)</span>
+<span class="n">G_l_f</span> <span class="o">=</span> <span class="n">matsf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">G_iw_f</span><span class="p">)</span>
 
                 
 <span class="c1">#G_tau,fermionic   </span>
 
-<span class="n">G_tau_f</span><span class="o">=</span><span class="n">tausf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">G_l_f</span><span class="p">)</span>
+<span class="n">G_tau_f</span> <span class="o">=</span> <span class="n">tausf</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">G_l_f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -486,20 +513,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06b09c510&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10edab620&gt;
 </pre></div>
 </div>
-<img alt="../_images/2f64cc71f7fc6be44c8317af44f8baecbd8febfa30beb655361c4bb40d9bf6ef.png" src="../_images/2f64cc71f7fc6be44c8317af44f8baecbd8febfa30beb655361c4bb40d9bf6ef.png" />
+<img alt="../_images/2ee1acd7aebc3d6dcc26d570bc209a89645291bcb52651a1596d149f7a953ed4.png" src="../_images/2ee1acd7aebc3d6dcc26d570bc209a89645291bcb52651a1596d149f7a953ed4.png" />
 </div>
 </div>
 <p>The so-called Polarization <span class="math notranslate nohighlight">\(P(\bar\tau_k^B)\)</span> is given by the random phase approximation, a connection between two Green’s functions:</p>
 <div class="math notranslate nohighlight">
-\[P(\bar{\tau}_k^B)=G(\bar{\tau}_k^B)*G(\beta-\bar{\tau}_k^B)\]</div>
+\[P(\bar{\tau}_k^B)=G(\bar{\tau}_k^B)*G(\beta-\bar{\tau}_k^B) = - G(\bar{\tau}_k^B)*G(-\bar{\tau}_k^B)\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Polarisation P, bosonic</span>
 
-<span class="n">P_tau_b</span><span class="o">=</span><span class="n">G_tau_b</span><span class="o">*</span><span class="p">(</span><span class="n">basisf</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="n">beta</span><span class="o">-</span><span class="n">tausb</span><span class="o">.</span><span class="n">tau</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="nd">@G_l_f</span><span class="p">)</span>
+<span class="n">P_tau_b</span> <span class="o">=</span> <span class="o">-</span> <span class="n">G_tau_b</span> <span class="o">*</span> <span class="p">(</span><span class="n">basisf</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="o">-</span><span class="n">tausb</span><span class="o">.</span><span class="n">tau</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G_l_f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -516,10 +543,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06af30e90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10f51dbd0&gt;
 </pre></div>
 </div>
-<img alt="../_images/6943cf145568a03ab47ad0ead52c966f69bd3392f05de6c881f5b51718d237f6.png" src="../_images/6943cf145568a03ab47ad0ead52c966f69bd3392f05de6c881f5b51718d237f6.png" />
+<img alt="../_images/b1b5bf4c8c91e8834f0d6765ec2489c7c05ca2711e8f0a19541199bf489d6a45.png" src="../_images/b1b5bf4c8c91e8834f0d6765ec2489c7c05ca2711e8f0a19541199bf489d6a45.png" />
 </div>
 </div>
 <p>The same way we transformed <span class="math notranslate nohighlight">\(\hat G^F(i\bar{\omega}_n^F)\)</span> into <span class="math notranslate nohighlight">\(G^B(\bar\tau_k^B)\)</span> we are now able to transform <span class="math notranslate nohighlight">\(P^B(\bar\tau_k^B)\)</span> into <span class="math notranslate nohighlight">\(\hat P^B(i\bar{\omega}_n^B)\)</span> again using least Square fitting and evaluating <span class="math notranslate nohighlight">\(P_l^B\)</span> on the given sampling points (Matsubara frequencies).</p>
@@ -548,7 +575,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;l&#39;)
 </pre></div>
 </div>
-<img alt="../_images/3ceffd1f1b7326a21c8c36404517a6da283f28e1183691433806d9a9dce71f47.png" src="../_images/3ceffd1f1b7326a21c8c36404517a6da283f28e1183691433806d9a9dce71f47.png" />
+<img alt="../_images/51979322c284604d2d1320254080bacb55fc3901af754db3af4ef25ac65fee78.png" src="../_images/51979322c284604d2d1320254080bacb55fc3901af754db3af4ef25ac65fee78.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -575,10 +602,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06ad32fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10f8702d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/e3c1780d57cb2f22df67df605bda7fbb410575cccf1526d0e8de97f14b08bb72.png" src="../_images/e3c1780d57cb2f22df67df605bda7fbb410575cccf1526d0e8de97f14b08bb72.png" />
+<img alt="../_images/35b2bc5b92c31229fd9c048a536c3118b6a97dd35de77197fcdbd2902aa1364d.png" src="../_images/35b2bc5b92c31229fd9c048a536c3118b6a97dd35de77197fcdbd2902aa1364d.png" />
 </div>
 </div>
 <p>Following <span class="math notranslate nohighlight">\(P\)</span> we will now calculate the Screened Interaction <span class="math notranslate nohighlight">\(W\)</span> with the following formula:</p>
@@ -617,10 +644,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06ad5e150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10f90dd10&gt;
 </pre></div>
 </div>
-<img alt="../_images/4e7832d580cb3f58e1075a88c2281a655e6fedaa5dd3609f988e62c26f9d201e.png" src="../_images/4e7832d580cb3f58e1075a88c2281a655e6fedaa5dd3609f988e62c26f9d201e.png" />
+<img alt="../_images/299f3ed1ef8a4711880f84964efdfce7ac15b9adae78249adcafc9dc38f3e984.png" src="../_images/299f3ed1ef8a4711880f84964efdfce7ac15b9adae78249adcafc9dc38f3e984.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -647,7 +674,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;l&#39;)
 </pre></div>
 </div>
-<img alt="../_images/e4064dbc4ac307f4d3f3667fafcb047c9e2d30c802a9c97f90c70f751c5f0a73.png" src="../_images/e4064dbc4ac307f4d3f3667fafcb047c9e2d30c802a9c97f90c70f751c5f0a73.png" />
+<img alt="../_images/72fb7e6f7ddd8a74d437adb4dc948519c10af5442ffe357bb819bd3260416cf3.png" src="../_images/72fb7e6f7ddd8a74d437adb4dc948519c10af5442ffe357bb819bd3260416cf3.png" />
 </div>
 </div>
 <p>In the next step we are changing back into fermionic statistics:</p>
@@ -675,10 +702,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06ab62fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fb21590&gt;
 </pre></div>
 </div>
-<img alt="../_images/d117d37e2a5cbc7a5d3f70d07a53a6926fd04375dea1ed0e690011f6f4cd6e2a.png" src="../_images/d117d37e2a5cbc7a5d3f70d07a53a6926fd04375dea1ed0e690011f6f4cd6e2a.png" />
+<img alt="../_images/d46c853cf7a81a090721b07d9ef9ff2378e19577fdebcacabb64ca307eb6717b.png" src="../_images/d46c853cf7a81a090721b07d9ef9ff2378e19577fdebcacabb64ca307eb6717b.png" />
 </div>
 </div>
 <p>After changing back into fermionic statistics the next quantity that is being dealt with is the so-called self energy <span class="math notranslate nohighlight">\(\Sigma\)</span>. When we first introduced the Dyson equation in the first chapter, we saw <span class="math notranslate nohighlight">\(V\)</span> as some sort of pertubation. The self-energy is very much alike as it describes the correlation effects of a many-body system. Here we will calculate <span class="math notranslate nohighlight">\(\tilde{\Sigma}(\bar{\tau}_k^F)\)</span> using <span class="math notranslate nohighlight">\(\Sigma^{GW}\)</span> so that</p>
@@ -707,10 +734,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06abac190&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fafde50&gt;
 </pre></div>
 </div>
-<img alt="../_images/e7e961d46326d46dfd6dc238509c178f71ec1209e5a884691ed9dae649660da1.png" src="../_images/e7e961d46326d46dfd6dc238509c178f71ec1209e5a884691ed9dae649660da1.png" />
+<img alt="../_images/ffdb88116776418a4a23c7eff3d2f3ee2526a76254bee275b9376b5bd548df33.png" src="../_images/ffdb88116776418a4a23c7eff3d2f3ee2526a76254bee275b9376b5bd548df33.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -734,10 +761,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57470/2200544827.py:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+  pl.title(&#39;$\Sigma_l^F$ over l &#39;)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;l&#39;)
 </pre></div>
 </div>
-<img alt="../_images/2313257ea3ed14664cc2c06230b33e14d43b6ee07246e6c0c593d4b1d3a12c8d.png" src="../_images/2313257ea3ed14664cc2c06230b33e14d43b6ee07246e6c0c593d4b1d3a12c8d.png" />
+<img alt="../_images/3d82ddc9344b57dca745eb9cc37dd87701809e6490cf0de0a32fd77e8ce16d7a.png" src="../_images/3d82ddc9344b57dca745eb9cc37dd87701809e6490cf0de0a32fd77e8ce16d7a.png" />
 </div>
 </div>
 <p>We will calculate</p>
@@ -773,10 +806,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57470/1504367459.py:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+  ax[0].set_title(&#39;Imaginary part of $\Sigma(i\omega)$&#39;)
+/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57470/1504367459.py:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+  ax[1].set_title(&#39;Real part of $\Sigma(i\omega)$&#39;)
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$\\omega$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/36e3c0abcb8b0b2300d49c3bc3052de39dbb44ef9770f6e6a325c97158704ff0.png" src="../_images/36e3c0abcb8b0b2300d49c3bc3052de39dbb44ef9770f6e6a325c97158704ff0.png" />
+<img alt="../_images/a4c44e8cb9241735c1057389a287492e69358e7c3d5c9a5e38f6b5ee5efd27e8.png" src="../_images/a4c44e8cb9241735c1057389a287492e69358e7c3d5c9a5e38f6b5ee5efd27e8.png" />
 </div>
 </div>
 <p>Last but not least we will obtain <span class="math notranslate nohighlight">\(G^F(i\bar{\omega}_n^F)\)</span> through the Dyson Equation of GW:</p>
@@ -806,10 +849,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fa06ab8afd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fd82850&gt;
 </pre></div>
 </div>
-<img alt="../_images/694df2bba328cb932359f8a6ce08cff5a7f3c68160da14e64a4cd92bb7507bf4.png" src="../_images/694df2bba328cb932359f8a6ce08cff5a7f3c68160da14e64a4cd92bb7507bf4.png" />
+<img alt="../_images/c20550c1d349ec2bbf55e45c808cd320384c3aa8cde1af5f7f0529f204375f66.png" src="../_images/c20550c1d349ec2bbf55e45c808cd320384c3aa8cde1af5f7f0529f204375f66.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -836,7 +879,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>full iterations:  1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>full iterations: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -848,16 +900,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 2.07806360e-18+0.03657118j  3.31916878e-19+0.10932936j
- -8.59280574e-18+0.18513256j  5.47680338e-18+0.24022776j
- -4.50903710e-18+0.28186922j  2.10892056e-17+0.34036864j
-  6.10886753e-18+0.4278915j   2.25032005e-18+0.57065346j
- -1.69861463e-17+0.83239627j  9.05172560e-17+1.38269615j
-  7.62400416e-17-1.38269615j -1.54955306e-17-0.83239627j
-  5.43243553e-18-0.57065346j  6.63080433e-18-0.4278915j
-  2.09349407e-17-0.34036864j -4.54682983e-18-0.28186922j
-  5.31668120e-18-0.24022776j -8.62614007e-18-0.18513256j
-  3.05041330e-19-0.10932936j  2.05045978e-18-0.03657118j]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.13806786e-19+0.02429373j  9.06724937e-18+0.09616324j
+ -2.54780751e-17+0.18513256j -1.80526795e-17+0.24022776j
+  1.94852549e-17+0.28186922j -1.51319184e-17+0.34036864j
+ -8.54740334e-18+0.4278915j  -4.72595122e-17+0.57065346j
+ -4.54124891e-17+0.83239627j -1.12374754e-17+1.38269615j
+ -1.12374754e-17-1.38269615j -4.54124891e-17-0.83239627j
+ -4.72595122e-17-0.57065346j -8.54740334e-18-0.4278915j
+ -1.51319184e-17-0.34036864j  1.94852549e-17-0.28186922j
+ -1.80526795e-17-0.24022776j -2.54780751e-17-0.18513256j
+  9.06724937e-18-0.09616324j -3.13806786e-19-0.02429373j]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -865,7 +920,7 @@ document.write(`
 <p>With this we have completed one full iteration of GF2 &amp; GW. Repeating this over and over again will show convergence and thus give the desired approximation to the self-energy.</p>
 </section>
 <section id="conclusion">
-<h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h1>
+<h1>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
 <p>The above code illustrated a full iteration of GW &amp; GF2 with sparse_ir.</p>
 <p>Taking advantage of the Singular Value Expansion of the imaginary time Green’s function allowed for the construction of the Intermediate Representation: A basis for the Matsubara Green’s function which makes it possible to switch back and forth between time and frequency domain.</p>
 <p>Pairing this with the GW &amp; GF2 approximations and the Hedin equations, we were able to make use of the IR. Because the Hedin equations are diagonal in one or the other representation, we had the IR basis work as a translator between these and ensure excact as well as fast calcuations for quantities like the self-energy, the polarization and the screened colomb interaction. All this while suffering a minimal loss in information.</p>
@@ -874,7 +929,7 @@ document.write(`
 <p>Naturally this idea of using the Intermediate Representation in order to facilitate calculations can be expanded in various directions. One could go beyond single orbital calculations with the use of matrices or implement another type of vertex-approximation. Undoubtedly not anywhere near all options have been exhausted, not for the use of the IR Basis nor other machine learning methods used in physics.</p>
 </section>
 <section id="sources">
-<h1>Sources<a class="headerlink" href="#sources" title="Permalink to this heading">#</a></h1>
+<h1>Sources<a class="headerlink" href="#sources" title="Link to this heading">#</a></h1>
 <p>[1] H.Bruus, Karsten Flensberg,<em>Many-body Quantum Theory in Condensed    Matter  Physics</em> (Oxford University Press Inc., New York, 2004)<br>
 [2] J.W.Negele, H.Orland, <em>Quantum Many-Particle Systems</em> (Westview Press, 1998)<br>
 [3] G.D.Mahan,<em>Many-Particle Physics</em> (Kluwer Academic/Plenum Publishers, New York, 2000)<br>
@@ -920,11 +975,10 @@ Review B 96(3), 035147 (2017), doi:10.1103/physrevb.96.035147.<br>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="second_order_perturbation_py.html"
@@ -944,10 +998,7 @@ Review B 96(3), 035147 (2017), doi:10.1103/physrevb.96.035147.<br>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -955,6 +1006,7 @@ Review B 96(3), 035147 (2017), doi:10.1103/physrevb.96.035147.<br>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -987,6 +1039,7 @@ By sparse-ir developers
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1013,8 +1066,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

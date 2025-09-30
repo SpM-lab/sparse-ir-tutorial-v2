@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Second-order perturbation &#8212; sparse-ir</title>
   
@@ -15,46 +14,45 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -62,12 +60,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RD8N0K0C9Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/second_order_perturbation_py';</script>
@@ -84,19 +86,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,12 +124,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -138,6 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -146,10 +163,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">sparse-ir</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample codes (Fortran)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="second_order_perturbation_fort.html">Second-order perturbation</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
@@ -218,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -227,14 +252,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -309,26 +334,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -368,12 +395,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="second-order-perturbation">
-<h1>Second-order perturbation<a class="headerlink" href="#second-order-perturbation" title="Permalink to this heading">#</a></h1>
+<h1>Second-order perturbation<a class="headerlink" href="#second-order-perturbation" title="Link to this heading">#</a></h1>
 <section id="theory">
-<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h2>
+<h2>Theory<a class="headerlink" href="#theory" title="Link to this heading">#</a></h2>
 <p>We consider the Hubbard model on a square lattice at half filling,
 whose Hamiltonian is given by</p>
 <div class="math notranslate nohighlight">
@@ -447,21 +474,21 @@ The computational complexity of FFT scales as <span class="math notranslate nohi
 which is considerably smaller than that of the naive implementation [<span class="math notranslate nohighlight">\(O(L^3)\)</span>] for large <span class="math notranslate nohighlight">\(L\)</span>.</p>
 </section>
 <section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="kn">import</span> <span class="nn">sparse_ir</span>
-<span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fftn</span><span class="p">,</span> <span class="n">ifftn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sparse_ir</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">fftn</span><span class="p">,</span> <span class="n">ifftn</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="step-1-generate-ir-basis-and-associated-sampling-points">
-<h3>Step 1: Generate IR basis and associated sampling points<a class="headerlink" href="#step-1-generate-ir-basis-and-associated-sampling-points" title="Permalink to this heading">#</a></h3>
+<h3>Step 1: Generate IR basis and associated sampling points<a class="headerlink" href="#step-1-generate-ir-basis-and-associated-sampling-points" title="Link to this heading">#</a></h3>
 <p>The following code works only for a single-orbital problem.
 <code class="docutils literal notranslate"><span class="pre">numpy.linalg.inv</span></code> can be used instead for computing matrix-valued Green’s functons, i.e., for multi-orbital systems.
 The condition numbers are around 180 and 250 for imaginary-time and Matsubara-frequency samplings,
@@ -497,15 +524,35 @@ If you want more significant digits, you can decrease the cutoff.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (tau):  162.99257542854215
-cond (matsu):  465.80046864182265
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (tau): 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>178.7075706855871
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (matsu): 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>423.4519199332223
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="step-2">
-<h3>Step 2<a class="headerlink" href="#step-2" title="Permalink to this heading">#</a></h3>
+<h3>Step 2<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
 <p>Compute the non-interacting Green’s function on a mesh.
 The Green’s function computed at <span class="math notranslate nohighlight">\(\boldsymbol{k}=\Gamma=(0,0)\)</span> is plotted below.</p>
 <div class="cell docutils container">
@@ -531,15 +578,30 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(256, 256) (256, 256) (256, 256)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(256, 256)
 </pre></div>
 </div>
-<img alt="../_images/1c01f8084475effe70b5fcd9e9a9fe9320b786c63c306070de301fc791b90e68.png" src="../_images/1c01f8084475effe70b5fcd9e9a9fe9320b786c63c306070de301fc791b90e68.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(256, 256)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(256, 256)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="../_images/516b003c202480cc40d3a631cc40c484ca84fa76727fb6da818d893b469fdba8.png" src="../_images/516b003c202480cc40d3a631cc40c484ca84fa76727fb6da818d893b469fdba8.png" />
 </div>
 </div>
 </section>
 <section id="step-3">
-<h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this heading">#</a></h3>
+<h3>Step 3<a class="headerlink" href="#step-3" title="Link to this heading">#</a></h3>
 <p>Transform the Green’s function to sampling times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,7 +619,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c9ffeead806a88319fda0dba95158c908ff6c1c6919ec9502b2a8ccedf9c0adf.png" src="../_images/c9ffeead806a88319fda0dba95158c908ff6c1c6919ec9502b2a8ccedf9c0adf.png" />
+<img alt="../_images/50cfeb80c5627e98219c57cc7532afe58efd6123f5d6b950e9c4e45b0649f0af.png" src="../_images/50cfeb80c5627e98219c57cc7532afe58efd6123f5d6b950e9c4e45b0649f0af.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -578,12 +640,12 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7f0bcce84e2e3247041ca09fbbe2c42ceb3810ebd8cd6efe5553bb55a116e6ea.png" src="../_images/7f0bcce84e2e3247041ca09fbbe2c42ceb3810ebd8cd6efe5553bb55a116e6ea.png" />
+<img alt="../_images/0dc473afcdab54ee0ff954a27747b517b21034fc65ed2498d5a8f4603cabd601.png" src="../_images/0dc473afcdab54ee0ff954a27747b517b21034fc65ed2498d5a8f4603cabd601.png" />
 </div>
 </div>
 </section>
 <section id="step-4">
-<h3>Step 4<a class="headerlink" href="#step-4" title="Permalink to this heading">#</a></h3>
+<h3>Step 4<a class="headerlink" href="#step-4" title="Link to this heading">#</a></h3>
 <p>Transform the Green’s function to the real space and evaluate the self-energy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -604,14 +666,14 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5ee0c03faf6ae2384efddaf904e3a6bba7fa5c1271a025cfca30121cfe0d405c.png" src="../_images/5ee0c03faf6ae2384efddaf904e3a6bba7fa5c1271a025cfca30121cfe0d405c.png" />
+<img alt="../_images/d22e74cd48ebae90dfcefda5f517f0e7ff5b03864ce6a3f22817f664ccfc2b28.png" src="../_images/d22e74cd48ebae90dfcefda5f517f0e7ff5b03864ce6a3f22817f664ccfc2b28.png" />
 </div>
 </div>
 <p>Compute the second-order term of the self-energy on the sampling points</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sigma(tau, r): (ntau, nr)</span>
-<span class="n">srt</span> <span class="o">=</span> <span class="n">U</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="n">srt</span> <span class="o">=</span> <span class="o">-</span> <span class="n">U</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">srt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$r=(0,0)$&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
@@ -623,12 +685,12 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/21b5ac0d6fad78a1e5305b682fc3f7040c0335ae56a4f839e176796092c4a48c.png" src="../_images/21b5ac0d6fad78a1e5305b682fc3f7040c0335ae56a4f839e176796092c4a48c.png" />
+<img alt="../_images/dcc2cb2b2cf52f08069e0e44229a6c133829c658e75571f75cbf2db658c472a0.png" src="../_images/dcc2cb2b2cf52f08069e0e44229a6c133829c658e75571f75cbf2db658c472a0.png" />
 </div>
 </div>
 </section>
 <section id="step-5">
-<h3>Step 5<a class="headerlink" href="#step-5" title="Permalink to this heading">#</a></h3>
+<h3>Step 5<a class="headerlink" href="#step-5" title="Link to this heading">#</a></h3>
 <p>Transform the self-energy to the IR basis and then transform it to the momentum space</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,7 +708,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3947b1d5faed634399eedeb4c67a5a6586febbdc73e974bf95717f8e118e8fcc.png" src="../_images/3947b1d5faed634399eedeb4c67a5a6586febbdc73e974bf95717f8e118e8fcc.png" />
+<img alt="../_images/7ae854e94432f544253369d76752913b23782a9f2b7702d9d45deaf663cb5798.png" src="../_images/7ae854e94432f544253369d76752913b23782a9f2b7702d9d45deaf663cb5798.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -668,12 +730,18 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6379f3d236ff7e7ab0e5fa13a3a7df54beec4650af02547216259ad5ab1c8d9b.png" src="../_images/6379f3d236ff7e7ab0e5fa13a3a7df54beec4650af02547216259ad5ab1c8d9b.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\G&#39;
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\G&#39;
+/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_58190/1387464666.py:7: SyntaxWarning: invalid escape sequence &#39;\G&#39;
+  plt.semilogy(np.abs(skl[:,0,0]), label=&quot;$k=\Gamma$&quot;)
+</pre></div>
+</div>
+<img alt="../_images/b8ddea08ebb1926fdb719ea46ef8fec73ccdbb74be6ac2b2c40c805d64f25833.png" src="../_images/b8ddea08ebb1926fdb719ea46ef8fec73ccdbb74be6ac2b2c40c805d64f25833.png" />
 </div>
 </div>
 </section>
 <section id="step-6">
-<h3>Step 6<a class="headerlink" href="#step-6" title="Permalink to this heading">#</a></h3>
+<h3>Step 6<a class="headerlink" href="#step-6" title="Link to this heading">#</a></h3>
 <p>Evaluate the self-energy on sampling frequencies</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -688,7 +756,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a974a6d967fceabe044780f1d140358a73ae9d0960ec1ad92bb1ba2026ad4751.png" src="../_images/a974a6d967fceabe044780f1d140358a73ae9d0960ec1ad92bb1ba2026ad4751.png" />
+<img alt="../_images/ce4bc96432836caba3d38a8d51cc43777439a27a7a65fdd43e6ee8e3db987043.png" src="../_images/ce4bc96432836caba3d38a8d51cc43777439a27a7a65fdd43e6ee8e3db987043.png" />
 </div>
 </div>
 <p>You can evaluate the self-energy on arbitrary frequencies.</p>
@@ -707,11 +775,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jovyan/.venv/default/lib/python3.11/site-packages/sparse_ir/sampling.py:129: ConditioningWarning: Sampling matrix is poorly conditioned (kappa = 5.5e+14)
-  warn(f&quot;Sampling matrix is poorly conditioned &quot;
-</pre></div>
-</div>
-<img alt="../_images/d8b7949c9bb139f2aea821415cb7dc488fbe901b0b9a7fec0034aadf2ef373b5.png" src="../_images/d8b7949c9bb139f2aea821415cb7dc488fbe901b0b9a7fec0034aadf2ef373b5.png" />
+<img alt="../_images/c87cddd8e1e14e83eaaa9c15745d8e0f9d4ce92001ab3c2878318bdb6e1d7957.png" src="../_images/c87cddd8e1e14e83eaaa9c15745d8e0f9d4ce92001ab3c2878318bdb6e1d7957.png" />
 </div>
 </div>
 </section>
@@ -743,11 +807,10 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="DLR_py.html"
@@ -767,10 +830,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -778,6 +838,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -816,6 +877,7 @@ By sparse-ir developers
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -842,8 +904,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

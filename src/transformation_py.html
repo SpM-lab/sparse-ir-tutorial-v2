@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Transformation from/to IR &#8212; sparse-ir</title>
   
@@ -15,46 +14,45 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -62,12 +60,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RD8N0K0C9Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/transformation_py';</script>
@@ -84,19 +86,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,12 +124,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -138,6 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -146,10 +163,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">sparse-ir</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample codes (Fortran)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="second_order_perturbation_fort.html">Second-order perturbation</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
@@ -218,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -227,14 +252,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -309,26 +334,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -364,10 +391,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="transformation-from-to-ir">
-<h1>Transformation from/to IR<a class="headerlink" href="#transformation-from-to-ir" title="Permalink to this heading">#</a></h1>
+<h1>Transformation from/to IR<a class="headerlink" href="#transformation-from-to-ir" title="Link to this heading">#</a></h1>
 <div class="math notranslate nohighlight">
 \[
 \newcommand{\iv}{{\mathrm{i}\nu}}
@@ -376,7 +403,7 @@ document.write(`
 \]</div>
 <p>In this section, we explain how to transform numerical data to IR.</p>
 <section id="poles">
-<h2>Poles<a class="headerlink" href="#poles" title="Permalink to this heading">#</a></h2>
+<h2>Poles<a class="headerlink" href="#poles" title="Link to this heading">#</a></h2>
 <p>We consider a Green’s function genereated by poles:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -410,20 +437,21 @@ We immediately obtain</p>
 <p>The following code demostrates this transformation for bosons.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sparse_ir</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sparse_ir</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
 
 <span class="n">beta</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">wmax</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">basis_b</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">)</span>
 
-<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])</span>
 <span class="n">omega_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">])</span>
 
-<span class="n">rhol_pole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;lp,p-&gt;l&#39;</span><span class="p">,</span> <span class="n">basis_b</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">omega_p</span><span class="p">),</span> <span class="n">coeff</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">omega_p</span><span class="p">))</span>
+<span class="n">v_omega_p</span> <span class="o">=</span> <span class="n">basis_b</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><span class="n">omega_p</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">omega_p</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">rhol_pole</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;lp,p-&gt;l&#39;</span><span class="p">,</span> <span class="n">v_omega_p</span><span class="p">,</span> <span class="n">coeff</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">omega_p</span><span class="p">))</span>
 <span class="n">gl_pole</span> <span class="o">=</span> <span class="o">-</span> <span class="n">basis_b</span><span class="o">.</span><span class="n">s</span> <span class="o">*</span> <span class="n">rhol_pole</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rhol_pole</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|\rho_l|$&quot;</span><span class="p">)</span>
@@ -437,19 +465,18 @@ We immediately obtain</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2b8c5092f9846eed6b77170ce669b9d75b1434682f7e6294ea47e94e9f635fd9.png" src="../_images/2b8c5092f9846eed6b77170ce669b9d75b1434682f7e6294ea47e94e9f635fd9.png" />
+<img alt="../_images/60e3ce94d739a766340aea0d1e495cfee44667f465c8d0dbf672c901b934e623.png" src="../_images/60e3ce94d739a766340aea0d1e495cfee44667f465c8d0dbf672c901b934e623.png" />
 </div>
 </div>
 <p>Alternatively, we can use <code class="docutils literal notranslate"><span class="pre">DiscreteLehmannRepresentation</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sparse_ir.dlr</span> <span class="kn">import</span> <span class="n">DiscreteLehmannRepresentation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sparse_ir.dlr</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiscreteLehmannRepresentation</span>
 <span class="n">dlr</span> <span class="o">=</span> <span class="n">DiscreteLehmannRepresentation</span><span class="p">(</span><span class="n">basis_b</span><span class="p">,</span> <span class="n">omega_p</span><span class="p">)</span>
 <span class="n">gl_pole2</span> <span class="o">=</span> <span class="n">dlr</span><span class="o">.</span><span class="n">to_IR</span><span class="p">(</span><span class="n">coeff</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">beta</span><span class="o">*</span><span class="n">omega_p</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">gl_pole2</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|g_l|$ from DLR&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">gl_pole</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|g_l|$&quot;</span><span class="p">)</span>
-
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$l$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e+1</span><span class="p">])</span>
@@ -459,12 +486,12 @@ We immediately obtain</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/256376267ee77f82e27609cf8597f5e18b1357669180041c3466557cd29c7bc2.png" src="../_images/256376267ee77f82e27609cf8597f5e18b1357669180041c3466557cd29c7bc2.png" />
+<img alt="../_images/71669a59c5ee43b463e85ef4908a97e57bba8b52b85f918b34179f837ba9008c.png" src="../_images/71669a59c5ee43b463e85ef4908a97e57bba8b52b85f918b34179f837ba9008c.png" />
 </div>
 </div>
 </section>
 <section id="from-smooth-spectral-function">
-<h2>From smooth spectral function<a class="headerlink" href="#from-smooth-spectral-function" title="Permalink to this heading">#</a></h2>
+<h2>From smooth spectral function<a class="headerlink" href="#from-smooth-spectral-function" title="Link to this heading">#</a></h2>
 <p>For a smooth spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span>, the expansion coefficients can be evaluated by computing the integral</p>
 <div class="math notranslate nohighlight">
 \[
@@ -499,7 +526,7 @@ Then, <span class="math notranslate nohighlight">\(\rho_l\)</span> can be transf
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1489115b551f62c2ad322259699f015487022fd6a1ca401fc09024146a9d622a.png" src="../_images/1489115b551f62c2ad322259699f015487022fd6a1ca401fc09024146a9d622a.png" />
+<img alt="../_images/e1a94c81ed4b5b8bd58a5d3da8bbeb5841a0f889ddbf61d2beea4cf08d41765b.png" src="../_images/e1a94c81ed4b5b8bd58a5d3da8bbeb5841a0f889ddbf61d2beea4cf08d41765b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -508,7 +535,7 @@ Then, <span class="math notranslate nohighlight">\(\rho_l\)</span> can be transf
 <span class="n">wmax</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">)</span>
 
-<span class="n">rhol</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span>
+<span class="n">rhol</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="o">-</span><span class="n">wmax</span><span class="p">,</span> <span class="n">wmax</span><span class="p">)</span>
 <span class="n">gl</span> <span class="o">=</span> <span class="o">-</span> <span class="n">basis</span><span class="o">.</span><span class="n">s</span> <span class="o">*</span> <span class="n">rhol</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rhol</span><span class="p">),</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|\rho_l|$&quot;</span><span class="p">)</span>
@@ -523,7 +550,7 @@ Then, <span class="math notranslate nohighlight">\(\rho_l\)</span> can be transf
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1b422220d2a6934269d530fc246fd44aa866ad37f2e26f8b00be1a1daebd263a.png" src="../_images/1b422220d2a6934269d530fc246fd44aa866ad37f2e26f8b00be1a1daebd263a.png" />
+<img alt="../_images/9b96af1e56ee9e7e41a6086c37a0108e97bba85e96c3a92553b938f64faa4ab8.png" src="../_images/9b96af1e56ee9e7e41a6086c37a0108e97bba85e96c3a92553b938f64faa4ab8.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(\rho_l\)</span> is evaluated on arbitrary real frequencies as follows.</p>
@@ -539,12 +566,12 @@ Then, <span class="math notranslate nohighlight">\(\rho_l\)</span> can be transf
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/63371fae30a78a0dc4a365a63c04bb4306b5f46061ee3d5fd09018437cc9b103.png" src="../_images/63371fae30a78a0dc4a365a63c04bb4306b5f46061ee3d5fd09018437cc9b103.png" />
+<img alt="../_images/535ff245132179b9315fb8ff620a0e30ca2e77f56137b7d70adb9e27be9c5a49.png" src="../_images/535ff245132179b9315fb8ff620a0e30ca2e77f56137b7d70adb9e27be9c5a49.png" />
 </div>
 </div>
 </section>
 <section id="from-ir-to-imaginary-time">
-<h2>From IR to imaginary time<a class="headerlink" href="#from-ir-to-imaginary-time" title="Permalink to this heading">#</a></h2>
+<h2>From IR to imaginary time<a class="headerlink" href="#from-ir-to-imaginary-time" title="Link to this heading">#</a></h2>
 <p>We are now ready to evaluate <span class="math notranslate nohighlight">\(g_l\)</span> on arbitrary <span class="math notranslate nohighlight">\(\tau\)</span> points.
 A naive way is as follows.</p>
 <div class="cell docutils container">
@@ -559,7 +586,7 @@ A naive way is as follows.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a488c6f1e95ab30e3341516f205953016d07928afccc2b179347d6b4abe56713.png" src="../_images/a488c6f1e95ab30e3341516f205953016d07928afccc2b179347d6b4abe56713.png" />
+<img alt="../_images/07ccbcce42ca8064e2a0d633625389ab818e041ae9ed08153e69b2bc8f6c9d3c.png" src="../_images/07ccbcce42ca8064e2a0d633625389ab818e041ae9ed08153e69b2bc8f6c9d3c.png" />
 </div>
 </div>
 <p>Alternatively, we can use <code class="docutils literal notranslate"><span class="pre">TauSampling</span></code> as follows.</p>
@@ -575,12 +602,12 @@ A naive way is as follows.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a488c6f1e95ab30e3341516f205953016d07928afccc2b179347d6b4abe56713.png" src="../_images/a488c6f1e95ab30e3341516f205953016d07928afccc2b179347d6b4abe56713.png" />
+<img alt="../_images/07ccbcce42ca8064e2a0d633625389ab818e041ae9ed08153e69b2bc8f6c9d3c.png" src="../_images/07ccbcce42ca8064e2a0d633625389ab818e041ae9ed08153e69b2bc8f6c9d3c.png" />
 </div>
 </div>
 </section>
 <section id="from-full-imaginary-time-data">
-<h2>From full imaginary-time data<a class="headerlink" href="#from-full-imaginary-time-data" title="Permalink to this heading">#</a></h2>
+<h2>From full imaginary-time data<a class="headerlink" href="#from-full-imaginary-time-data" title="Link to this heading">#</a></h2>
 <p>A numerically stable way to expand <span class="math notranslate nohighlight">\(G(\tau)\)</span> in IR
 is evaluating the integral</p>
 <div class="math notranslate nohighlight">
@@ -590,7 +617,7 @@ G_l = \int_0^\beta \mathrm{d} \tau G(\tau) U_l(\tau).
 <p>You can use <code class="docutils literal notranslate"><span class="pre">overlap</span></code> function as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eval_gtau</span><span class="p">(</span><span class="n">taus</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">eval_gtau</span><span class="p">(</span><span class="n">taus</span><span class="p">):</span>
     <span class="n">uval</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="n">taus</span><span class="p">)</span> <span class="c1">#(nl, ntau)</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">taus</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
        <span class="nb">print</span><span class="p">(</span><span class="n">uval</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">gl</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -598,7 +625,7 @@ G_l = \int_0^\beta \mathrm{d} \tau G(\tau) U_l(\tau).
     <span class="k">else</span><span class="p">:</span>
        <span class="k">return</span> <span class="n">uval</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">gl</span>
 
-<span class="n">gl_reconst</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">eval_gtau</span><span class="p">)</span>
+<span class="n">gl_reconst</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">eval_gtau</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
 
 <span class="n">ls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">ls</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">gl_reconst</span><span class="p">)[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;reconstructed&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -613,17 +640,17 @@ G_l = \int_0^\beta \mathrm{d} \tau G(\tau) U_l(\tau).
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/81a29242761760f4b2af38b606170dedf5a1c9b7acc5c1fc26e9b5b3d5e3c3ca.png" src="../_images/81a29242761760f4b2af38b606170dedf5a1c9b7acc5c1fc26e9b5b3d5e3c3ca.png" />
+<img alt="../_images/d12fc12617486cc6e5dc2ad4778dda3d986b3fab907808c8ba9d5d29aad4a9c0.png" src="../_images/d12fc12617486cc6e5dc2ad4778dda3d986b3fab907808c8ba9d5d29aad4a9c0.png" />
 </div>
 </div>
 </section>
 <section id="remark-what-happens-if-omega-mathrm-max-is-too-small">
-<h2>Remark: What happens if <span class="math notranslate nohighlight">\(\omega_\mathrm{max}\)</span> is too small?<a class="headerlink" href="#remark-what-happens-if-omega-mathrm-max-is-too-small" title="Permalink to this heading">#</a></h2>
+<h2>Remark: What happens if <span class="math notranslate nohighlight">\(\omega_\mathrm{max}\)</span> is too small?<a class="headerlink" href="#remark-what-happens-if-omega-mathrm-max-is-too-small" title="Link to this heading">#</a></h2>
 <p>If <span class="math notranslate nohighlight">\(G_l\)</span> do not decay like <span class="math notranslate nohighlight">\(S_l\)</span>,  <span class="math notranslate nohighlight">\(\omega_\mathrm{max}\)</span> may be too small.
 Below, we numerically demonstrate it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">quad</span>
 
 <span class="n">beta</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">wmax</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -644,12 +671,12 @@ Below, we numerically demonstrate it.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/891f14c8dd3b8efdc82036ec72b9e6fad80191fbf12b0bf5df57a171d98fff7e.png" src="../_images/891f14c8dd3b8efdc82036ec72b9e6fad80191fbf12b0bf5df57a171d98fff7e.png" />
+<img alt="../_images/5ddd1ed191ac82616dffe2f299033ba53c9b9d94868c0b3e40031326938e652c.png" src="../_images/5ddd1ed191ac82616dffe2f299033ba53c9b9d94868c0b3e40031326938e652c.png" />
 </div>
 </div>
 </section>
 <section id="matrix-valued-object">
-<h2>Matrix-valued object<a class="headerlink" href="#matrix-valued-object" title="Permalink to this heading">#</a></h2>
+<h2>Matrix-valued object<a class="headerlink" href="#matrix-valued-object" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">evaluate</span></code> and <code class="docutils literal notranslate"><span class="pre">fit</span></code> accept a matrix-valued object as an input.
 The axis to which the transformation applied can be specified by using the keyword augment <code class="docutils literal notranslate"><span class="pre">axis</span></code>.</p>
 <div class="cell docutils container">
@@ -663,8 +690,28 @@ The axis to which the transformation applied can be specified by using the keywo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gl:  (30,)
-gl_tensor:  (1, 2, 3, 30)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gl: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(30,)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gl_tensor: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 30)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -680,7 +727,16 @@ gl_tensor:  (1, 2, 3, 30)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gtau_tensor:  (1, 2, 3, 30)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gtau_tensor: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, 30)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -713,11 +769,10 @@ gl_tensor:  (1, 2, 3, 30)
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="additional_material.html"
@@ -737,10 +792,7 @@ gl_tensor:  (1, 2, 3, 30)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -748,6 +800,7 @@ gl_tensor:  (1, 2, 3, 30)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -782,6 +835,7 @@ By sparse-ir developers
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -808,8 +862,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

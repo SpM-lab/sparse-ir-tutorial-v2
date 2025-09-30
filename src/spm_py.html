@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>SpM analytic continuation &#8212; sparse-ir</title>
   
@@ -15,46 +14,45 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -62,12 +60,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-RD8N0K0C9Y');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/spm_py';</script>
@@ -84,19 +86,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,12 +124,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -138,6 +152,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../index.html">
@@ -146,10 +163,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">sparse-ir</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
@@ -195,10 +224,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample codes (Fortran)</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="second_order_perturbation_fort.html">Second-order perturbation</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
@@ -218,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -227,14 +252,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -309,26 +334,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -370,25 +397,24 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="spm-analytic-continuation">
-<h1>SpM analytic continuation<a class="headerlink" href="#spm-analytic-continuation" title="Permalink to this heading">#</a></h1>
+<h1>SpM analytic continuation<a class="headerlink" href="#spm-analytic-continuation" title="Link to this heading">#</a></h1>
 <p>Author: Kazuyoshi Yoshimi &amp; Junya Otsuki</p>
 <p>This example provides an application of <code class="docutils literal notranslate"><span class="pre">sparse-ir</span></code> to the sparse-modeling analytic continuation (SpM) algorithm. We reproduce the result presented in the original paper <span id="id1">[<a class="reference internal" href="bibliography.html#id23" title="Junya Otsuki, Masayuki Ohzeki, Hiroshi Shinaoka, and Kazuyoshi Yoshimi. Sparse modeling approach to analytical continuation of imaginary-time quantum Monte Carlo data. Physical Review E, 95(6):061302(R), 06 2017. URL: https://journals.aps.org/pre/pdf/10.1103/PhysRevE.95.061302, doi:10.1103/physreve.95.061302.">Otsuki <em>et al.</em>, 2017</a>]</span>.</p>
 <p>The analytic continuation can be formulated as the inverse problem of the equation</p>
 <div class="math notranslate nohighlight" id="equation-lehmann-spm">
-<span class="eqno">(3)<a class="headerlink" href="#equation-lehmann-spm" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(3)<a class="headerlink" href="#equation-lehmann-spm" title="Link to this equation">#</a></span>\[
   G(\tau) = -\int_{-\infty}^{\infty} d\omega K(\tau, \omega) \rho(\omega).
 \]</div>
 <p>We evaluate <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> for a given <span class="math notranslate nohighlight">\(G(\tau)\)</span>.</p>
 <!-- Because of ill-conditioned nature of the kernel function $K$, the inversion of this equation is sensitive to noise in $G(\tau)$. SpM method extract relevant information in $G(\tau)$ using $L_1$-norm regularization. -->
 <section id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">#</a></h2>
+<h2>Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>sparse_ir
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>admmsolver
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>admmsolver
 </pre></div>
 </div>
 </div>
@@ -397,7 +423,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download data for G(tau) and rhow(omega) from GitHub repo</span>
-<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlretrieve</span>
 <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/SpM-lab/SpM/master/samples/fermion/&quot;</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Gtau.in&quot;</span><span class="p">,</span> <span class="s2">&quot;Gtau.in.dos&quot;</span><span class="p">]:</span>
     <span class="n">urlretrieve</span><span class="p">(</span><span class="n">base_url</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -410,16 +436,16 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="input-data-for-g-tau">
-<h2>Input data for <span class="math notranslate nohighlight">\(G(\tau)\)</span><a class="headerlink" href="#input-data-for-g-tau" title="Permalink to this heading">#</a></h2>
+<h2>Input data for <span class="math notranslate nohighlight">\(G(\tau)\)</span><a class="headerlink" href="#input-data-for-g-tau" title="Link to this heading">#</a></h2>
 <p>We load the sample data provided in the repository <strong>SpM-lab/SpM</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -447,12 +473,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af7f54335ea07165ff780261a7112f8b77e929d7a7c240173ba3f3c5043bb90f.png" src="../_images/af7f54335ea07165ff780261a7112f8b77e929d7a7c240173ba3f3c5043bb90f.png" />
+<img alt="../_images/f054712986772fa627272c781ed633fa8899546d960aec619cef5fd35f3337e3.png" src="../_images/f054712986772fa627272c781ed633fa8899546d960aec619cef5fd35f3337e3.png" />
 </div>
 </div>
 </section>
 <section id="spectral-function-rho-omega-answer">
-<h2>Spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> (answer)<a class="headerlink" href="#spectral-function-rho-omega-answer" title="Permalink to this heading">#</a></h2>
+<h2>Spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> (answer)<a class="headerlink" href="#spectral-function-rho-omega-answer" title="Link to this heading">#</a></h2>
 <p>We generate the real frequency grid for the spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -480,12 +506,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b93c5402a5a2604915107fc5ddd1d984277ac44a426488dd8177b1dbd5904da8.png" src="../_images/b93c5402a5a2604915107fc5ddd1d984277ac44a426488dd8177b1dbd5904da8.png" />
+<img alt="../_images/60792683f16b4413d0ed48f6ddab135fbdc8ce8e975c5a7307796e16d3131be8.png" src="../_images/60792683f16b4413d0ed48f6ddab135fbdc8ce8e975c5a7307796e16d3131be8.png" />
 </div>
 </div>
 </section>
 <section id="ir-basis">
-<h2>IR basis<a class="headerlink" href="#ir-basis" title="Permalink to this heading">#</a></h2>
+<h2>IR basis<a class="headerlink" href="#ir-basis" title="Link to this heading">#</a></h2>
 <p>We first generate IR basis.
 On a discrete grid of <span class="math notranslate nohighlight">\(\{ \tau_i \}\)</span> and <span class="math notranslate nohighlight">\(\{ \omega_j \}\)</span>, the kernel function <span class="math notranslate nohighlight">\(K(\tau, \omega)\)</span> are represented by a matrix <span class="math notranslate nohighlight">\(\hat{K}\)</span> with <span class="math notranslate nohighlight">\(\hat{K}_{ij}=K(\tau_i, \omega_j)\)</span>. The singular value decomposition of <span class="math notranslate nohighlight">\(\hat{K}\)</span> defines the IR basis</p>
 <div class="math notranslate nohighlight">
@@ -504,7 +530,7 @@ On a discrete grid of <span class="math notranslate nohighlight">\(\{ \tau_i \}\
 <p>The matrices <span class="math notranslate nohighlight">\(\hat{U}\)</span>, <span class="math notranslate nohighlight">\(\hat{S}\)</span>, and <span class="math notranslate nohighlight">\(\hat{V}\)</span> can be computed by <code class="docutils literal notranslate"><span class="pre">sparse_ir.FiniteTempBasis</span></code> class (<a class="reference external" href="https://sparse-ir.readthedocs.io/en/latest/basis.html">https://sparse-ir.readthedocs.io/en/latest/basis.html</a>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sparse_ir</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sparse_ir</span>
 
 <span class="c1">#Set basis</span>
 <span class="n">SVmin</span> <span class="o">=</span> <span class="mf">1e-10</span>
@@ -529,11 +555,14 @@ On a discrete grid of <span class="math notranslate nohighlight">\(\{ \tau_i \}\
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4001, 43), (43,), (1001, 43)
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="id2">
-<h2>SpM analytic continuation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>SpM analytic continuation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>The spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> can be expanded with the IR basis</p>
 <div class="math notranslate nohighlight">
 \[
@@ -595,7 +624,7 @@ Namely, using <span class="math notranslate nohighlight">\(\hat{U}\hat{U}^{\dagg
 <p>Because <span class="math notranslate nohighlight">\(\hat{U}\)</span> is not a unitary matrix in the present formalism, one cannot use this equation.</p>
 </section>
 <section id="admm">
-<h2>ADMM<a class="headerlink" href="#admm" title="Permalink to this heading">#</a></h2>
+<h2>ADMM<a class="headerlink" href="#admm" title="Link to this heading">#</a></h2>
 <p>We solve the above multi-constaint optimization problem using alternating direction method of multipliers (ADMM).
 To this end, we consider an alternative multivariate optimization problem</p>
 <div class="math notranslate nohighlight">
@@ -617,29 +646,32 @@ The import statement below shows all necessary classes for implementing the pres
 <strong>Note that <code class="docutils literal notranslate"><span class="pre">admmsolver</span></code> is under active development and its interface is subject to future changes.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">admmsolver</span>
-<span class="kn">import</span> <span class="nn">admmsolver.optimizer</span>
-<span class="kn">import</span> <span class="nn">admmsolver.objectivefunc</span>
-<span class="kn">from</span> <span class="nn">admmsolver.objectivefunc</span> <span class="kn">import</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">admmsolver</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">admmsolver.optimizer</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">admmsolver.objectivefunc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">admmsolver.objectivefunc</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">L1Regularizer</span><span class="p">,</span>
     <span class="c1">#LeastSquares,</span>
     <span class="n">ConstrainedLeastSquares</span><span class="p">,</span>
     <span class="n">NonNegativePenalty</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">admmsolver.matrix</span> <span class="kn">import</span> <span class="n">identity</span>
-<span class="kn">from</span> <span class="nn">admmsolver.optimizer</span> <span class="kn">import</span> <span class="n">SimpleOptimizer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">admmsolver.matrix</span><span class="w"> </span><span class="kn">import</span> <span class="n">identity</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">admmsolver.optimizer</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleOptimizer</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;admmsolver==</span><span class="si">{</span><span class="n">admmsolver</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>admmsolver==0.7.6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>admmsolver==0.7.7
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="l-2-norms">
-<h3><span class="math notranslate nohighlight">\(L_2\)</span> norms<a class="headerlink" href="#l-2-norms" title="Permalink to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(L_2\)</span> norms<a class="headerlink" href="#l-2-norms" title="Link to this heading">#</a></h3>
 <p>The Green’s function follows the sum-rule</p>
 <div class="math notranslate nohighlight">
 \[
@@ -671,7 +703,7 @@ In the IR basis, the left-hand side is reprenseted by</p>
 </div>
 </section>
 <section id="l-1-norm-regularization">
-<h3><span class="math notranslate nohighlight">\(L_1\)</span>-norm regularization<a class="headerlink" href="#l-1-norm-regularization" title="Permalink to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(L_1\)</span>-norm regularization<a class="headerlink" href="#l-1-norm-regularization" title="Link to this heading">#</a></h3>
 <p>The <span class="math notranslate nohighlight">\(L_1\)</span>-norm regularization term</p>
 <div class="math notranslate nohighlight">
 \[
@@ -690,7 +722,7 @@ We note that <span class="math notranslate nohighlight">\(\boldsymbol{x}_1\)</sp
 <p>Here, we use <span class="math notranslate nohighlight">\(\lambda=10^{-1.8}\)</span>, which was found to be optimal for the present dataset.</p>
 </section>
 <section id="non-negative-constraint">
-<h3>Non-negative constraint<a class="headerlink" href="#non-negative-constraint" title="Permalink to this heading">#</a></h3>
+<h3>Non-negative constraint<a class="headerlink" href="#non-negative-constraint" title="Link to this heading">#</a></h3>
 <p>The last term describes the non-negative constraint</p>
 <div class="math notranslate nohighlight">
 \[
@@ -755,6 +787,9 @@ Thus, the multivariate objective function <span class="math notranslate nohighli
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(43,), (43,), (1001,)
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>The spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> can be reconstructed from the coefficients <span class="math notranslate nohighlight">\(\{ \rho_l \}\)</span> stored in <span class="math notranslate nohighlight">\(\boldsymbol{x}_0\)</span>.</p>
@@ -768,7 +803,7 @@ Thus, the multivariate objective function <span class="math notranslate nohighli
 </section>
 </section>
 <section id="plot-the-results">
-<h2>Plot the results<a class="headerlink" href="#plot-the-results" title="Permalink to this heading">#</a></h2>
+<h2>Plot the results<a class="headerlink" href="#plot-the-results" title="Link to this heading">#</a></h2>
 <p>We plot the spectral function <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> computed in the SpM together with the exact solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,7 +817,7 @@ Thus, the multivariate objective function <span class="math notranslate nohighli
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/503fb5cbbd4515237d085fd45f33ba322e2e48c5bbf5ef2cd4b68eaff487f169.png" src="../_images/503fb5cbbd4515237d085fd45f33ba322e2e48c5bbf5ef2cd4b68eaff487f169.png" />
+<img alt="../_images/ca3ecebec6cc7415ed8773e331d6d4f406e21c07c69d119426f8e508c95713cb.png" src="../_images/ca3ecebec6cc7415ed8773e331d6d4f406e21c07c69d119426f8e508c95713cb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -825,11 +860,10 @@ Thus, the multivariate objective function <span class="math notranslate nohighli
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="analytic_continuation_py.html"
@@ -849,10 +883,7 @@ Thus, the multivariate objective function <span class="math notranslate nohighli
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -860,6 +891,7 @@ Thus, the multivariate objective function <span class="math notranslate nohighli
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -900,6 +932,7 @@ By sparse-ir developers
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -926,8 +959,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
