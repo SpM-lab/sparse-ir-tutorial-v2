@@ -1,6 +1,9 @@
 format: jb-book
 root: index
 parts:
+- caption: Migration guide
+  chapters:
+  - file: src/migration.md
 - caption: Basic theory
   chapters:
   - file: src/IR_py.ipynb
