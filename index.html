@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to sparse-ir tutorial &#8212; sparse-ir</title>
+    <title>Welcome to sparse-ir-v2 tutorial &#8212; sparse-ir</title>
   
   
   
@@ -75,7 +75,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Intermediate representation (IR)" href="src/IR_py.html" />
+    <link rel="next" title="Migration from sparse-ir/SparseIR.jl version 1 to version 2" href="src/migration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +181,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Migration guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="src/migration.html">Migration from sparse-ir/SparseIR.jl version 1 to version 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="src/IR_py.html">Intermediate representation (IR)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="src/sparse_sampling_py.html">Sparse sampling</a></li>
@@ -367,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to sparse-ir tutorial</h1>
+    <h1>Welcome to sparse-ir-v2 tutorial</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,7 +381,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to sparse-ir tutorial</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to sparse-ir-v2 tutorial</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contributors">Contributors</a><ul class="visible nav section-nav flex-column">
 </ul>
 </li>
@@ -393,10 +397,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="welcome-to-sparse-ir-tutorial">
-<h1>Welcome to sparse-ir tutorial<a class="headerlink" href="#welcome-to-sparse-ir-tutorial" title="Link to this heading">#</a></h1>
-<p>This online document provides comprehensive tutorials of the Python library <a class="reference external" href="https://github.com/SpM-lab/sparse-ir">sparse-ir</a> library as well as its port to <a class="reference external" href="https://github.com/SpM-lab/SparseIR.jl">Julia</a> and <a class="reference external" href="https://github.com/SpM-lab/sparse-ir-fortran">Fortran</a>.</p>
-<p>You can run jupyter notebooks online on <a class="reference external" href="https://mybinder.org/v2/gh/SpM-lab/sparse-ir-binder/HEAD">mybinder</a>!</p>
+  <section id="welcome-to-sparse-ir-v2-tutorial">
+<h1>Welcome to sparse-ir-v2 tutorial<a class="headerlink" href="#welcome-to-sparse-ir-v2-tutorial" title="Link to this heading">#</a></h1>
+<p>This online document provides comprehensive tutorials of sparse-ir libraries in various languages:</p>
+<ul class="simple">
+<li><p>Python: <a class="reference external" href="https://github.com/SpM-lab/sparse-ir">sparse-ir</a></p></li>
+<li><p>Julia: <a class="reference external" href="https://github.com/SpM-lab/SparseIR.jl">SparseIR.jl</a></p></li>
+<li><p>C &amp; Fortran: <a class="reference external" href="https://github.com/SpM-lab/libsparseir">libsparseir</a></p></li>
+</ul>
+<p>The original <code class="docutils literal notranslate"><span class="pre">libsparseir</span></code> is written in C++ and provides C-API, which is robust and accessible from any programming languages.
+The Python, Julia and Fortran libraries are wrappers of <code class="docutils literal notranslate"><span class="pre">libsparseir</span></code> and provide user-friendly interfaces.
+We recommend to start with Python or Julia libraries, which are easier to install and use.</p>
+<p>The version 2 of <code class="docutils literal notranslate"><span class="pre">sparse-ir</span></code> and <code class="docutils literal notranslate"><span class="pre">SparseIR.jl</span></code> have changed the internal implementation to the C++ implementation of <code class="docutils literal notranslate"><span class="pre">libsparseir</span></code>.
+Although most of the interfaces remain unchanged, there are some substantial changes, which <strong>break the backward compatibility</strong>.
+Please refer to <a class="reference internal" href="src/migration.html"><span class="std std-doc">the migration guide</span></a> for details.</p>
 <p>Please free to make a contact with the authors of each tutorial page if you have any questions!</p>
 </section>
 <section id="contributors">
@@ -420,6 +434,8 @@ document.write(`
 <li><p>Kazuyoshi Yoshimi (ISSP)</p></li>
 <li><p>Hiroshi Shinaoka (Saitama Univ.)</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -465,11 +481,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="src/IR_py.html"
+       href="src/migration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Intermediate representation (IR)</p>
+        <p class="prev-next-title">Migration from sparse-ir/SparseIR.jl version 1 to version 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -489,7 +505,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to sparse-ir tutorial</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to sparse-ir-v2 tutorial</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contributors">Contributors</a><ul class="visible nav section-nav flex-column">
 </ul>
 </li>

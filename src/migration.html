@@ -75,6 +75,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/migration';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Intermediate representation (IR)" href="IR_py.html" />
+    <link rel="prev" title="Welcome to sparse-ir-v2 tutorial" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -137,8 +139,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,7 +180,11 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Migration guide</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Migration from sparse-ir/SparseIR.jl version 1 to version 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
@@ -376,7 +380,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-domain-of-the-basis-functions-u-tau-have-been-extended-from-0-beta-to-beta-beta">The domain of the basis functions <span class="math notranslate nohighlight">\(U(\tau)\)</span> have been extended from <span class="math notranslate nohighlight">\([0, \beta]\)</span> to $[-\beta, \beta].</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-domain-of-the-basis-functions-u-tau">The domain of the basis functions <span class="math notranslate nohighlight">\(U(\tau)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-domain-of-the-tau-sampling-points">The domain of the <span class="math notranslate nohighlight">\(\tau\)</span> sampling points</a></li>
 </ul>
             </nav>
         </div>
@@ -392,12 +397,16 @@ document.write(`
 <h1>Migration from sparse-ir/SparseIR.jl version 1 to version 2<a class="headerlink" href="#migration-from-sparse-ir-sparseir-jl-version-1-to-version-2" title="Link to this heading">#</a></h1>
 <p>Version 2 has changed the internal implementation to C++, but most of the interfaces remain unchanged.
 The following points have changed as exceptions:</p>
-<section id="the-domain-of-the-basis-functions-u-tau-have-been-extended-from-0-beta-to-beta-beta">
-<h2>The domain of the basis functions <span class="math notranslate nohighlight">\(U(\tau)\)</span> have been extended from <span class="math notranslate nohighlight">\([0, \beta]\)</span> to $[-\beta, \beta].<a class="headerlink" href="#the-domain-of-the-basis-functions-u-tau-have-been-extended-from-0-beta-to-beta-beta" title="Link to this heading">#</a></h2>
+<section id="the-domain-of-the-basis-functions-u-tau">
+<h2>The domain of the basis functions <span class="math notranslate nohighlight">\(U(\tau)\)</span><a class="headerlink" href="#the-domain-of-the-basis-functions-u-tau" title="Link to this heading">#</a></h2>
+<p>This has been extended from <span class="math notranslate nohighlight">\([0, \beta]\)</span> to <span class="math notranslate nohighlight">\([-\beta, \beta]\)</span>.</p>
 <ul class="simple">
-<li><p>The fermionic basis functions are anti-periodic, while the bosonic basis functions are periodic. If you use the logistic kernel (default), the fermionic and bosonic basis functions are identical in <span class="math notranslate nohighlight">\((0, \beta)\)</span>, while they have opposite signs in <span class="math notranslate nohighlight">\((-\beta, 0)\)</span>. To keep consistency with the previous version, <span class="math notranslate nohighlight">\(U_l(\beta)\)</span> and <span class="math notranslate nohighlight">\(U_l(-\beta)\)</span> evaluate to the values at <span class="math notranslate nohighlight">\(\beta-0\)</span> and <span class="math notranslate nohighlight">\(-\beta+0\)</span>, respectively. The value at <span class="math notranslate nohighlight">\(-0\)</span> can be evaluated by <span class="math notranslate nohighlight">\(U_l(-0)\)</span>. See the following example code.</p></li>
-<li><p>The <span class="math notranslate nohighlight">\(\tau\)</span> sampling points are now defined in <span class="math notranslate nohighlight">\([-\beta/2, \beta/2]\)</span> instead of <span class="math notranslate nohighlight">\([0, \beta]\)</span>. The distribution of the sampling points is symmetric with respect to <span class="math notranslate nohighlight">\(0\)</span>. This change has been introduced for preparing a future introduction of zero-temperature basis functions. You can switch to the previous behavior by setting <code class="docutils literal notranslate"><span class="pre">use_positive_taus=True</span></code> when initializing a <code class="docutils literal notranslate"><span class="pre">TauSampling</span></code> object or a <code class="docutils literal notranslate"><span class="pre">FiniteTempBasisSet</span></code> object. This will affect some diagrammatic calculations, e.g., second order perturbation theory: <span class="math notranslate nohighlight">\(G(\tau)G(\beta-\tau) = - G(\tau)G(-\tau)\)</span>. See the following example code:</p></li>
+<li><p>The fermionic basis functions are anti-periodic, while the bosonic basis functions are periodic. If you use the logistic kernel (default), the fermionic and bosonic basis functions are identical in <span class="math notranslate nohighlight">\((0, \beta)\)</span>, while they have opposite signs in <span class="math notranslate nohighlight">\((-\beta, 0)\)</span>. To keep consistency with the previous version, <span class="math notranslate nohighlight">\(U_l(\beta)\)</span> and <span class="math notranslate nohighlight">\(U_l(-\beta)\)</span> evaluate to the values at <span class="math notranslate nohighlight">\(\beta-0\)</span> and <span class="math notranslate nohighlight">\(-\beta+0\)</span>, respectively. The value at <span class="math notranslate nohighlight">\(-0\)</span> can be evaluated by <span class="math notranslate nohighlight">\(U_l(-0)\)</span>.</p></li>
 </ul>
+</section>
+<section id="the-domain-of-the-tau-sampling-points">
+<h2>The domain of the <span class="math notranslate nohighlight">\(\tau\)</span> sampling points<a class="headerlink" href="#the-domain-of-the-tau-sampling-points" title="Link to this heading">#</a></h2>
+<p>The <span class="math notranslate nohighlight">\(\tau\)</span> sampling points are now defined in <span class="math notranslate nohighlight">\([-\beta/2, \beta/2]\)</span> instead of <span class="math notranslate nohighlight">\([0, \beta]\)</span>. The distribution of the sampling points is symmetric with respect to <span class="math notranslate nohighlight">\(0\)</span>. This change has been introduced for preparing a future introduction of zero-temperature basis functions. You can switch to the previous behavior by setting <code class="docutils literal notranslate"><span class="pre">use_positive_taus=True</span></code> when initializing a <code class="docutils literal notranslate"><span class="pre">TauSampling</span></code> object or a <code class="docutils literal notranslate"><span class="pre">FiniteTempBasisSet</span></code> object. This will affect some diagrammatic calculations, e.g., second order perturbation theory: <span class="math notranslate nohighlight">\(G(\tau)G(\beta-\tau) = - G(\tau)G(-\tau)\)</span>. See the following example code:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Version 1: G(tau) * G(beta-tau)</span>
 <span class="n">gtau</span> <span class="o">*</span> <span class="n">gtau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
@@ -438,6 +447,24 @@ The following points have changed as exceptions:</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to sparse-ir-v2 tutorial</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="IR_py.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Intermediate representation (IR)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -454,7 +481,8 @@ The following points have changed as exceptions:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-domain-of-the-basis-functions-u-tau-have-been-extended-from-0-beta-to-beta-beta">The domain of the basis functions <span class="math notranslate nohighlight">\(U(\tau)\)</span> have been extended from <span class="math notranslate nohighlight">\([0, \beta]\)</span> to $[-\beta, \beta].</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-domain-of-the-basis-functions-u-tau">The domain of the basis functions <span class="math notranslate nohighlight">\(U(\tau)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-domain-of-the-tau-sampling-points">The domain of the <span class="math notranslate nohighlight">\(\tau\)</span> sampling points</a></li>
 </ul>
   </nav></div>
 
