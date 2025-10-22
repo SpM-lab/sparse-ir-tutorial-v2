@@ -1,3 +1,0 @@
-# Please update the tag 0.1
-docker build -t shinaoka/sparse-ir-tutorial-binder:0.1 .
-docker push shinaoka/sparse-ir-tutorial-binder:0.1

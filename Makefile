@@ -2,9 +2,9 @@ build:
 	@echo "Installing Python packages..."
 	uv sync
 	@echo "Installing Julia packages..."
-	julia --project=./src -e "import Pkg;Pkg.instantiate()"
+	julia --project=@. --startup-file=no -e "import Pkg;Pkg.instantiate()"
 	@echo "Registering kernel for Julia notebooks..."
-	julia --project=@. register_julia_kernel.jl
+	julia --project=@. --startup-file=no register_julia_kernel.jl
 	@echo "Building HTML files..."
 	. .venv/bin/activate && jupyter book build --all -v .
 
