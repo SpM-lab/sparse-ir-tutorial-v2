@@ -1,0 +1,64 @@
+Traceback (most recent call last):
+  File "/home/runner/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+    ~~~~~~~~~^
+        nb,
+        ^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/home/runner/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/runner/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/runner/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+        cell, index, execution_count=self.code_cells_executed + 1
+    )
+  File "/home/runner/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+function rho(omega)
+    return abs.(omega) < 1 ? (2/π) .* sqrt.(1-omega^2) : 0.0
+end
+
+beta = 10000.0
+wmax = 1.0
+eps = 1e-15 # cutoff for SVD
+basis = FiniteTempBasis(Fermionic(), beta, wmax, eps)
+
+rhol = overlap(basis.v, rho, -wmax, wmax)
+gl = - basis.s .* rhol
+
+ls = collect(0:length(basis)-1)
+p = plot(marker=:x, yaxis=:log, ylabel=L"|g_l|", xlabel=L"l", ylims=(1e-15,10))
+plot!(p, ls[1:2:end], abs.(gl[1:2:end]), marker=:x, yaxis=:log, ylabel=L"|g_l|", xlabel=L"l")
+------------------
+
+
+MethodError: no method matching overlap(::SparseIR.PiecewiseLegendrePolyVector, ::typeof(rho), ::Float64, ::Float64)
+The function `overlap` exists, but no method is defined for this combination of argument types.
+
+[0mClosest candidates are:
+[0m  overlap(::SparseIR.PiecewiseLegendrePolyVector, ::F; rtol, return_error) where F
+[0m[90m   @[39m [35mSparseIR[39m [90m~/.julia/packages/SparseIR/Lrt2M/src/[39m[90m[4mpoly.jl:250[24m[39m
+[0m  overlap([91m::SparseIR.PiecewiseLegendrePoly[39m, ::F; rtol, return_error, maxevals, points) where F
+[0m[90m   @[39m [35mSparseIR[39m [90m~/.julia/packages/SparseIR/Lrt2M/src/[39m[90m[4mpoly.jl:92[24m[39m
+
+
+Stacktrace:
+ [1] top-level scope
+[90m   @[39m [90m[4mIn[2]:10[24m[39m
+ [2] [0m[1meval[22m[0m[1m([22m[90mm[39m::[0mModule, [90me[39m::[0mAny[0m[1m)[22m
+[90m   @[39m [90mCore[39m [90m./[39m[90m[4mboot.jl:489[24m[39m
+

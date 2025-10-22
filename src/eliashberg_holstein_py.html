@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -523,10 +523,28 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sparse_ir</span>
 
+<span class="c1"># Get sparse-ir version</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">importlib.metadata</span><span class="w"> </span><span class="kn">import</span> <span class="n">version</span>
+    <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">(</span><span class="s1">&#39;sparse-ir&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
+        <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;sparse-ir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sparse-ir version: </span><span class="si">{</span><span class="n">sparse_ir_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
     <span class="s2">&quot;font.family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span><span class="p">,</span>
     <span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
 <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparse-ir version: 2.0.0a6
 </pre></div>
 </div>
 </div>
@@ -593,9 +611,7 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute Pi(tau)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Change from version 1</span>
-        <span class="c1"># return -4 * (self.g**2) * (g_tau * g_tau[::-1] + f_tau**2)</span>
-        <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">g_tau</span> <span class="o">*</span> <span class="n">g_tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">f_tau</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">g_tau</span> <span class="o">*</span> <span class="n">g_tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f_tau</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
   
     <span class="k">def</span><span class="w"> </span><span class="nf">d_iv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_iv</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -677,8 +693,8 @@ We take the semi-circular density of states <span class="math notranslate nohigh
         <span class="n">g_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">g_iv</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
         <span class="n">f_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">f_iv</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ph</span><span class="p">:</span>
-            <span class="n">g_tau</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">g_tau</span> <span class="o">-</span> <span class="n">g_tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="c1">#g_tau[g_tau &gt; 0] = 0</span>
+            <span class="n">g_tau</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">g_tau</span> <span class="o">+</span> <span class="n">g_tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">g_tau</span><span class="p">[</span><span class="n">g_tau</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
         
         <span class="c1"># Update Phi</span>
         <span class="n">phi_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">pi_tau</span><span class="p">(</span><span class="n">g_tau</span><span class="p">,</span> <span class="n">f_tau</span><span class="p">)</span>
@@ -821,16 +837,8 @@ We consider a semicircular density of state with a half bandwidth of <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 0 : diff_sigma= 0.050065007010085684, diff_delta=0.9999728824192636
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 100 : diff_sigma= 3.064954518933183e-07, diff_delta=5.541443695161741e-07
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 0 : diff_sigma= 0.0457552798642339, diff_delta=2.0061243587653528
+iter= 100 : diff_sigma= 3.74021774274258e-07, diff_delta=8.714200395859573e-07
 </pre></div>
 </div>
 </div>
@@ -848,7 +856,7 @@ We consider a semicircular density of state with a half bandwidth of <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a3d6b0ccdd7e24f76e74d0bb3f57877d53c718efd33ace276bb523919d5a703c.png" src="../_images/a3d6b0ccdd7e24f76e74d0bb3f57877d53c718efd33ace276bb523919d5a703c.png" />
+<img alt="../_images/f272a41fdedaa123866028ce502f1d9e8922661565437572c97754ae867d535e.png" src="../_images/f272a41fdedaa123866028ce502f1d9e8922661565437572c97754ae867d535e.png" />
 </div>
 </div>
 </section>
@@ -914,12 +922,12 @@ We consider a semicircular density of state with a half bandwidth of <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d5cc21c8ee628ee429374c95e04c091b6c00e47974674b179039e15f4c629f9c.png" src="../_images/d5cc21c8ee628ee429374c95e04c091b6c00e47974674b179039e15f4c629f9c.png" />
-<img alt="../_images/d935ea1726c4354916449230b7b4a8b0594347a4860b07c025879ec41d3677e5.png" src="../_images/d935ea1726c4354916449230b7b4a8b0594347a4860b07c025879ec41d3677e5.png" />
-<img alt="../_images/f1126277dcde983ece03c3908ecc11bd2205a211e0646abfe3f4805e12312392.png" src="../_images/f1126277dcde983ece03c3908ecc11bd2205a211e0646abfe3f4805e12312392.png" />
-<img alt="../_images/2381b781049caec2b54bcd37525a1b5eb2c84f46ca2518e904f5d3693ea63946.png" src="../_images/2381b781049caec2b54bcd37525a1b5eb2c84f46ca2518e904f5d3693ea63946.png" />
-<img alt="../_images/4109ecc914ff8a4f083ac18fd78045eaf332c4bf45c4545013beb7a9d05b153b.png" src="../_images/4109ecc914ff8a4f083ac18fd78045eaf332c4bf45c4545013beb7a9d05b153b.png" />
-<img alt="../_images/0930914bd6db5b0f4cfead7d6645d7310843407fae71e7d0ce0e68a510568af4.png" src="../_images/0930914bd6db5b0f4cfead7d6645d7310843407fae71e7d0ce0e68a510568af4.png" />
+<img alt="../_images/01d66dc3ce6dd8a5536d4140e6ceb42cff9179b1aa5b49176fc0c25ca9c8a42d.png" src="../_images/01d66dc3ce6dd8a5536d4140e6ceb42cff9179b1aa5b49176fc0c25ca9c8a42d.png" />
+<img alt="../_images/88991bd0817d81a9e62a4dbc754a7a4458bbe775b23d7a7bab300ceafa82e07c.png" src="../_images/88991bd0817d81a9e62a4dbc754a7a4458bbe775b23d7a7bab300ceafa82e07c.png" />
+<img alt="../_images/6408066ec090bdf8c00478d3562202c96cd81621cca6780fb8729f02b3a69781.png" src="../_images/6408066ec090bdf8c00478d3562202c96cd81621cca6780fb8729f02b3a69781.png" />
+<img alt="../_images/846c8062e0ccab58427d602be386f9d1fce63f864a1729a68f340398754f360d.png" src="../_images/846c8062e0ccab58427d602be386f9d1fce63f864a1729a68f340398754f360d.png" />
+<img alt="../_images/d4f6e05d0860b8517ae8524fd4b5762ef048ed830dbe5606b6c69815bcd0a75a.png" src="../_images/d4f6e05d0860b8517ae8524fd4b5762ef048ed830dbe5606b6c69815bcd0a75a.png" />
+<img alt="../_images/1b0eae4d27f26e14dfd0400744af290f5a09233e73eac39c1342cbc5509352a9.png" src="../_images/1b0eae4d27f26e14dfd0400744af290f5a09233e73eac39c1342cbc5509352a9.png" />
 </div>
 </div>
 </section>
@@ -996,7 +1004,7 @@ We consider a semicircular density of state with a half bandwidth of <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8c83f96c06225d00cdaeb6e771c3051d98b218039e64c11e50ba1fb670da4805.png" src="../_images/8c83f96c06225d00cdaeb6e771c3051d98b218039e64c11e50ba1fb670da4805.png" />
+<img alt="../_images/532ddfaa8371f4101e2c5fca90c0711195ca36009c21fa32ebc59da6c686682e.png" src="../_images/532ddfaa8371f4101e2c5fca90c0711195ca36009c21fa32ebc59da6c686682e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1012,7 +1020,7 @@ We consider a semicircular density of state with a half bandwidth of <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c8f5e35c6e52de0caac29b52c6b1e192bd8829f7cc3634005185c511df1f4aae.png" src="../_images/c8f5e35c6e52de0caac29b52c6b1e192bd8829f7cc3634005185c511df1f4aae.png" />
+<img alt="../_images/11149e45cd24d414ed6602a1b165e782fb75b1ca17378e23dde8163c0a24de28.png" src="../_images/11149e45cd24d414ed6602a1b165e782fb75b1ca17378e23dde8163c0a24de28.png" />
 </div>
 </div>
 <!-- [1] Y. Kaga, P. Werner and S. Hoshino arXiv:2203.06946. -->

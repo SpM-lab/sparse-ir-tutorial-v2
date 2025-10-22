@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -776,10 +776,35 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.1011348344804945
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 12.44211883473281
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">solver</span> <span class="o">=</span> <span class="n">TPSCSolver</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># perform TPSC calculation</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nn">Cell In[4], line 41,</span> in <span class="ni">TPSCSolver.solve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="bp">self</span><span class="o">.</span><span class="n">docc_calc</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="c1"># determine charge vertex U_ch</span>
+<span class="ne">---&gt; </span><span class="mi">41</span> <span class="bp">self</span><span class="o">.</span><span class="n">charge_vertex_calc</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="c1"># set spin and charge susceptibility</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_spin</span>   <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">RPA_term_calc</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">U_sp</span><span class="p">)</span>
+
+<span class="nn">Cell In[4], line 136,</span> in <span class="ni">TPSCSolver.charge_vertex_calc</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="n">chi_trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_qtrace_calc</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="n">sfc_eq</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">U_ch</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">chi_trace</span><span class="p">(</span><span class="o">-</span><span class="n">U_ch</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">docc</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+<span class="ne">--&gt; </span><span class="mi">136</span> <span class="bp">self</span><span class="o">.</span><span class="n">U_ch</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">sfc_eq</span><span class="p">,</span> <span class="n">U_a</span><span class="p">,</span> <span class="n">U_b</span><span class="p">,</span> <span class="n">rtol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">U_sfc_tol</span><span class="p">)</span>
+
+<span class="nn">File ~/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/scipy/optimize/_zeros_py.py:846,</span> in <span class="ni">brentq</span><span class="nt">(f, a, b, args, xtol, rtol, maxiter, full_output, disp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">844</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rtol too small (</span><span class="si">{</span><span class="n">rtol</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> &lt; </span><span class="si">{</span><span class="n">_rtol</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">845</span> <span class="n">f</span> <span class="o">=</span> <span class="n">_wrap_nan_raise</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">846</span> <span class="n">r</span> <span class="o">=</span> <span class="n">_zeros</span><span class="o">.</span><span class="n">_brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">xtol</span><span class="p">,</span> <span class="n">rtol</span><span class="p">,</span> <span class="n">maxiter</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">full_output</span><span class="p">,</span> <span class="n">disp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span> <span class="k">return</span> <span class="n">results_c</span><span class="p">(</span><span class="n">full_output</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="s2">&quot;brentq&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: f(a) and f(b) must have different signs
 </pre></div>
 </div>
 </div>
@@ -802,23 +827,6 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/2614448632.py:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/2614448632.py:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/2614448632.py:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_title(&#39;Re $G(k,i\omega_0)$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/54ea9b855d90c836512d609390bd32d8e24b0d655013a787ea7ad9fa36d1b3c9.png" src="../_images/54ea9b855d90c836512d609390bd32d8e24b0d655013a787ea7ad9fa36d1b3c9.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -836,23 +844,6 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/1524884887.py:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/1524884887.py:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/1524884887.py:9: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-  ax.set_title(&#39;Im $\Sigma(k,i\omega_0)$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/4536a7a38c4a334dfe2637c021fbb8b13a9709d25450eab774b96aafc659677a.png" src="../_images/4536a7a38c4a334dfe2637c021fbb8b13a9709d25450eab774b96aafc659677a.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -869,23 +860,6 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/2686374420.py:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/2686374420.py:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/2686374420.py:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-  ax.set_title(&#39;$\chi_{\mathrm{sp}}(k,i\nu_0)$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/e4f7f76a013e427f63579eefad6471e1eceab454e5967e43a4cf6e38a0c689e7.png" src="../_images/e4f7f76a013e427f63579eefad6471e1eceab454e5967e43a4cf6e38a0c689e7.png" />
 </div>
 </div>
 </section>
@@ -953,346 +927,6 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialization...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:47: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:48: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:47: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:48: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/1554326033.py:47: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(U_array, U_ch_array, &#39;-&#39;, label=&#39;$U_{\mathrm{ch}}$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57484/1554326033.py:48: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(U_array, U_sp_array, &#39;-&#39;, label=&#39;$U_{\mathrm{sp}}$&#39;)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start TPSC loop...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.009988853647935142
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.10844539767304137
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.20462542385301566
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.2984789555706955
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.38995933428732577
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.4790237958387998
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.5656340453556727
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.6497568174661893
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.731364407280038
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.8104351570179269
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.8869538831669794
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 0.9609122297786352
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.0323089350574113
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.1011500006251835
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.167448755793373
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.2312258126104405
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.2925089112258377
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.351332658975074
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.407738170304622
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.4617726179870079
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.5134887088267046
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.5629440990795302
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.6102007660186637
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.6553243524630132
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.698383500685407
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.7394491910380925
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.7785940990080047
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.8158919824012563
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.8514171081164592
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.8852437256509629
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.9174455922237692
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.9480955522975565
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.9772651724145571
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.005024430672467
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.031441458877369
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.0565823344196947
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.0805109182034855
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.103288734516636
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.124974888453772
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.145626016482253
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.165296265792269
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.1840372982535525
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.201898315103475
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.218926098746976
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.2351650684335627
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.250657346902997
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.265442835444129
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.2795592951417754
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.2930424324008554
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.3059259871201343
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.3182418221686993
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Finished. Plotting now.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1058952b0&gt;
-</pre></div>
-</div>
-<img alt="../_images/84d361bf922ded72458ffe60f8cdf45b85738004456e8ce3f1f481d6e460bd82.png" src="../_images/84d361bf922ded72458ffe60f8cdf45b85738004456e8ce3f1f481d6e460bd82.png" />
 </div>
 </div>
 </section>

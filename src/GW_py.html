@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -517,10 +517,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10edab620&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd13e1f0830&gt;
 </pre></div>
 </div>
-<img alt="../_images/2ee1acd7aebc3d6dcc26d570bc209a89645291bcb52651a1596d149f7a953ed4.png" src="../_images/2ee1acd7aebc3d6dcc26d570bc209a89645291bcb52651a1596d149f7a953ed4.png" />
+<img alt="../_images/7b13bc423790647f3c36eb6e7870fd262c2ddddc9e5eea62539c1d098038e2ae.png" src="../_images/7b13bc423790647f3c36eb6e7870fd262c2ddddc9e5eea62539c1d098038e2ae.png" />
 </div>
 </div>
 <p>The so-called Polarization <span class="math notranslate nohighlight">\(P(\bar\tau_k^B)\)</span> is given by the random phase approximation, a connection between two Green’s functions:</p>
@@ -530,7 +530,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Polarisation P, bosonic</span>
 
-<span class="n">P_tau_b</span> <span class="o">=</span> <span class="o">-</span> <span class="n">G_tau_b</span> <span class="o">*</span> <span class="p">(</span><span class="n">basisf</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="o">-</span><span class="n">tausb</span><span class="o">.</span><span class="n">tau</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">G_l_f</span><span class="p">)</span>
+<span class="n">P_tau_b</span><span class="o">=</span><span class="n">G_tau_b</span><span class="o">*</span><span class="p">(</span><span class="n">basisf</span><span class="o">.</span><span class="n">u</span><span class="p">(</span><span class="n">beta</span><span class="o">-</span><span class="n">tausb</span><span class="o">.</span><span class="n">tau</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="nd">@G_l_f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -547,10 +547,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10f51dbd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd13bc97610&gt;
 </pre></div>
 </div>
-<img alt="../_images/b1b5bf4c8c91e8834f0d6765ec2489c7c05ca2711e8f0a19541199bf489d6a45.png" src="../_images/b1b5bf4c8c91e8834f0d6765ec2489c7c05ca2711e8f0a19541199bf489d6a45.png" />
+<img alt="../_images/88d22b8a0ba2a0f45c5f405b3f56b26d311ffe7b68fc17e735f7db10e6cc161d.png" src="../_images/88d22b8a0ba2a0f45c5f405b3f56b26d311ffe7b68fc17e735f7db10e6cc161d.png" />
 </div>
 </div>
 <p>The same way we transformed <span class="math notranslate nohighlight">\(\hat G^F(i\bar{\omega}_n^F)\)</span> into <span class="math notranslate nohighlight">\(G^B(\bar\tau_k^B)\)</span> we are now able to transform <span class="math notranslate nohighlight">\(P^B(\bar\tau_k^B)\)</span> into <span class="math notranslate nohighlight">\(\hat P^B(i\bar{\omega}_n^B)\)</span> again using least Square fitting and evaluating <span class="math notranslate nohighlight">\(P_l^B\)</span> on the given sampling points (Matsubara frequencies).</p>
@@ -579,7 +579,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;l&#39;)
 </pre></div>
 </div>
-<img alt="../_images/51979322c284604d2d1320254080bacb55fc3901af754db3af4ef25ac65fee78.png" src="../_images/51979322c284604d2d1320254080bacb55fc3901af754db3af4ef25ac65fee78.png" />
+<img alt="../_images/470c4ef1e40f66fc5abe355ac8c9c0114f39f5d8546f1d6286e191f6a4f3ac37.png" src="../_images/470c4ef1e40f66fc5abe355ac8c9c0114f39f5d8546f1d6286e191f6a4f3ac37.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -606,10 +606,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10f8702d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd139a8a210&gt;
 </pre></div>
 </div>
-<img alt="../_images/35b2bc5b92c31229fd9c048a536c3118b6a97dd35de77197fcdbd2902aa1364d.png" src="../_images/35b2bc5b92c31229fd9c048a536c3118b6a97dd35de77197fcdbd2902aa1364d.png" />
+<img alt="../_images/f60c00b0491bfada6a3bc3cf87763000d391221308e177145681f953c1c0e34c.png" src="../_images/f60c00b0491bfada6a3bc3cf87763000d391221308e177145681f953c1c0e34c.png" />
 </div>
 </div>
 <p>Following <span class="math notranslate nohighlight">\(P\)</span> we will now calculate the Screened Interaction <span class="math notranslate nohighlight">\(W\)</span> with the following formula:</p>
@@ -648,10 +648,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10f90dd10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd139be3d90&gt;
 </pre></div>
 </div>
-<img alt="../_images/299f3ed1ef8a4711880f84964efdfce7ac15b9adae78249adcafc9dc38f3e984.png" src="../_images/299f3ed1ef8a4711880f84964efdfce7ac15b9adae78249adcafc9dc38f3e984.png" />
+<img alt="../_images/4ee0ed4d2dd1447bc05ada7adbba8cd63ba0934cb112c5ee7e9055188c76cdf2.png" src="../_images/4ee0ed4d2dd1447bc05ada7adbba8cd63ba0934cb112c5ee7e9055188c76cdf2.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -678,7 +678,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;l&#39;)
 </pre></div>
 </div>
-<img alt="../_images/72fb7e6f7ddd8a74d437adb4dc948519c10af5442ffe357bb819bd3260416cf3.png" src="../_images/72fb7e6f7ddd8a74d437adb4dc948519c10af5442ffe357bb819bd3260416cf3.png" />
+<img alt="../_images/585e7b69c9a5db67ecfe2206076511898de6047659ff2252172a16cb31c7b28f.png" src="../_images/585e7b69c9a5db67ecfe2206076511898de6047659ff2252172a16cb31c7b28f.png" />
 </div>
 </div>
 <p>In the next step we are changing back into fermionic statistics:</p>
@@ -706,10 +706,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fb21590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd1395d4410&gt;
 </pre></div>
 </div>
-<img alt="../_images/d46c853cf7a81a090721b07d9ef9ff2378e19577fdebcacabb64ca307eb6717b.png" src="../_images/d46c853cf7a81a090721b07d9ef9ff2378e19577fdebcacabb64ca307eb6717b.png" />
+<img alt="../_images/fb856a3e715c0858e933a722a036153c88ab4b3b012c11a0f94b370e7e9f1667.png" src="../_images/fb856a3e715c0858e933a722a036153c88ab4b3b012c11a0f94b370e7e9f1667.png" />
 </div>
 </div>
 <p>After changing back into fermionic statistics the next quantity that is being dealt with is the so-called self energy <span class="math notranslate nohighlight">\(\Sigma\)</span>. When we first introduced the Dyson equation in the first chapter, we saw <span class="math notranslate nohighlight">\(V\)</span> as some sort of pertubation. The self-energy is very much alike as it describes the correlation effects of a many-body system. Here we will calculate <span class="math notranslate nohighlight">\(\tilde{\Sigma}(\bar{\tau}_k^F)\)</span> using <span class="math notranslate nohighlight">\(\Sigma^{GW}\)</span> so that</p>
@@ -738,10 +738,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fafde50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd139465590&gt;
 </pre></div>
 </div>
-<img alt="../_images/ffdb88116776418a4a23c7eff3d2f3ee2526a76254bee275b9376b5bd548df33.png" src="../_images/ffdb88116776418a4a23c7eff3d2f3ee2526a76254bee275b9376b5bd548df33.png" />
+<img alt="../_images/fb1584ae457d8593300775786a63b45903cf9d5c73fcfa9fd7c4eea5a9c65d97.png" src="../_images/fb1584ae457d8593300775786a63b45903cf9d5c73fcfa9fd7c4eea5a9c65d97.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -767,14 +767,14 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57470/2200544827.py:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/tmp/ipykernel_15734/2200544827.py:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
   pl.title(&#39;$\Sigma_l^F$ over l &#39;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;l&#39;)
 </pre></div>
 </div>
-<img alt="../_images/3d82ddc9344b57dca745eb9cc37dd87701809e6490cf0de0a32fd77e8ce16d7a.png" src="../_images/3d82ddc9344b57dca745eb9cc37dd87701809e6490cf0de0a32fd77e8ce16d7a.png" />
+<img alt="../_images/45476bd8dd4a753bce8e58f44985bfebc508811de329dc1a1b7994bfedf254cc.png" src="../_images/45476bd8dd4a753bce8e58f44985bfebc508811de329dc1a1b7994bfedf254cc.png" />
 </div>
 </div>
 <p>We will calculate</p>
@@ -814,16 +814,16 @@ document.write(`
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57470/1504367459.py:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/tmp/ipykernel_15734/1504367459.py:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
   ax[0].set_title(&#39;Imaginary part of $\Sigma(i\omega)$&#39;)
-/var/folders/1t/fxgqx0n17z33mplwpw4n1d8r0000gn/T/ipykernel_57470/1504367459.py:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/tmp/ipykernel_15734/1504367459.py:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
   ax[1].set_title(&#39;Real part of $\Sigma(i\omega)$&#39;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;$\\omega$&#39;)
 </pre></div>
 </div>
-<img alt="../_images/a4c44e8cb9241735c1057389a287492e69358e7c3d5c9a5e38f6b5ee5efd27e8.png" src="../_images/a4c44e8cb9241735c1057389a287492e69358e7c3d5c9a5e38f6b5ee5efd27e8.png" />
+<img alt="../_images/19ddfc1cda23f36e2b17ff7603684e691ae32b534aed3d0829009fc5991c3d3f.png" src="../_images/19ddfc1cda23f36e2b17ff7603684e691ae32b534aed3d0829009fc5991c3d3f.png" />
 </div>
 </div>
 <p>Last but not least we will obtain <span class="math notranslate nohighlight">\(G^F(i\bar{\omega}_n^F)\)</span> through the Dyson Equation of GW:</p>
@@ -853,10 +853,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fd82850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd1390342d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/c20550c1d349ec2bbf55e45c808cd320384c3aa8cde1af5f7f0529f204375f66.png" src="../_images/c20550c1d349ec2bbf55e45c808cd320384c3aa8cde1af5f7f0529f204375f66.png" />
+<img alt="../_images/28b2b7ec91934b4c03f8730e815bbabd33412df2a941ce7813d36eb8d2bf7fb6.png" src="../_images/28b2b7ec91934b4c03f8730e815bbabd33412df2a941ce7813d36eb8d2bf7fb6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -883,16 +883,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>full iterations: 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>full iterations:  1
 </pre></div>
 </div>
 </div>
@@ -904,19 +895,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.13806786e-19+0.02429373j  9.06724937e-18+0.09616324j
- -2.54780751e-17+0.18513256j -1.80526795e-17+0.24022776j
-  1.94852549e-17+0.28186922j -1.51319184e-17+0.34036864j
- -8.54740334e-18+0.4278915j  -4.72595122e-17+0.57065346j
- -4.54124891e-17+0.83239627j -1.12374754e-17+1.38269615j
- -1.12374754e-17-1.38269615j -4.54124891e-17-0.83239627j
- -4.72595122e-17-0.57065346j -8.54740334e-18-0.4278915j
- -1.51319184e-17-0.34036864j  1.94852549e-17-0.28186922j
- -1.80526795e-17-0.24022776j -2.54780751e-17-0.18513256j
-  9.06724937e-18-0.09616324j -3.13806786e-19-0.02429373j]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.46370251e-19+0.03657118j  2.00239729e-19+0.10932936j
+  7.67798887e-18+0.18513256j -1.64868693e-17+0.24022776j
+  1.68451749e-17+0.28186922j  1.36007451e-17+0.34036864j
+ -5.26139721e-18+0.4278915j  -7.06265383e-18+0.57065346j
+  5.74342589e-17+0.83239627j  7.30136272e-17+1.38269615j
+  7.30136272e-17-1.38269615j  5.74342589e-17-0.83239627j
+ -7.06265383e-18-0.57065346j -5.26139721e-18-0.4278915j
+  1.36007451e-17-0.34036864j  1.68451749e-17-0.28186922j
+ -1.64868693e-17-0.24022776j  7.67798887e-18-0.18513256j
+  2.00239729e-19-0.10932936j  1.46370251e-19-0.03657118j]
 </pre></div>
 </div>
 </div>
