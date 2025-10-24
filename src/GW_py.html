@@ -180,11 +180,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Migration guide</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="migration.html">Migration from sparse-ir/SparseIR.jl version 1 to version 2</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
@@ -442,7 +438,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rho</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">wmax</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="n">rho_l</span> <span class="o">=</span> <span class="n">basisf</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="o">-</span><span class="n">wmax</span><span class="p">,</span> <span class="n">wmax</span><span class="p">)</span>
+<span class="n">rho_l</span> <span class="o">=</span> <span class="n">basisf</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span>
 
 <span class="n">G_l_0</span> <span class="o">=</span> <span class="o">-</span><span class="n">basisf</span><span class="o">.</span><span class="n">s</span><span class="o">*</span><span class="n">rho_l</span>  
 
@@ -517,7 +513,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd13e1f0830&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0133fd0830&gt;
 </pre></div>
 </div>
 <img alt="../_images/7b13bc423790647f3c36eb6e7870fd262c2ddddc9e5eea62539c1d098038e2ae.png" src="../_images/7b13bc423790647f3c36eb6e7870fd262c2ddddc9e5eea62539c1d098038e2ae.png" />
@@ -547,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd13bc97610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0133e634d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/88d22b8a0ba2a0f45c5f405b3f56b26d311ffe7b68fc17e735f7db10e6cc161d.png" src="../_images/88d22b8a0ba2a0f45c5f405b3f56b26d311ffe7b68fc17e735f7db10e6cc161d.png" />
@@ -606,7 +602,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd139a8a210&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f01809760d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/f60c00b0491bfada6a3bc3cf87763000d391221308e177145681f953c1c0e34c.png" src="../_images/f60c00b0491bfada6a3bc3cf87763000d391221308e177145681f953c1c0e34c.png" />
@@ -648,7 +644,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd139be3d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f012fd9fc50&gt;
 </pre></div>
 </div>
 <img alt="../_images/4ee0ed4d2dd1447bc05ada7adbba8cd63ba0934cb112c5ee7e9055188c76cdf2.png" src="../_images/4ee0ed4d2dd1447bc05ada7adbba8cd63ba0934cb112c5ee7e9055188c76cdf2.png" />
@@ -706,7 +702,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd1395d4410&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f012f7f42d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/fb856a3e715c0858e933a722a036153c88ab4b3b012c11a0f94b370e7e9f1667.png" src="../_images/fb856a3e715c0858e933a722a036153c88ab4b3b012c11a0f94b370e7e9f1667.png" />
@@ -738,7 +734,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd139465590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f012f679450&gt;
 </pre></div>
 </div>
 <img alt="../_images/fb1584ae457d8593300775786a63b45903cf9d5c73fcfa9fd7c4eea5a9c65d97.png" src="../_images/fb1584ae457d8593300775786a63b45903cf9d5c73fcfa9fd7c4eea5a9c65d97.png" />
@@ -767,7 +763,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
 &lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-/tmp/ipykernel_15734/2200544827.py:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/tmp/ipykernel_15780/2200544827.py:2: SyntaxWarning: invalid escape sequence &#39;\S&#39;
   pl.title(&#39;$\Sigma_l^F$ over l &#39;)
 </pre></div>
 </div>
@@ -814,9 +810,9 @@ document.write(`
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
-/tmp/ipykernel_15734/1504367459.py:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/tmp/ipykernel_15780/1504367459.py:3: SyntaxWarning: invalid escape sequence &#39;\S&#39;
   ax[0].set_title(&#39;Imaginary part of $\Sigma(i\omega)$&#39;)
-/tmp/ipykernel_15734/1504367459.py:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
+/tmp/ipykernel_15780/1504367459.py:6: SyntaxWarning: invalid escape sequence &#39;\S&#39;
   ax[1].set_title(&#39;Real part of $\Sigma(i\omega)$&#39;)
 </pre></div>
 </div>
@@ -853,7 +849,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd1390342d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f012f254190&gt;
 </pre></div>
 </div>
 <img alt="../_images/28b2b7ec91934b4c03f8730e815bbabd33412df2a941ce7813d36eb8d2bf7fb6.png" src="../_images/28b2b7ec91934b4c03f8730e815bbabd33412df2a941ce7813d36eb8d2bf7fb6.png" />

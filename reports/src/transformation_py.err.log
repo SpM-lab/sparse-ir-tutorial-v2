@@ -28,37 +28,27 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-function rho(omega)
-    return abs.(omega) < 1 ? (2/π) .* sqrt.(1-omega^2) : 0.0
-end
+beta = 10
+wmax = 10
+basis = sparse_ir.FiniteTempBasis("F", beta, wmax, eps=1e-10)
 
-beta = 10000.0
-wmax = 1.0
-eps = 1e-15 # cutoff for SVD
-basis = FiniteTempBasis(Fermionic(), beta, wmax, eps)
+rhol = basis.v.overlap(rho
+gl = - basis.s * rhol
 
-rhol = overlap(basis.v, rho, -wmax, wmax)
-gl = - basis.s .* rhol
-
-ls = collect(0:length(basis)-1)
-p = plot(marker=:x, yaxis=:log, ylabel=L"|g_l|", xlabel=L"l", ylims=(1e-15,10))
-plot!(p, ls[1:2:end], abs.(gl[1:2:end]), marker=:x, yaxis=:log, ylabel=L"|g_l|", xlabel=L"l")
+plt.semilogy(np.abs(rhol), marker="o", ls="", label=r"$|\rho_l|$")
+plt.semilogy(np.abs(gl), marker="s", ls="", label=r"$|g_l|$")
+plt.semilogy(np.abs(basis.s), marker="", ls="--", label=r"$S_l$")
+plt.xlabel(r"$l$")
+plt.ylim([1e-5, 10])
+plt.legend(frameon=False)
+plt.show()
+#plt.savefig("coeff.pdf")
 ------------------
 
 
-MethodError: no method matching overlap(::SparseIR.PiecewiseLegendrePolyVector, ::typeof(rho), ::Float64, ::Float64)
-The function `overlap` exists, but no method is defined for this combination of argument types.
+  [36mCell[39m[36m [39m[32mIn[4][39m[32m, line 5[39m
+[31m    [39m[31mrhol = basis.v.overlap(rho[39m
+                          ^
+[31mSyntaxError[39m[31m:[39m '(' was never closed
 
-[0mClosest candidates are:
-[0m  overlap(::SparseIR.PiecewiseLegendrePolyVector, ::F; rtol, return_error) where F
-[0m[90m   @[39m [35mSparseIR[39m [90m~/.julia/packages/SparseIR/Lrt2M/src/[39m[90m[4mpoly.jl:250[24m[39m
-[0m  overlap([91m::SparseIR.PiecewiseLegendrePoly[39m, ::F; rtol, return_error, maxevals, points) where F
-[0m[90m   @[39m [35mSparseIR[39m [90m~/.julia/packages/SparseIR/Lrt2M/src/[39m[90m[4mpoly.jl:92[24m[39m
-
-
-Stacktrace:
- [1] top-level scope
-[90m   @[39m [90m[4mIn[2]:10[24m[39m
- [2] [0m[1meval[22m[0m[1m([22m[90mm[39m::[0mModule, [90me[39m::[0mAny[0m[1m)[22m
-[90m   @[39m [90mCore[39m [90m./[39m[90m[4mboot.jl:489[24m[39m
 

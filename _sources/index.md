@@ -1,5 +1,6 @@
-## Welcome to sparse-ir-v2 tutorial
+## Welcome to sparse-ir tutorial
 
+<!--
 This online document provides comprehensive tutorials of sparse-ir libraries in various languages:
 
 - Python: [sparse-ir](https://github.com/SpM-lab/sparse-ir)
@@ -13,6 +14,9 @@ We recommend to start with Python or Julia libraries, which are easier to instal
 The version 2 of `sparse-ir` and `SparseIR.jl` have changed the internal implementation to the C++ implementation of `libsparseir`.
 Although most of the interfaces remain unchanged, there are some substantial changes, which **break the backward compatibility**.
 Please refer to [the migration guide](src/migration.md) for details.
+-->
+
+This online document provides comprehensive tutorials of the Python library [sparse-ir](https://github.com/SpM-lab/sparse-ir) library and [Julia](https://github.com/SpM-lab/SparseIR.jl).
 
 Please free to make a contact with the authors of each tutorial page if you have any questions!
 

@@ -35,7 +35,7 @@ mesh = Mesh(IR_basis_set)
 
 # Calculate non-interacting Green function
 rho = lambda omega : 2*np.sqrt(D**2 - omega.clip(-D,D)**2)/(np.pi*D**2)
-rho_l = IR_basis_set.basis_f.v.overlap(rho, -wmax, wmax)
+rho_l = IR_basis_set.basis_f.v.overlap(rho)
 g0_l  = -IR_basis_set.basis_f.s * rho_l
 g0_loc = IR_basis_set.smpl_wn_f.evaluate(g0_l)
 
@@ -52,22 +52,24 @@ solver.solve()
 [36mCell[39m[36m [39m[32mIn[6][39m[32m, line 8[39m
 [32m      6[39m [38;5;66;03m# Calculate non-interacting Green function[39;00m
 [32m      7[39m rho = [38;5;28;01mlambda[39;00m omega : [32m2[39m*np.sqrt(D**[32m2[39m - omega.clip(-D,D)**[32m2[39m)/(np.pi*D**[32m2[39m)
-[32m----> [39m[32m8[39m rho_l = [43mIR_basis_set[49m[43m.[49m[43mbasis_f[49m[43m.[49m[43mv[49m[43m.[49m[43moverlap[49m[43m([49m[43mrho[49m[43m,[49m[43m [49m[43m-[49m[43mwmax[49m[43m,[49m[43m [49m[43mwmax[49m[43m)[49m
+[32m----> [39m[32m8[39m rho_l = [43mIR_basis_set[49m[43m.[49m[43mbasis_f[49m[43m.[49m[43mv[49m[43m.[49m[43moverlap[49m[43m([49m[43mrho[49m[43m)[49m
 [32m      9[39m g0_l  = -IR_basis_set.basis_f.s * rho_l
 [32m     10[39m g0_loc = IR_basis_set.smpl_wn_f.evaluate(g0_l)
 
-[36mFile [39m[32m~/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/sparse_ir/poly.py:372[39m, in [36mPiecewiseLegendrePolyVector.overlap[39m[34m(self, f, xmin, xmax, rtol, return_error, points)[39m
-[32m    369[39m     [38;5;28;01mif[39;00m xmax > [38;5;28mself[39m._xmax:
-[32m    370[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mxmax ([39m[38;5;132;01m{[39;00mxmax[38;5;132;01m}[39;00m[33m) must be less than or equal to the upper bound of the polynomial domain ([39m[38;5;132;01m{[39;00m[38;5;28mself[39m._xmax[38;5;132;01m}[39;00m[33m)[39m[33m"[39m)
-[32m--> [39m[32m372[39m f_res = [43mf[49m[43m([49m[32;43m0.5[39;49m[43m*[49m[43mxmin[49m[43m [49m[43m+[49m[43m [49m[32;43m0.5[39;49m[43m*[49m[43mxmax[49m[43m)[49m
-[32m    374[39m f_ = f
-[32m    375[39m [38;5;28;01mif[39;00m [38;5;28mhasattr[39m(f_res, [33m'[39m[33mshape[39m[33m'[39m):
+[36mFile [39m[32m~/work/sparse-ir-tutorial-v2/sparse-ir-tutorial-v2/.venv/lib/python3.13/site-packages/sparse_ir/poly.py:425[39m, in [36mPiecewiseLegendrePolyVector.overlap[39m[34m(self, f, xmin, xmax, rtol, return_error, points)[39m
+[32m    420[39m     [38;5;28;01mif[39;00m xmax > [38;5;28mself[39m._xmax:
+[32m    421[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33mf[39m[33m"[39m[33mxmax ([39m[38;5;132;01m{[39;00mxmax[38;5;132;01m}[39;00m[33m) must be less than or equal [39m[33m"[39m
+[32m    422[39m                        [33mf[39m[33m"[39m[33mto the upper bound of the polynomial domain [39m[33m"[39m
+[32m    423[39m                        [33mf[39m[33m"[39m[33m([39m[38;5;132;01m{[39;00m[38;5;28mself[39m._xmax[38;5;132;01m}[39;00m[33m)[39m[33m"[39m)
+[32m--> [39m[32m425[39m f_res = [43mf[49m[43m([49m[32;43m0.5[39;49m[43m*[49m[43mxmin[49m[43m [49m[43m+[49m[43m [49m[32;43m0.5[39;49m[43m*[49m[43mxmax[49m[43m)[49m
+[32m    427[39m f_ = f
+[32m    428[39m [38;5;28;01mif[39;00m [38;5;28mhasattr[39m(f_res, [33m'[39m[33mshape[39m[33m'[39m):
 
 [36mCell[39m[36m [39m[32mIn[6][39m[32m, line 7[39m, in [36m<lambda>[39m[34m(omega)[39m
 [32m      4[39m mesh = Mesh(IR_basis_set)
 [32m      6[39m [38;5;66;03m# Calculate non-interacting Green function[39;00m
 [32m----> [39m[32m7[39m rho = [38;5;28;01mlambda[39;00m omega : [32m2[39m*np.sqrt(D**[32m2[39m - [43momega[49m[43m.[49m[43mclip[49m(-D,D)**[32m2[39m)/(np.pi*D**[32m2[39m)
-[32m      8[39m rho_l = IR_basis_set.basis_f.v.overlap(rho, -wmax, wmax)
+[32m      8[39m rho_l = IR_basis_set.basis_f.v.overlap(rho)
 [32m      9[39m g0_l  = -IR_basis_set.basis_f.s * rho_l
 
 [31mAttributeError[39m: 'float' object has no attribute 'clip'
