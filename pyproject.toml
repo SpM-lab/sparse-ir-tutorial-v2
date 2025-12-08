@@ -2,7 +2,7 @@
 name = "sparse-ir-tutorial"
 version = "0.1.0"
 dependencies = [
-    "jupyter-book",
+    "jupyter-book<2.0",
     "jupytext",
     "matplotlib",
     "ghp-import",
