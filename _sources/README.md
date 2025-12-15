@@ -1,4 +1,4 @@
-# sparse-ir
+# sparse-ir-tutorial
 
 ## Author guideline
 
@@ -13,15 +13,5 @@ Install `uv` and run the following commands to build html files:
 make build
 ```
 
-Then, you can upload html files to the repository by running the following command:
-
-```bash
-make upload
-```
-
 ## References
 You can add references to `references.bib`.
-
-## Trouble shooting
-
-* https://github.com/executablebooks/jupyter-book/issues/1541
