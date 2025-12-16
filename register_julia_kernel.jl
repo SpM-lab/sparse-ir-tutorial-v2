@@ -140,8 +140,8 @@ if abspath(PROGRAM_FILE) == @__FILE__
     
     @printf "Registering kernel with project directory: %s\n" project_dir
     
-    # Register kernel with name "julia-1.11" to match the notebooks
-    success = register_julia_kernel("julia-1.11", "julia", project_arg)
+    # Register kernel with name "julia-x.y" to match the notebooks
+    success = register_julia_kernel("julia-$(VERSION.major).$(VERSION.minor)", "julia", project_arg)
     
     if success
         println("✓ Kernel registration completed successfully")
