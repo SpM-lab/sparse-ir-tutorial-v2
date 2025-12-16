@@ -39,7 +39,7 @@ function update_notebook_kernel(notebook_path::String, kernel_name::String="juli
         
         # Update kernelspec
         notebook["metadata"]["kernelspec"] = Dict(
-            "display_name" => "Julia 1.11.2",
+            "display_name" => "Julia $(VERSION)",
             "language" => "julia",
             "name" => kernel_name
         )
@@ -49,7 +49,7 @@ function update_notebook_kernel(notebook_path::String, kernel_name::String="juli
             "file_extension" => ".jl",
             "mimetype" => "application/julia",
             "name" => "julia",
-            "version" => "1.11.2"
+            "version" => "$(VERSION)"
         )
         
         # Write back the notebook

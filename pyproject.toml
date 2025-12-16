@@ -7,7 +7,6 @@ dependencies = [
     "matplotlib",
     "ghp-import",
     "jupyterlab",
-    "sparse-ir>=2.0.0a6",
+    "sparse-ir>=2.0.0a8",
     "admmsolver",
-    "pylibsparseir",
 ]
