@@ -16,7 +16,9 @@ Although most of the interfaces remain unchanged, there are some substantial cha
 Please refer to [the migration guide](src/migration.md) for details.
 -->
 
-This online document provides comprehensive tutorials of the Python library [sparse-ir](https://github.com/SpM-lab/sparse-ir) library and [Julia](https://github.com/SpM-lab/SparseIR.jl).
+This online document provides comprehensive tutorials of the Python library [sparse-ir](https://github.com/SpM-lab/sparse-ir) library and Julia library [SparseIR.jl](https://github.com/SpM-lab/SparseIR.jl).
+
+**For information on the whole sparse-ir ecosystem (including Rust, C-API, and Fortran bindings), please refer to [the sparse-ir documentation](https://spm-lab.github.io/sparse-ir-doc).**
 
 Please free to make a contact with the authors of each tutorial page if you have any questions!
 
