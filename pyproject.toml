@@ -9,5 +9,5 @@ dependencies = [
     "jupyterlab",
     "sparse-ir>=2.0.0a9",
     "admmsolver",
-    "pylibsparseir>=0.7.4",
+    "pylibsparseir>=0.7.5",
 ]
