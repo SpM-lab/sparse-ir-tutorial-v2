@@ -8,12 +8,11 @@ This has been extended from $[0, \beta]$ to $[-\beta, \beta]$.
 - The fermionic basis functions are anti-periodic, while the bosonic basis functions are periodic. If you use the logistic kernel (default), the fermionic and bosonic basis functions are identical in $(0, \beta)$, while they have opposite signs in $(-\beta, 0)$. To keep consistency with the previous version, $U_l(\beta)$ and $U_l(-\beta)$ evaluate to the values at $\beta^-$ and $(-\beta)^+$, respectively. The value at $0^-$ is obtained by passing `-0.0` (`u(-0.0)`), while `u(0.0)` gives the value at $0^+$.
 
 ### The domain of the $\tau$ sampling points
-The $\tau$ sampling points are now defined in $[-\beta/2, \beta/2]$ instead of $[0, \beta]$. The distribution of the sampling points is symmetric with respect to $0$. This change has been introduced for preparing a future introduction of zero-temperature basis functions. You can switch to the previous behavior by setting `use_positive_taus=True` when initializing a `TauSampling` object or a `FiniteTempBasisSet` object. This will affect some diagrammatic calculations, e.g., second order perturbation theory: $G(\tau)G(\beta-\tau) = - G(\tau)G(-\tau)$. See the following example code:
+The default $\tau$ sampling points lie in $(0, \beta)$, as in version 1 (`use_positive_taus=True` is the default of `TauSampling` and `FiniteTempBasisSet`). Reversing the array of the sampling points maps $\tau$ to $\beta-\tau$. This is useful in some diagrammatic calculations, e.g., second order perturbation theory, which needs $G(\tau)G(\beta-\tau)$. See the following example code:
 
 ```Python
-# Version 1: G(tau) * G(beta-tau)
+# G(tau) * G(beta-tau) on the default sampling points
 gtau * gtau[::-1]
-
-# Version 2: G(tau) * G(-tau)
--gtau * gtau[::-1]
 ```
+
+Setting `use_positive_taus=False` when initializing a `TauSampling` object or a `FiniteTempBasisSet` object places the sampling points in $(-\beta/2, \beta/2]$ instead. This option has been introduced for preparing a future introduction of zero-temperature basis functions. These points are symmetric with respect to $0$ only when their number is even: for an odd number, $\beta/2$ is a sampling point but $-\beta/2$ is not. Reversing the array therefore does not map $\tau$ to $-\tau$ in general.
