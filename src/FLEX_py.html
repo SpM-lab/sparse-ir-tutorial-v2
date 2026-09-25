@@ -16,47 +16,56 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -66,6 +75,12 @@
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -73,40 +88,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/FLEX_py';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="TPSC approximation" href="TPSC_py.html" />
     <link rel="prev" title="DMFT with IPT solver" href="DMFT_IPT_py.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -114,7 +126,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -122,15 +133,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -139,7 +194,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,23 +225,20 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLR.html">Discrete Lehmann representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matsubarasum.html">Summation over Matsubara axis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">Notation and conventions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html">Intermediate representation (IR)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html">Sparse sampling</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/DLR.html">Discrete Lehmann representation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html">Summation over Matsubara axis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -236,9 +289,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -321,7 +379,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -335,25 +393,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -375,7 +425,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory-of-flex-in-the-paramagnetic-state">Theory of FLEX in the paramagnetic state</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-of-flex-equations">Set of FLEX equations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-practical-implementation">Notes on practical implementation</a></li>
@@ -417,33 +467,33 @@ document.write(`
 <p>Author: <a class="reference external" href="mailto:niklas&#46;witt&#37;&#52;&#48;physik&#46;uni-hamburg&#46;de">Niklas Witt</a></p>
 <section id="theory-of-flex-in-the-paramagnetic-state">
 <h2>Theory of FLEX in the paramagnetic state<a class="headerlink" href="#theory-of-flex-in-the-paramagnetic-state" title="Link to this heading">#</a></h2>
-<p>The FLuctuation EXchange (FLEX) approximation is a perturbative diagrammatic method that was first introduced by Bickers et al. <span id="id1">[<a class="reference internal" href="bibliography.html#id40" title="N. E. Bickers, D. J. Scalapino, and S. R. White. Conserving approximations for strongly correlated electron systems: bethe-salpeter equation and dynamics for the two-dimensional hubbard model. Phys. Rev. Lett., 62:961–964, Feb 1989. URL: https://link.aps.org/doi/10.1103/PhysRevLett.62.961, doi:10.1103/PhysRevLett.62.961.">Bickers <em>et al.</em>, 1989</a>, <a class="reference internal" href="bibliography.html#id41" title="N.E Bickers and D.J Scalapino. Conserving approximations for strongly fluctuating electron systems. i. formalism and calculational approach. Annals of Physics, 193(1):206-251, 1989. URL: https://www.sciencedirect.com/science/article/pii/000349168990359X, doi:https://doi.org/10.1016/0003-4916(89)90359-X.">Bickers and Scalapino, 1989</a>]</span>. It can be derived from a Luttinger-Ward functional <span id="id2">[<a class="reference internal" href="bibliography.html#id43" title="J. M. Luttinger and J. C. Ward. Ground-state energy of a many-fermion system. ii. Phys. Rev., 118:1417–1427, Jun 1960. URL: https://link.aps.org/doi/10.1103/PhysRev.118.1417, doi:10.1103/PhysRev.118.1417.">Luttinger and Ward, 1960</a>]</span> containing an infinite series of closed bubble and ladder diagrams. Physically, this means that in FLEX the exchange of spin and charge fluctuations is treated self-consistently. As such, it is suitable for studying systems with strong spin fluctuations, e.g., in Fermi liquids or near quantum critical points. Here, we want to give a code example of the single-orbital limit of FLEX with a local Hubbard interaction <span class="math notranslate nohighlight">\(U\)</span> to illustrate the practical implementation of the <code class="docutils literal notranslate"><span class="pre">sparse-ir</span></code> package for diagrammatic methods.</p>
-<p>For the implementation of a multi-orbital code, please have a look at <span id="id3">[<a class="reference internal" href="bibliography.html#id42" title="Niklas Witt, Erik G. C. P. van Loon, Takuya Nomoto, Ryotaro Arita, and Tim O. Wehling. Efficient fluctuation-exchange approach to low-temperature spin fluctuations and superconductivity: from the hubbard model to $\mathrm Na_x\mathrm CoO_2\ifmmode \cdot \else ·\fi y\mathrm H_2\mathrm O$. Phys. Rev. B, 103:205148, May 2021. URL: https://link.aps.org/doi/10.1103/PhysRevB.103.205148, doi:10.1103/PhysRevB.103.205148.">Witt <em>et al.</em>, 2021</a>]</span> and <a class="reference external" href="https://github.com/nikwitt/FLEX_IR">FLEX_IR package</a>.</p>
+<p>The FLuctuation EXchange (FLEX) approximation is a perturbative diagrammatic method that was first introduced by Bickers et al. <span class="bibtex-citation" id="id1">[<a class="reference internal" href="bibliography.html#id40" title="N. E. Bickers, D. J. Scalapino, and S. R. White. Conserving approximations for strongly correlated electron systems: bethe-salpeter equation and dynamics for the two-dimensional hubbard model. Phys. Rev. Lett., 62:961–964, Feb 1989. URL: https://link.aps.org/doi/10.1103/PhysRevLett.62.961, doi:10.1103/PhysRevLett.62.961.">Bickers <em>et al.</em>, 1989</a>, <a class="reference internal" href="bibliography.html#id41" title="N.E Bickers and D.J Scalapino. Conserving approximations for strongly fluctuating electron systems. i. formalism and calculational approach. Annals of Physics, 193(1):206-251, 1989. URL: https://www.sciencedirect.com/science/article/pii/000349168990359X, doi:https://doi.org/10.1016/0003-4916(89)90359-X.">Bickers and Scalapino, 1989</a>]</span>. It can be derived from a Luttinger-Ward functional <span class="bibtex-citation" id="id2">[<a class="reference internal" href="bibliography.html#id43" title="J. M. Luttinger and J. C. Ward. Ground-state energy of a many-fermion system. ii. Phys. Rev., 118:1417–1427, Jun 1960. URL: https://link.aps.org/doi/10.1103/PhysRev.118.1417, doi:10.1103/PhysRev.118.1417.">Luttinger and Ward, 1960</a>]</span> containing an infinite series of closed bubble and ladder diagrams. Physically, this means that in FLEX the exchange of spin and charge fluctuations is treated self-consistently. As such, it is suitable for studying systems with strong spin fluctuations, e.g., in Fermi liquids or near quantum critical points. Here, we want to give a code example of the single-orbital limit of FLEX with a local Hubbard interaction <span class="math notranslate nohighlight">\(U\)</span> to illustrate the practical implementation of the <code class="docutils literal notranslate"><span class="pre">sparse-ir</span></code> package for diagrammatic methods.</p>
+<p>For the implementation of a multi-orbital code, please have a look at <span class="bibtex-citation" id="id3">[<a class="reference internal" href="bibliography.html#id42" title="Niklas Witt, Erik G. C. P. van Loon, Takuya Nomoto, Ryotaro Arita, and Tim O. Wehling. Efficient fluctuation-exchange approach to low-temperature spin fluctuations and superconductivity: from the hubbard model to $\mathrm Na_x\mathrm CoO_2\ifmmode \cdot \else ·\fi y\mathrm H_2\mathrm O$. Phys. Rev. B, 103:205148, May 2021. URL: https://link.aps.org/doi/10.1103/PhysRevB.103.205148, doi:10.1103/PhysRevB.103.205148.">Witt <em>et al.</em>, 2021</a>]</span> and <a class="reference external" href="https://github.com/nikwitt/FLEX_IR">FLEX_IR package</a>.</p>
 <section id="set-of-flex-equations">
 <h3>Set of FLEX equations<a class="headerlink" href="#set-of-flex-equations" title="Link to this heading">#</a></h3>
 <p>We review the set of equations that need to be solved self-consistently in the FLEX approximation. The goal is to solve the Dyson equation</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-G(i\omega_n,\boldsymbol{k}) &amp;= [G_0^{-1}(i\omega_n,\boldsymbol{k}) - \Sigma(i\omega_n,\boldsymbol{k})]^{-1} \\
-&amp; = [i\omega_n - (\varepsilon_{\boldsymbol{k}}-\mu) - \Sigma(i\omega_n,\boldsymbol{k})]^{-1}\;.
+G(\mathrm{i}\nu^\mathrm{F},\boldsymbol{k}) &amp;= [G_0^{-1}(\mathrm{i}\nu^\mathrm{F},\boldsymbol{k}) - \Sigma(\mathrm{i}\nu^\mathrm{F},\boldsymbol{k})]^{-1} \\
+&amp; = [\mathrm{i}\nu^\mathrm{F} - (\varepsilon_{\boldsymbol{k}}-\mu) - \Sigma(\mathrm{i}\nu^\mathrm{F},\boldsymbol{k})]^{-1}\;.
 \end{align}
 \end{split}\]</div>
-<p>for the interacting Green function <span class="math notranslate nohighlight">\(G\)</span> from the non-interacting Green function <span class="math notranslate nohighlight">\(G_0(i\omega_n,\boldsymbol{k}) = [i\omega_n - (\varepsilon_{\boldsymbol{k}}-\mu)]^{-1}\)</span> with single-particle dispersion <span class="math notranslate nohighlight">\(\varepsilon_{\boldsymbol{k}}\)</span> and chemical potential <span class="math notranslate nohighlight">\(\mu\)</span> as well as self-energy <span class="math notranslate nohighlight">\(\Sigma\)</span> as a function of (fermionic) Matsubara frequencies <span class="math notranslate nohighlight">\(\omega_n=(2n+1)\pi T\)</span> and momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>. Using the Green function, we calculate the irreducible susceptibility (“bubble diagram”) as</p>
+<p>for the interacting Green function <span class="math notranslate nohighlight">\(G\)</span> from the non-interacting Green function <span class="math notranslate nohighlight">\(G_0(\mathrm{i}\nu^\mathrm{F},\boldsymbol{k}) = [\mathrm{i}\nu^\mathrm{F} - (\varepsilon_{\boldsymbol{k}}-\mu)]^{-1}\)</span> with single-particle dispersion <span class="math notranslate nohighlight">\(\varepsilon_{\boldsymbol{k}}\)</span> and chemical potential <span class="math notranslate nohighlight">\(\mu\)</span> as well as self-energy <span class="math notranslate nohighlight">\(\Sigma\)</span> as a function of fermionic Matsubara frequencies <span class="math notranslate nohighlight">\(\nu^\mathrm{F} = n\pi T\)</span> (odd <span class="math notranslate nohighlight">\(n\)</span>) and momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>. Using the Green function, we calculate the irreducible susceptibility (“bubble diagram”) as</p>
 <div class="math notranslate nohighlight">
-\[ \chi_0(i\nu_m, \boldsymbol{q}) = - \frac{T}{N_{\boldsymbol{k}}} \sum_{n,\boldsymbol{k}} G(i\omega_n + i\nu_m, \boldsymbol{k} + \boldsymbol{q})G(i\omega_n, \boldsymbol{k})\;.\]</div>
-<p><span class="math notranslate nohighlight">\(N_{\boldsymbol{k}}\)</span> denotes the number of <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>-points. This equation is a convolution typical for diagrammatic methods. It can be easily evaluated by Fourier transforming to imaginary-time and real space, resulting in a simple multiplication</p>
+\[ \chi_0(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) = - \frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{F},\boldsymbol{k}} G(\mathrm{i}\nu^\mathrm{F} + \mathrm{i}\nu^\mathrm{B}, \boldsymbol{k} + \boldsymbol{q})G(\mathrm{i}\nu^\mathrm{F}, \boldsymbol{k})\;.\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\nu^\mathrm{B} = n\pi T\)</span> (even <span class="math notranslate nohighlight">\(n\)</span>) is a bosonic Matsubara frequency and <span class="math notranslate nohighlight">\(N_{\boldsymbol{k}}\)</span> denotes the number of <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>-points. This equation is a convolution typical for diagrammatic methods. It can be easily evaluated by Fourier transforming to imaginary-time and real space, resulting in a simple multiplication</p>
 <div class="math notranslate nohighlight">
 \[ \chi_0(\tau, \boldsymbol{r}) = - G(\tau, \boldsymbol{r})G(-\tau,-\boldsymbol{r}) = G(\tau, \boldsymbol{r})G(\beta-\tau,\boldsymbol{r})\;.\]</div>
-<p>In our practical implementation, we will perform this step using the <code class="docutils literal notranslate"><span class="pre">sparse-ir</span></code> package. The infinite sum of bubble and ladder diagrams can be resummed to yield a Berk-Shrieffer type interaction <span id="id4">[<a class="reference internal" href="bibliography.html#id44" title="N. F. Berk and J. R. Schrieffer. Effect of Ferromagnetic Spin Correlations on Superconductivity. Physical Review Letters, 17(8):433–435, aug 1966. URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.17.433, doi:10.1103/physrevlett.17.433.">Berk and Schrieffer, 1966</a>]</span></p>
+<p>In our practical implementation, we will perform this step using the <code class="docutils literal notranslate"><span class="pre">sparse-ir</span></code> package. The infinite sum of bubble and ladder diagrams can be resummed to yield a Berk-Shrieffer type interaction <span class="bibtex-citation" id="id4">[<a class="reference internal" href="bibliography.html#id44" title="N. F. Berk and J. R. Schrieffer. Effect of Ferromagnetic Spin Correlations on Superconductivity. Physical Review Letters, 17(8):433–435, aug 1966. URL: https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.17.433, doi:10.1103/physrevlett.17.433.">Berk and Schrieffer, 1966</a>]</span></p>
 <div class="math notranslate nohighlight">
-\[ V(i\nu_m, \boldsymbol{q}) = \frac{3}{2} U^2 \chi_{\mathrm{s}}(i\nu_m, \boldsymbol{q}) + \frac{1}{2} U^2 \chi_{\mathrm{c}}(i\nu_m, \boldsymbol{q}) - U^2 \chi_0(i\nu_m, \boldsymbol{q}) + U \]</div>
+\[ V(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) = \frac{3}{2} U^2 \chi_{\mathrm{s}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) + \frac{1}{2} U^2 \chi_{\mathrm{c}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) - U^2 \chi_0(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) + U \]</div>
 <p>with spin and charge susceptibility like in the Random-Phase-Approximation (RPA)</p>
 <div class="math notranslate nohighlight">
-\[ \chi_{\mathrm{s}}(i\nu_m, \boldsymbol{q}) = \frac{\chi_0(i\nu_m, \boldsymbol{q})}{1-U\chi_0(i\nu_m, \boldsymbol{q})} \quad , \quad \chi_{\mathrm{c}}(i\nu_m, \boldsymbol{q}) = \frac{\chi_0(i\nu_m, \boldsymbol{q})}{1+U\chi_0(i\nu_m, \boldsymbol{q})}\;. \]</div>
+\[ \chi_{\mathrm{s}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) = \frac{\chi_0(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})}{1-U\chi_0(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})} \quad , \quad \chi_{\mathrm{c}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) = \frac{\chi_0(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})}{1+U\chi_0(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})}\;. \]</div>
 <p>The self-energy can be calculated from the convolution</p>
 <div class="math notranslate nohighlight">
-\[ \Sigma(i\omega_n, \boldsymbol{k}) = \frac{T}{N_{\boldsymbol{k}}} \sum_{m,\boldsymbol{q}} V(i\nu_m, \boldsymbol{q}) G(i\omega_n - i\nu_m, \boldsymbol{k} - \boldsymbol{q}) \]</div>
+\[ \Sigma(\mathrm{i}\nu^\mathrm{F}, \boldsymbol{k}) = \frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{B},\boldsymbol{q}} V(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) G(\mathrm{i}\nu^\mathrm{F} - \mathrm{i}\nu^\mathrm{B}, \boldsymbol{k} - \boldsymbol{q}) \]</div>
 <p>which Fourier transformed to real space and imaginary times takes the form</p>
 <div class="math notranslate nohighlight">
 \[ \Sigma(\tau, \boldsymbol{r}) = V(\tau, \boldsymbol{r}) G(\tau, \boldsymbol{r})\;. \]</div>
@@ -480,11 +530,11 @@ G(i\omega_n,\boldsymbol{k}) &amp;= [G_0^{-1}(i\omega_n,\boldsymbol{k}) - \Sigma(
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If true, we use sampling points in [0, beta].</span>
-<span class="c1"># If false, we use sampling points in [-beta/2, beta/2].</span>
-<span class="c1"># sparse-ir version 1 defaults to use_positive_taus=True, </span>
-<span class="c1"># but sparse-ir version 2 defaults to use_positive_taus=False.</span>
-<span class="n">use_positive_taus</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If true, we use sampling points in (0, beta); reversing the array maps tau to beta - tau.</span>
+<span class="c1"># If false, we use sampling points in (-beta/2, beta/2]; reversing the array maps tau to -tau</span>
+<span class="c1"># only if the number of points is even (see ckio_calc below).</span>
+<span class="c1"># sparse-ir defaults to use_positive_taus=True, which reproduces the sampling points of version 1.</span>
+<span class="n">use_positive_taus</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -518,18 +568,18 @@ G(i\omega_n,\boldsymbol{k}) &amp;= [G_0^{-1}(i\omega_n,\boldsymbol{k}) - \Sigma(
 </section>
 <section id="generating-meshes">
 <h3>Generating meshes<a class="headerlink" href="#generating-meshes" title="Link to this heading">#</a></h3>
-<p>We need to generate a <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>-mesh as well as set up the IR basis functions on a sparse <span class="math notranslate nohighlight">\(\tau\)</span> and <span class="math notranslate nohighlight">\(i\omega_n\)</span> grid. Then we can calculate the dispersion on this mesh.
-In addition, we set calculation routines to Fourier transform <span class="math notranslate nohighlight">\(k\leftrightarrow r\)</span> and <span class="math notranslate nohighlight">\(\tau\leftrightarrow i\omega_n\)</span> (via IR basis).</p>
+<p>We need to generate a <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>-mesh as well as set up the IR basis functions on a sparse <span class="math notranslate nohighlight">\(\tau\)</span> and <span class="math notranslate nohighlight">\(\mathrm{i}\nu\)</span> grid. Then we can calculate the dispersion on this mesh.
+In addition, we set calculation routines to Fourier transform <span class="math notranslate nohighlight">\(k\leftrightarrow r\)</span> and <span class="math notranslate nohighlight">\(\tau\leftrightarrow \mathrm{i}\nu\)</span> (via IR basis).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Initiate fermionic and bosonic IR basis objects</span>
 <span class="n">IR_basis_set</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">IR_tol</span><span class="p">,</span> <span class="n">use_positive_taus</span><span class="o">=</span><span class="n">use_positive_taus</span><span class="p">)</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Mesh</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Holding class for k-mesh and sparsely sampled imaginary time &#39;tau&#39; / Matsubara frequency &#39;iwn&#39; grids.</span>
-<span class="sd">    Additionally it defines the Fourier transform routines &#39;r &lt;-&gt; k&#39;  and &#39;tau &lt;-&gt; l &lt;-&gt; wn&#39;.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Holding class for k-mesh and sparsely sampled imaginary time 'tau' / Matsubara frequency 'iwn' grids.</span>
+<span class="sd">    Additionally it defines the Fourier transform routines 'r &lt;-&gt; k'  and 'tau &lt;-&gt; l &lt;-&gt; wn'.</span>
+<span class="sd">    """</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">IR_basis_set</span><span class="p">,</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span> <span class="o">=</span> <span class="n">IR_basis_set</span>
 
@@ -551,14 +601,14 @@ In addition, we set calculation routines to Fourier transform <span class="math 
         <span class="bp">self</span><span class="o">.</span><span class="n">ek_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iwn_f</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">ek</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">smpl_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statistics</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Return sampling object for given statistic &quot;&quot;&quot;</span>
-        <span class="n">smpl_tau</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_tau_f</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_tau_b</span><span class="p">}[</span><span class="n">statistics</span><span class="p">]</span>
-        <span class="n">smpl_wn</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="p">,</span>  <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_wn_b</span> <span class="p">}[</span><span class="n">statistics</span><span class="p">]</span>
+<span class="w">        </span><span class="sd">""" Return sampling object for given statistic """</span>
+        <span class="n">smpl_tau</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'F'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_tau_f</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_tau_b</span><span class="p">}[</span><span class="n">statistics</span><span class="p">]</span>
+        <span class="n">smpl_wn</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">'F'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="p">,</span>  <span class="s1">'B'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_wn_b</span> <span class="p">}[</span><span class="n">statistics</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">smpl_tau</span><span class="p">,</span> <span class="n">smpl_wn</span>
 
     
     <span class="k">def</span><span class="w"> </span><span class="nf">tau_to_wn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statistics</span><span class="p">,</span> <span class="n">obj_tau</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Fourier transform from tau to in via IR basis &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from tau to in via IR basis """</span>
         <span class="n">smpl_tau</span><span class="p">,</span> <span class="n">smpl_wn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">smpl_obj</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
 
         <span class="n">obj_tau</span> <span class="o">=</span> <span class="n">obj_tau</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">))</span>
@@ -567,7 +617,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
         <span class="k">return</span> <span class="n">obj_wn</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">wn_to_tau</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statistics</span><span class="p">,</span> <span class="n">obj_wn</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Fourier transform from iwn to tau via IR basis &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from iwn to tau via IR basis """</span>
         <span class="n">smpl_tau</span><span class="p">,</span> <span class="n">smpl_wn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">smpl_obj</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
 
         <span class="n">obj_wn</span>  <span class="o">=</span> <span class="n">obj_wn</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">smpl_wn</span><span class="o">.</span><span class="n">wn</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">))</span>
@@ -577,14 +627,14 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 
     
     <span class="k">def</span><span class="w"> </span><span class="nf">k_to_r</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj_k</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Fourier transform from k-space to real space &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from k-space to real space """</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">obj_k</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">)</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">obj_k</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">obj_r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">obj_r</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">r_to_k</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj_r</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Fourier transform from real space to k-space &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from real space to k-space """</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">obj_r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">)</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftn</span><span class="p">(</span><span class="n">obj_r</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">obj_k</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span>
@@ -602,11 +652,11 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FLEXSolver</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">sigma_init</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sfc_tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> 
                  <span class="n">maxiter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">U_maxiter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mix</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Solver class to calculate the FLEX loop self-consistently.</span>
 <span class="sd">        After initializing the Solver by `solver = FLEXSolver(mesh, U, n, **kwargs)` </span>
 <span class="sd">        it can be run by `solver.solve()`.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="c1">## Set internal parameters for the solve </span>
         <span class="bp">self</span><span class="o">.</span><span class="n">U</span> <span class="o">=</span> <span class="n">U</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
@@ -630,7 +680,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
     
     <span class="c1">#%%%%%%%%%%% Loop solving instance</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; FLEXSolver.solve() executes FLEX loop until convergence &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" FLEXSolver.solve() executes FLEX loop until convergence """</span>
         <span class="c1"># check whether U &lt; U_crit! Otherwise, U needs to be renormalized.</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ckio</span><span class="p">))</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">U</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">U_renormalization</span><span class="p">()</span>
@@ -645,12 +695,12 @@ In addition, we set calculation routines to Fourier transform <span class="math 
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">sfc_check</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">sfc_check</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">sfc_tol</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FLEX loop converged at desired accuracy&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"FLEX loop converged at desired accuracy"</span><span class="p">)</span>
                 <span class="k">break</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FLEX loop finished&quot;</span><span class="p">,</span> <span class="s2">&quot; mu = &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="s2">&quot;n = &quot;</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">calc_electron_density</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mu</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"FLEX loop finished"</span><span class="p">,</span> <span class="s2">" mu = "</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mu</span><span class="p">,</span> <span class="s2">"n = "</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">calc_electron_density</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mu</span><span class="p">))</span>
     
     <span class="k">def</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; FLEX loop &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" FLEX loop """</span>
         <span class="n">gkio_old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gkio</span>
         
         <span class="c1"># calculate interaction and self-energy</span>
@@ -669,9 +719,9 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 
     <span class="c1">#%%%%%%%%%%% U renormalization loop instance</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">U_renormalization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Loop for renormalizing U if Stoner enhancement U*max{chi0} &gt;= 1. &quot;&quot;&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initiate U renormalization loop.&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="sd">""" Loop for renormalizing U if Stoner enhancement U*max{chi0} &gt;= 1. """</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!'</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Initiate U renormalization loop.'</span><span class="p">)</span>
     
         <span class="c1"># save old U for later</span>
         <span class="n">U_old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">U</span>
@@ -693,40 +743,44 @@ In addition, we set calculation routines to Fourier transform <span class="math 
         
             <span class="c1"># break condition for too many steps</span>
             <span class="k">if</span> <span class="n">U_it</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">U_maxiter</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iteration number of U renormalization reached break condition!&#39;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">'Iteration number of U renormalization reached break condition!'</span><span class="p">)</span>
                 <span class="k">break</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Leaving U renormalization...&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Leaving U renormalization...'</span><span class="p">)</span>
     
     
     <span class="c1">#%%%%%%%%%%% Calculation steps</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">gkio_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; calculate Green function G(iw,k) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" calculate Green function G(iw,k) """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">gkio</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">iwn_f_</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ek_</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">grit_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Calculate real space Green function G(tau,r) [for calculating chi0 and sigma] &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Calculate real space Green function G(tau,r) [for calculating chi0 and sigma] """</span>
         <span class="c1"># Fourier transform</span>
         <span class="n">grit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">k_to_r</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gkio</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">grit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">grit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">grit</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">ckio_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Calculate irreducible susciptibility chi0(iv,q) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Calculate irreducible susciptibility chi0(iv,q) """</span>
         <span class="k">if</span> <span class="n">use_positive_taus</span><span class="p">:</span>
             <span class="c1"># G(tau) * G(beta - tau)</span>
             <span class="n">ckio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grit</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">grit</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># - G(tau) * G(- tau)</span>
+            <span class="c1"># Reversing maps tau to -tau only for an even number of points: for an odd number,</span>
+            <span class="c1"># the unfolded set (-beta/2, beta/2] contains beta/2 but not -beta/2.</span>
+            <span class="n">tau</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_tau_f</span><span class="o">.</span><span class="n">sampling_points</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">tau</span><span class="p">)</span>
             <span class="n">ckio</span> <span class="o">=</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">grit</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">grit</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
 
         <span class="c1"># Fourier transform</span>
         <span class="n">ckio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">r_to_k</span><span class="p">(</span><span class="n">ckio</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ckio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">ckio</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ckio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="n">ckio</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">V_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Calculate interaction V(tau,r) from RPA-like spin and charge susceptibility for calculating sigma &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Calculate interaction V(tau,r) from RPA-like spin and charge susceptibility for calculating sigma """</span>
         <span class="c1"># check whether U is too large and give warning</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ckio</span><span class="p">))</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">U</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;U*max(chi0) &gt;= 1! Paramagnetic phase is left and calculations will turn unstable!&quot;</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">"U*max(chi0) &gt;= 1! Paramagnetic phase is left and calculations will turn unstable!"</span><span class="p">)</span>
         
         <span class="c1"># spin and charge susceptibility</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">chi_spin</span>   <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ckio</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">U</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">ckio</span><span class="p">)</span>
@@ -738,20 +792,20 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 
         <span class="c1"># Fourier transform</span>
         <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">k_to_r</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">sigma_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Calculate self-energy Sigma(iw,k) &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Calculate self-energy Sigma(iw,k) """</span>
         <span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">grit</span>
     
         <span class="c1"># Fourier transform</span>
         <span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">r_to_k</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
     
     
     <span class="c1">#%%%%%%%%%%% Setting chemical potential mu</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">calc_electron_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mu</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Calculate electron density from Green function &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Calculate electron density from Green function """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">gkio_calc</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
         <span class="n">gio</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gkio</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk</span>
         <span class="n">g_l</span>  <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gio</span><span class="p">)</span>
@@ -762,7 +816,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
         <span class="k">return</span> <span class="n">n</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">mu_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Find chemical potential for a given filling n0 via brent&#39;s root finding algorithm &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Find chemical potential for a given filling n0 via brent's root finding algorithm """</span>
         <span class="n">n_calc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_electron_density</span>
         <span class="n">n0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
         <span class="n">f</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">mu</span> <span class="p">:</span> <span class="n">n_calc</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span> <span class="o">-</span> <span class="n">n0</span>
@@ -790,36 +844,36 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!
 Initiate U renormalization loop.
-1 2.367980269169681 4
-2 2.6631530509569186 4
-3 2.95284320113172 4
-4 3.237266502718885 4
-5 3.5175353552336626 4
-6 3.795074730273968 4
+1 2.3679802691718326 4
+2 2.6631530509592896 4
+3 2.9528432011375583 4
+4 3.2372665027423513 4
+5 3.5175353553180138 4
+6 3.795074730529654 4
 Leaving U renormalization...
-0 0.0884856005173572
-1 0.14570308992905276
-2 0.022617041679980205
-3 0.011894203140063802
-4 0.0076281915483045306
-5 0.005338267277074998
-6 0.003893516473329329
-7 0.002897332162395585
-8 0.002176464239243601
-9 0.0016422654487944137
-10 0.0012421928038383232
-11 0.000941483578202798
-12 0.0007151124194445046
-13 0.0005445535769922566
-14 0.0004159661723993089
-15 0.00031892012665283654
-16 0.0002455640703980158
-17 0.00018996189387583454
-18 0.00014769336793763014
-19 0.00011545778980617507
-20 9.075726258865171e-05
+0 0.08848089073842162
+1 0.14569522734604973
+2 0.022615814131259786
+3 0.011893505710469598
+4 0.007627709050175331
+5 0.005337914476431367
+6 0.003893254237014355
+7 0.0028971360061508995
+8 0.002176317020927867
+9 0.0016421546589771535
+10 0.0012421091833949025
+11 0.0009414202269492817
+12 0.0007150642109596808
+13 0.0005445167053372086
+14 0.000415937809337824
+15 0.00031889817046910733
+16 0.0002455469581971671
+17 0.00018994846475094352
+18 0.00014768275513226683
+19 0.00011544934333148394
+20 9.07504952512532e-05
 FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
+FLEX loop finished  mu =  -0.6713298207863078 n =  0.849999999999999
 </pre></div>
 </div>
 </div>
@@ -829,69 +883,61 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot 2D k-dependence of lowest Matsubara frequency of e.g. Green function</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">gkio</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">gkio</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">shading</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$k_x/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$k_x/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$k_y/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$k_y/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Re $G(k,i\omega_0)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Re $G(k,\mathrm</span><span class="si">{i}</span><span class="s1">\pi T)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_9082/2935616919.py:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/tmp/ipykernel_9082/2935616919.py:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/tmp/ipykernel_9082/2935616919.py:9: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_title(&#39;Re $G(k,i\omega_0)$&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:4: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\p'
+/tmp/ipykernel_5291/1543576925.py:4: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_xlabel('$k_x/\pi$')
+/tmp/ipykernel_5291/1543576925.py:6: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_ylabel('$k_y/\pi$')
 </pre></div>
 </div>
-<img alt="../_images/915ceb545d278cfb7ee29084e55dd1b23555a2eac2506b6e4a1e67fb8375905a.png" src="../_images/915ceb545d278cfb7ee29084e55dd1b23555a2eac2506b6e4a1e67fb8375905a.png" />
+<img alt="../_images/eeaf1fadf1de413d8e2daf17691c5099ba7965db09a24425e343ef1265fa1f68.png" src="../_images/eeaf1fadf1de413d8e2daf17691c5099ba7965db09a24425e343ef1265fa1f68.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot 2D k-dependence of lowest Matsubara frequency of e.g. chi0</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">ckio</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_b</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">ckio</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_b</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">shading</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$k_x/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$k_x/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$k_y/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$k_y/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Re $\chi_0(k,i</span><span class="se">\n</span><span class="s1">u_0)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Re $\chi_0(k,\mathrm</span><span class="si">{i}</span><span class="s1">\nu^\mathrm</span><span class="si">{B}</span><span class="s1">=0)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/tmp/ipykernel_9082/78280166.py:4: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/tmp/ipykernel_9082/78280166.py:6: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/tmp/ipykernel_9082/78280166.py:9: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-  ax.set_title(&#39;Re $\chi_0(k,i\nu_0)$&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:4: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\p'
+/tmp/ipykernel_5291/3153606020.py:4: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_xlabel('$k_x/\pi$')
+/tmp/ipykernel_5291/3153606020.py:6: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_ylabel('$k_y/\pi$')
 </pre></div>
 </div>
-<img alt="../_images/18e747a5f27f66befe8fb5ebc9d44151a931164f34865104368d540d970bd677.png" src="../_images/18e747a5f27f66befe8fb5ebc9d44151a931164f34865104368d540d970bd677.png" />
+<img alt="../_images/16f5fddf11b88810197a99719d1eff18ce3ae78f09ac316f430e8f1190022a33.png" src="../_images/16f5fddf11b88810197a99719d1eff18ce3ae78f09ac316f430e8f1190022a33.png" />
 </div>
 </div>
 </section>
@@ -903,8 +949,8 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-\Delta^{(\xi)}(i\omega_n, \boldsymbol{k}) &amp;= \frac{T}{N_{\boldsymbol{k}}} \sum_{m,\boldsymbol{q}} V^{(\xi)}(i\nu_m, \boldsymbol{q})F^{(\xi)}(i\omega_n - i\nu_m, \boldsymbol{k}-\boldsymbol{q}) \\
- &amp;= -\frac{T}{N_{\boldsymbol{k}}} \sum_{m,\boldsymbol{q}} V^{(\xi)}(i\nu_m, \boldsymbol{q}) |G(i\omega_n - i\nu_m, \boldsymbol{k} - \boldsymbol{q})|^2 \Delta^{(\xi)}(i\omega_n - i\nu_m, \boldsymbol{k}-\boldsymbol{q})
+\Delta^{(\xi)}(\mathrm{i}\nu^\mathrm{F}, \boldsymbol{k}) &amp;= \frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{B},\boldsymbol{q}} V^{(\xi)}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})F^{(\xi)}(\mathrm{i}\nu^\mathrm{F} - \mathrm{i}\nu^\mathrm{B}, \boldsymbol{k}-\boldsymbol{q}) \\
+ &amp;= -\frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{B},\boldsymbol{q}} V^{(\xi)}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) |G(\mathrm{i}\nu^\mathrm{F} - \mathrm{i}\nu^\mathrm{B}, \boldsymbol{k} - \boldsymbol{q})|^2 \Delta^{(\xi)}(\mathrm{i}\nu^\mathrm{F} - \mathrm{i}\nu^\mathrm{B}, \boldsymbol{k}-\boldsymbol{q})
 \end{align}
  \end{split}\]</div>
 <p>for the gap function <span class="math notranslate nohighlight">\(\Delta\)</span> (‘order parameter’) in either the spin singlet (<span class="math notranslate nohighlight">\(\xi=\mathrm{S}\)</span>) or spin triplet (<span class="math notranslate nohighlight">\(\xi=\mathrm{T}\)</span>) pairing channel. <span class="math notranslate nohighlight">\(F^{(\xi)} = -|G|^2\Delta^{(\xi)}\)</span> is the anomalous Green function. Just like the convoluted sum for the self-energy, we can compute this equation easily after Fourier transforming to</p>
@@ -918,8 +964,8 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-    V^{(\xi=\mathrm{S})}(i\nu_m, \boldsymbol{q}) &amp;= \frac{3}{2}U^2\chi_{\mathrm{s}}(i\nu_m, \boldsymbol{q}) - \frac{1}{2}U^2\chi_{\mathrm{c}}(i\nu_m, \boldsymbol{q}) + U\,,\\
-    V^{(\xi=\mathrm{T})}(i\nu_m, \boldsymbol{q}) &amp;= -\frac{1}{2}U^2\chi_{\mathrm{s}}(i\nu_m, \boldsymbol{q}) - \frac{1}{2}U^2\chi_{\mathrm{c}}(i\nu_m, \boldsymbol{q})\,.
+    V^{(\xi=\mathrm{S})}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) &amp;= \frac{3}{2}U^2\chi_{\mathrm{s}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) - \frac{1}{2}U^2\chi_{\mathrm{c}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) + U\,,\\
+    V^{(\xi=\mathrm{T})}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) &amp;= -\frac{1}{2}U^2\chi_{\mathrm{s}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) - \frac{1}{2}U^2\chi_{\mathrm{c}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})\,.
 \end{align}
 \end{split}\]</div>
 <p>The gap equation is effectively an eigenvalue problem with <span class="math notranslate nohighlight">\(\Delta\)</span> being the eigenvector and <span class="math notranslate nohighlight">\(\mathcal{K}\sim V |G|^2\)</span> the matrix. Since we are only interested in the phase transition of the dominant symmetry pairing channel, we can solve for the largest eigenvalue <span class="math notranslate nohighlight">\(\lambda\)</span> via the power method.</p>
@@ -937,10 +983,10 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">LinearizedGapSolver</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">FLEX_solver</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">sfc_tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Solver class for solving the linearized gap equation using the power method.</span>
 <span class="sd">        It takes FLEX results as an input.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         
         <span class="c1">## Initialize necessary quantities from converged (normal state) FLEX calculation</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span> <span class="o">=</span> <span class="n">FLEX_solver</span><span class="o">.</span><span class="n">mesh</span>
@@ -966,7 +1012,7 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
         <span class="bp">self</span><span class="o">.</span><span class="n">lam</span> <span class="o">=</span> <span class="mi">0</span>
         
     <span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Solving instance to find eigenvalue from power method &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Solving instance to find eigenvalue from power method """</span>
         <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxiter</span><span class="p">):</span>
             <span class="n">lam_old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lam</span>
             <span class="n">delta_old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta</span>
@@ -977,7 +1023,7 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
     
             <span class="c1"># Fourier transform to momentum space</span>
             <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">r_to_k</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
-            <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="n">delta</span><span class="p">)</span>
+            <span class="n">delta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">'F'</span><span class="p">,</span><span class="n">delta</span><span class="p">)</span>
     
             <span class="c1"># calculate eigenvalue</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span><span class="o">*</span><span class="n">delta_old</span><span class="p">)</span> <span class="p">)</span>
@@ -991,7 +1037,7 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
     
     <span class="c1">#%%%%%%%%%%% Calculation steps</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">V_singlet_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Set up interaction in real space and imaginary time &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Set up interaction in real space and imaginary time """</span>
     
         <span class="n">V</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">U</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_spin</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">U</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_charge</span>
         <span class="c1"># Constant Hartree Term V ~ U needs to be treated extra, since it cannot be modeled by the IR basis.</span>
@@ -999,15 +1045,15 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
     
         <span class="c1"># Fourier transform</span>
         <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">k_to_r</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">V_singlet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V_singlet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">'B'</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">frit_calc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Calculate (linearized) anomalous Green function F = -|G|^2 * delta for evaluating the gap equation &quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">""" Calculate (linearized) anomalous Green function F = -|G|^2 * delta for evaluating the gap equation """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fkio</span> <span class="o">=</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">gkio</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gkio</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">delta</span>
         
         <span class="c1"># Fourier transform</span>
         <span class="n">frit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">k_to_r</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fkio</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">frit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">frit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frit</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">wn_to_tau</span><span class="p">(</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">frit</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1019,21 +1065,21 @@ FLEX loop finished  mu =  -0.6713298055026865 n =  0.8500000000000001
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gap_solver</span> <span class="o">=</span> <span class="n">LinearizedGapSolver</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span> <span class="n">sfc_tol</span><span class="o">=</span><span class="n">sfc_tol</span><span class="p">)</span>
 <span class="n">gap_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The superconducting eigenvalue at T=</span><span class="si">{}</span><span class="s2"> is lambda_d=</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">lam</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The superconducting eigenvalue at T=</span><span class="si">{}</span><span class="s2"> is lambda_d=</span><span class="si">{:.3f}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">lam</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0.11506812006551756 0.11506812006551756
-1 0.4050857615164143 0.2900176414508967
-2 0.44825773555824844 0.04317197404183415
-3 0.4549835659347099 0.006725830376461461
-4 0.4565823894830906 0.0015988235483807012
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0.11506867124286616 0.11506867124286616
+1 0.405085755136786 0.2900170838939199
+2 0.4482577307241001 0.04317197558731406
+3 0.4549835609760414 0.006725830251941345
+4 0.4565823844730335 0.0015988234969920856
+5 0.45696174167894965 0.0003793572059161421
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 0.45696174670309897 0.00037935722000836947
-6 0.45706387421345646 0.0001021275103574859
-7 0.4570904439778188 2.6569764362327497e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 0.45706386918387093 0.00010212750492127887
+7 0.45709043894656387 2.6569762692940646e-05
 The superconducting eigenvalue at T=0.1 is lambda_d=0.457
 </pre></div>
 </div>
@@ -1046,90 +1092,82 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.457
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot 2D k-dependence of lowest Matsubara frequency of the gap vs. initial guess</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">delta0</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">delta0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">delta0</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">delta0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu'</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$k_x/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$k_x/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$k_y/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$k_y/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">Delta^0_d(k)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">Delta^0_d(k)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">delta</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">delta</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu'</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$k_x/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$k_x/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$k_y/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$k_y/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">Delta_d(k,i\omega_0)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\Delta_d(k,\mathrm</span><span class="si">{i}</span><span class="s1">\pi T)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_9082/1784683789.py:5: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/tmp/ipykernel_9082/1784683789.py:7: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/tmp/ipykernel_9082/1784683789.py:16: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/tmp/ipykernel_9082/1784683789.py:18: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/tmp/ipykernel_9082/1784683789.py:21: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_title(&#39;$\\Delta_d(k,i\omega_0)$&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:16: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:18: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:16: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:18: SyntaxWarning: invalid escape sequence '\p'
+/tmp/ipykernel_5291/3544012212.py:5: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_xlabel('$k_x/\pi$')
+/tmp/ipykernel_5291/3544012212.py:7: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_ylabel('$k_y/\pi$')
+/tmp/ipykernel_5291/3544012212.py:16: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_xlabel('$k_x/\pi$')
+/tmp/ipykernel_5291/3544012212.py:18: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_ylabel('$k_y/\pi$')
 </pre></div>
 </div>
-<img alt="../_images/07ab2c287687a1f6cc762b35828556680585bae0f1ce930c40eb412a5a5f54b7.png" src="../_images/07ab2c287687a1f6cc762b35828556680585bae0f1ce930c40eb412a5a5f54b7.png" />
-<img alt="../_images/4f5373063c0bca153e583df09e0462d025ada995c45a3b0cf18518e1fe0b080d.png" src="../_images/4f5373063c0bca153e583df09e0462d025ada995c45a3b0cf18518e1fe0b080d.png" />
+<img alt="../_images/a8f29265fb5ae640ac6f93fa23988c6fdeab8acc3180ceb93611cc0e48939f0d.png" src="../_images/a8f29265fb5ae640ac6f93fa23988c6fdeab8acc3180ceb93611cc0e48939f0d.png" />
+<img alt="../_images/65d05f280d6463d37424e413e87d8015d4fbf35ade4581f90fa7be5d8af37f3b.png" src="../_images/65d05f280d6463d37424e413e87d8015d4fbf35ade4581f90fa7be5d8af37f3b.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot 2D k-dependence of lowest Matsubara frequency of the anomalous Green function</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">fkio</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">mesh</span><span class="o">.</span><span class="n">k2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="n">nk2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">gap_solver</span><span class="o">.</span><span class="n">fkio</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="p">)),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'RdBu'</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$k_x/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$k_x/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$k_y/\pi$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$k_y/\pi$'</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Re $F(k,i\omega_0)$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'Re $F(k,\mathrm</span><span class="si">{i}</span><span class="s1">\pi T)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-/tmp/ipykernel_9082/74277736.py:5: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_xlabel(&#39;$k_x/\pi$&#39;)
-/tmp/ipykernel_9082/74277736.py:7: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  ax.set_ylabel(&#39;$k_y/\pi$&#39;)
-/tmp/ipykernel_9082/74277736.py:10: SyntaxWarning: invalid escape sequence &#39;\o&#39;
-  ax.set_title(&#39;Re $F(k,i\omega_0)$&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence '\p'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\p'
+/tmp/ipykernel_5291/3183819188.py:5: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_xlabel('$k_x/\pi$')
+/tmp/ipykernel_5291/3183819188.py:7: SyntaxWarning: invalid escape sequence '\p'
+  ax.set_ylabel('$k_y/\pi$')
 </pre></div>
 </div>
-<img alt="../_images/5eae8d303f3626838a859eac1fa11ec8730c66464a7c43d1c95b57df8b2ffadd.png" src="../_images/5eae8d303f3626838a859eac1fa11ec8730c66464a7c43d1c95b57df8b2ffadd.png" />
+<img alt="../_images/fa5a296a84063e7b2087a1f9ac1e8b8b12ce06cf8d5d39ee284d94cbd9bf14b5.png" src="../_images/fa5a296a84063e7b2087a1f9ac1e8b8b12ce06cf8d5d39ee284d94cbd9bf14b5.png" />
 </div>
 </div>
 </section>
@@ -1137,13 +1175,13 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.457
 </section>
 <section id="example-antiferromagnetic-fluctuations-and-d-wave-superconductivity-in-the-square-lattice-hubbard-model">
 <h2>Example: Antiferromagnetic fluctuations and <span class="math notranslate nohighlight">\(d\)</span>-wave superconductivity in the square-lattice Hubbard model<a class="headerlink" href="#example-antiferromagnetic-fluctuations-and-d-wave-superconductivity-in-the-square-lattice-hubbard-model" title="Link to this heading">#</a></h2>
-<p>In this section, we will reproduce Figs. 3(b) and 4 of <span id="id7">[<a class="reference internal" href="bibliography.html#id45" title="Ryotaro Arita, Kazuhiko Kuroki, and Hideo Aoki. D- and p-wave superconductivity mediated by spin fluctuations in two- and three-dimensional single-band repulsive hubbard model. Journal of the Physical Society of Japan, 69(4):1181-1191, 2000. URL: https://doi.org/10.1143/JPSJ.69.1181, arXiv:https://doi.org/10.1143/JPSJ.69.1181, doi:10.1143/JPSJ.69.1181.">Arita <em>et al.</em>, 2000</a>]</span> or respective Fig. 2(a) of <span id="id8">[<a class="reference internal" href="bibliography.html#id42" title="Niklas Witt, Erik G. C. P. van Loon, Takuya Nomoto, Ryotaro Arita, and Tim O. Wehling. Efficient fluctuation-exchange approach to low-temperature spin fluctuations and superconductivity: from the hubbard model to $\mathrm Na_x\mathrm CoO_2\ifmmode \cdot \else ·\fi y\mathrm H_2\mathrm O$. Phys. Rev. B, 103:205148, May 2021. URL: https://link.aps.org/doi/10.1103/PhysRevB.103.205148, doi:10.1103/PhysRevB.103.205148.">Witt <em>et al.</em>, 2021</a>]</span> using the Sparse-IR FLEX code developed above. It shows (i) the momemtum dependence of the static spin susceptibility and (ii) the temperature dependence of the superconducting eigenvalue <span class="math notranslate nohighlight">\(\lambda_d\)</span> (as calculated above) and the inverse maximal spin susceptibility <span class="math notranslate nohighlight">\(1/\chi_{\mathrm{s,max}}\)</span>, which indicates tendency towards (quasi-)magnetic ordering.</p>
+<p>In this section, we will reproduce Figs. 3(b) and 4 of <span class="bibtex-citation" id="id7">[<a class="reference internal" href="bibliography.html#id45" title="Ryotaro Arita, Kazuhiko Kuroki, and Hideo Aoki. D- and p-wave superconductivity mediated by spin fluctuations in two- and three-dimensional single-band repulsive hubbard model. Journal of the Physical Society of Japan, 69(4):1181-1191, 2000. URL: https://doi.org/10.1143/JPSJ.69.1181, arXiv:https://doi.org/10.1143/JPSJ.69.1181, doi:10.1143/JPSJ.69.1181.">Arita <em>et al.</em>, 2000</a>]</span> or respective Fig. 2(a) of <span class="bibtex-citation" id="id8">[<a class="reference internal" href="bibliography.html#id42" title="Niklas Witt, Erik G. C. P. van Loon, Takuya Nomoto, Ryotaro Arita, and Tim O. Wehling. Efficient fluctuation-exchange approach to low-temperature spin fluctuations and superconductivity: from the hubbard model to $\mathrm Na_x\mathrm CoO_2\ifmmode \cdot \else ·\fi y\mathrm H_2\mathrm O$. Phys. Rev. B, 103:205148, May 2021. URL: https://link.aps.org/doi/10.1103/PhysRevB.103.205148, doi:10.1103/PhysRevB.103.205148.">Witt <em>et al.</em>, 2021</a>]</span> using the Sparse-IR FLEX code developed above. It shows (i) the momemtum dependence of the static spin susceptibility and (ii) the temperature dependence of the superconducting eigenvalue <span class="math notranslate nohighlight">\(\lambda_d\)</span> (as calculated above) and the inverse maximal spin susceptibility <span class="math notranslate nohighlight">\(1/\chi_{\mathrm{s,max}}\)</span>, which indicates tendency towards (quasi-)magnetic ordering.</p>
 <p>In order to perform calculations for different <span class="math notranslate nohighlight">\(T\)</span>, we will initiate the IR basis with a <span class="math notranslate nohighlight">\(\Lambda = \beta_{\mathrm{max}}\omega_{\mathrm{max}}\)</span> that is sufficient for the lowest temperature <span class="math notranslate nohighlight">\(T_{\mathrm{min}} = 1/\beta_{\mathrm{max}}\)</span> we plan to do calculations for. Since <span class="math notranslate nohighlight">\(T\)</span> changes, we have to reevaluate the IR basis set instance for every step. We start from high <span class="math notranslate nohighlight">\(T\)</span> and decrease its value. We initialize a new FLEX loop at a lower <span class="math notranslate nohighlight">\(T\)</span> by using the previously converged solution, since it does not change drastically and speeds up convergence.</p>
 <p>You can simply execute the following two code blocks which will first perform the calculation and then generate a figure similar to those in the references above.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%%%%%%%%%%%%%%% Parameter settings</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Initialization...&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Initialization...'</span><span class="p">)</span>
 <span class="c1"># system parameters</span>
 <span class="n">t</span>    <span class="o">=</span> <span class="mi">1</span>      <span class="c1"># hopping amplitude</span>
 <span class="n">n</span>    <span class="o">=</span> <span class="mf">0.85</span>   <span class="c1"># electron filling, here per spin per lattice site (n=1: half filling)</span>
@@ -1156,7 +1194,7 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.457
 <span class="c1"># numerical parameters</span>
 <span class="n">nk1</span><span class="p">,</span> <span class="n">nk2</span>  <span class="o">=</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span>    <span class="c1"># k-mesh sufficiently dense!</span>
 <span class="n">nk</span>        <span class="o">=</span> <span class="n">nk1</span><span class="o">*</span><span class="n">nk2</span>
-<span class="n">IR_Lambda</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span>     <span class="c1"># dimensionless IR parameter &gt;= w_max * beta_min = 400</span>
+<span class="n">IR_Lambda</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">3</span>     <span class="c1"># dimensionless IR parameter &gt;= wmax * beta_max = 400</span>
 <span class="n">IR_tol</span>    <span class="o">=</span> <span class="mf">1e-8</span>      <span class="c1"># desired accuary for l-cutoff of IR basis functions</span>
 <span class="n">sfc_tol</span>   <span class="o">=</span> <span class="mf">1e-4</span>      <span class="c1"># desired accuracy for self-consistent iteration</span>
 <span class="n">it_max</span>    <span class="o">=</span> <span class="mi">30</span>        <span class="c1"># maximal number of iterations in self-consistent cycle</span>
@@ -1177,7 +1215,7 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.457
 
 <span class="c1">#%%%%%%%%%%%%%%% Calculation for different T values</span>
 <span class="k">for</span> <span class="n">T_it</span><span class="p">,</span> <span class="n">T</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">T_values</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Now: T = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Now: T = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
     <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">T</span>
 
     <span class="c1"># initialize meshes</span>
@@ -1186,12 +1224,12 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.457
     
     <span class="c1"># calculate FLEX loop</span>
     <span class="n">solver</span> <span class="o">=</span> <span class="n">FLEXSolver</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">sigma_init</span><span class="o">=</span><span class="n">sigma_init</span><span class="p">,</span> <span class="n">sfc_tol</span><span class="o">=</span><span class="n">sfc_tol</span><span class="p">,</span> 
-                        <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span> <span class="n">U_maxiter</span><span class="o">=</span><span class="n">U_maxiter</span><span class="p">,</span> <span class="n">mix</span><span class="o">=</span><span class="n">mix</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                        <span class="n">maxiter</span><span class="o">=</span><span class="n">it_max</span><span class="p">,</span> <span class="n">U_maxiter</span><span class="o">=</span><span class="n">U_it_max</span><span class="p">,</span> <span class="n">mix</span><span class="o">=</span><span class="n">mix</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
     <span class="n">sigma_init</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">sigma</span>
 
     <span class="c1"># calculate linearized gap equation</span>
-    <span class="n">gap_solver</span> <span class="o">=</span> <span class="n">LinearizedGapSolver</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span> <span class="n">sfc_tol</span><span class="o">=</span><span class="n">sfc_tol</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">gap_solver</span> <span class="o">=</span> <span class="n">LinearizedGapSolver</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="n">it_max</span><span class="p">,</span> <span class="n">sfc_tol</span><span class="o">=</span><span class="n">sfc_tol</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">gap_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
     
     <span class="c1"># save data for plotting</span>
@@ -1212,66 +1250,62 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.457
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!
 Initiate U renormalization loop.
-1 2.2871467923985134 4
-2 2.48568473302158 4
-3 2.689078018648907 4
-4 2.895247551029832 4
+1 2.2871467924426105 4
+2 2.4856847329902765 4
+3 2.6890780185958474 4
+4 2.895247551053964 4
+5 3.1004194839034858 4
+6 3.306837927955802 4
+7 3.5156369594103567 4
+8 3.7272843762091323 4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 3.1004194838443198 4
-6 3.3068379278804017 4
-7 3.515636959328878 4
-8 3.727284376127315 4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 3.9417173198592796 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 3.94171731993827 4
 Leaving U renormalization...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6743334860145459 n =  0.8499999999999992
+FLEX loop finished  mu =  -0.6743334860011422 n =  0.8500000000000012
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.07
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6758310005565067 n =  0.8499999999999999
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.06
+FLEX loop finished  mu =  -0.6758310005529391 n =  0.8499999999999985
+Now: T = 0.06
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.677321131817976 n =  0.8500000000000014
+FLEX loop finished  mu =  -0.6773211318271805 n =  0.8500000000000001
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.05
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6786033878293237 n =  0.8499999999999988
+FLEX loop finished  mu =  -0.6786033878226603 n =  0.8499999999999994
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.04
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6795225333898375 n =  0.8500000000000001
+FLEX loop finished  mu =  -0.6795225333915923 n =  0.8499999999999996
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.03
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6799832822016448 n =  0.8499999999999994
+FLEX loop finished  mu =  -0.6799832821970707 n =  0.8499999999999994
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.025
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
-FLEX loop finished  mu =  -0.6801766287428851 n =  0.8499999999999992
+FLEX loop finished  mu =  -0.6801766287413304 n =  0.8499999999999996
 </pre></div>
 </div>
 </div>
@@ -1294,22 +1328,22 @@ FLEX loop finished  mu =  -0.6801766287428851 n =  0.8499999999999992
                           <span class="n">chi_s_plt</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk2</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span>
                           <span class="p">[</span><span class="n">chi_s_plt</span><span class="p">[</span><span class="n">it</span><span class="p">,</span><span class="n">it</span><span class="p">]</span> <span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">nk1</span><span class="o">//</span><span class="mi">2</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 
-<span class="n">f_ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_HSP</span><span class="p">,</span> <span class="n">chi_s_HSP</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">f_ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_HSP</span><span class="p">,</span> <span class="n">chi_s_HSP</span><span class="p">,</span><span class="s1">'-'</span><span class="p">)</span>
 <span class="n">f_ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
 <span class="n">f_ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
-<span class="n">f_ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;$\Gamma$&#39;</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="s1">&#39;$\Gamma$&#39;</span><span class="p">])</span>
+<span class="n">f_ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">'$\Gamma$'</span><span class="p">,</span><span class="s1">'X'</span><span class="p">,</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'$\Gamma$'</span><span class="p">])</span>
 <span class="n">f_ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">26</span><span class="p">])</span>
-<span class="n">f_ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">f_ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">chi_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{s}</span><span class="s1">}(i</span><span class="se">\\</span><span class="s1">nu=0,{</span><span class="se">\\</span><span class="s1">bf</span><span class="si">{q}</span><span class="s1">})$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">f_ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+<span class="n">f_ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$</span><span class="se">\\</span><span class="s1">chi_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{s}</span><span class="s1">}(</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{i}</span><span class="se">\\</span><span class="s1">nu^</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{B}</span><span class="s1">=0,{</span><span class="se">\\</span><span class="s1">bf</span><span class="si">{q}</span><span class="s1">})$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">f_ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 
 <span class="c1"># second panel with T-dependence of lambda_d and 1/chi_s,max</span>
-<span class="n">f_ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_values</span><span class="p">,</span> <span class="n">lam_T</span><span class="p">,</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\lambda_d$&#39;</span><span class="p">)</span>
-<span class="n">f_ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_values</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">chiSmax_T</span><span class="p">,</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$1/\chi_{\mathrm</span><span class="si">{s}</span><span class="s1">,\mathrm</span><span class="si">{max}</span><span class="s1">}$&#39;</span><span class="p">)</span>
+<span class="n">f_ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_values</span><span class="p">,</span> <span class="n">lam_T</span><span class="p">,</span> <span class="s1">'-x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$\lambda_d$'</span><span class="p">)</span>
+<span class="n">f_ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T_values</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">chiSmax_T</span><span class="p">,</span> <span class="s1">'-x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$1/\chi_{\mathrm</span><span class="si">{s}</span><span class="s1">,\mathrm</span><span class="si">{max}</span><span class="s1">}$'</span><span class="p">)</span>
 <span class="n">f_ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.08</span><span class="p">])</span>
 <span class="n">f_ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">f_ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$T/t$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
-<span class="n">f_ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\lambda_d$, $1/\chi_{\mathrm</span><span class="si">{s}</span><span class="s1">,\mathrm</span><span class="si">{max}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">f_ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$T/t$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">f_ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$\lambda_d$, $1/\chi_{\mathrm</span><span class="si">{s}</span><span class="s1">,\mathrm</span><span class="si">{max}</span><span class="s1">}$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">f_ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">f_ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1317,29 +1351,29 @@ FLEX loop finished  mu =  -0.6801766287428851 n =  0.8499999999999992
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-&lt;&gt;:27: SyntaxWarning: invalid escape sequence &#39;\l&#39;
-&lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\l&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-&lt;&gt;:27: SyntaxWarning: invalid escape sequence &#39;\l&#39;
-&lt;&gt;:28: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\l&#39;
-/tmp/ipykernel_9082/2352191630.py:20: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-  f_ax1.set_xticklabels([&#39;$\Gamma$&#39;,&#39;X&#39;,&#39;M&#39;,&#39;$\Gamma$&#39;])
-/tmp/ipykernel_9082/2352191630.py:20: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-  f_ax1.set_xticklabels([&#39;$\Gamma$&#39;,&#39;X&#39;,&#39;M&#39;,&#39;$\Gamma$&#39;])
-/tmp/ipykernel_9082/2352191630.py:27: SyntaxWarning: invalid escape sequence &#39;\l&#39;
-  f_ax2.plot(T_values, lam_T, &#39;-x&#39;, label=&#39;$\lambda_d$&#39;)
-/tmp/ipykernel_9082/2352191630.py:28: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-  f_ax2.plot(T_values, 1/chiSmax_T, &#39;-x&#39;, label=&#39;$1/\chi_{\mathrm{s},\mathrm{max}}$&#39;)
-/tmp/ipykernel_9082/2352191630.py:32: SyntaxWarning: invalid escape sequence &#39;\l&#39;
-  f_ax2.set_ylabel(&#39;$\lambda_d$, $1/\chi_{\mathrm{s},\mathrm{max}}$&#39;, fontsize=14)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:20: SyntaxWarning: invalid escape sequence '\G'
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence '\G'
+&lt;&gt;:27: SyntaxWarning: invalid escape sequence '\l'
+&lt;&gt;:28: SyntaxWarning: invalid escape sequence '\c'
+&lt;&gt;:32: SyntaxWarning: invalid escape sequence '\l'
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence '\G'
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence '\G'
+&lt;&gt;:27: SyntaxWarning: invalid escape sequence '\l'
+&lt;&gt;:28: SyntaxWarning: invalid escape sequence '\c'
+&lt;&gt;:32: SyntaxWarning: invalid escape sequence '\l'
+/tmp/ipykernel_5291/324788705.py:20: SyntaxWarning: invalid escape sequence '\G'
+  f_ax1.set_xticklabels(['$\Gamma$','X','M','$\Gamma$'])
+/tmp/ipykernel_5291/324788705.py:20: SyntaxWarning: invalid escape sequence '\G'
+  f_ax1.set_xticklabels(['$\Gamma$','X','M','$\Gamma$'])
+/tmp/ipykernel_5291/324788705.py:27: SyntaxWarning: invalid escape sequence '\l'
+  f_ax2.plot(T_values, lam_T, '-x', label='$\lambda_d$')
+/tmp/ipykernel_5291/324788705.py:28: SyntaxWarning: invalid escape sequence '\c'
+  f_ax2.plot(T_values, 1/chiSmax_T, '-x', label='$1/\chi_{\mathrm{s},\mathrm{max}}$')
+/tmp/ipykernel_5291/324788705.py:32: SyntaxWarning: invalid escape sequence '\l'
+  f_ax2.set_ylabel('$\lambda_d$, $1/\chi_{\mathrm{s},\mathrm{max}}$', fontsize=14)
 </pre></div>
 </div>
-<img alt="../_images/9c1d863bdf9fcbbdf818eaf25f540050a861e235bd302e92ef3452ffa0d0b44f.png" src="../_images/9c1d863bdf9fcbbdf818eaf25f540050a861e235bd302e92ef3452ffa0d0b44f.png" />
+<img alt="../_images/9f673bc9ba85cb318dd5bc19ebab94164dab68e5b3c5dbf2801ddef9cccd339d.png" src="../_images/9f673bc9ba85cb318dd5bc19ebab94164dab68e5b3c5dbf2801ddef9cccd339d.png" />
 </div>
 </div>
 </section>
@@ -1400,15 +1434,17 @@ FLEX loop finished  mu =  -0.6801766287428851 n =  0.8499999999999992
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory-of-flex-in-the-paramagnetic-state">Theory of FLEX in the paramagnetic state</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-of-flex-equations">Set of FLEX equations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-practical-implementation">Notes on practical implementation</a></li>
@@ -1482,8 +1518,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

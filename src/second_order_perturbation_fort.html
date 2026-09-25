@@ -16,47 +16,56 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -66,6 +75,12 @@
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -73,38 +88,35 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/second_order_perturbation_fort';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -112,7 +124,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -120,15 +131,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -139,7 +194,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,23 +225,20 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLR.html">Discrete Lehmann representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matsubarasum.html">Summation over Matsubara axis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">Notation and conventions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html">Intermediate representation (IR)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html">Sparse sampling</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/DLR.html">Discrete Lehmann representation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html">Summation over Matsubara axis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -236,9 +289,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -321,7 +379,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -335,25 +393,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -375,7 +425,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-sparse-ir-fortran">How to use sparse-ir-fortran</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-tutorial-code">Building the tutorial code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-code-second-order-perturbation-fort-x">Running the code “<code class="docutils literal notranslate"><span class="pre">second_order_perturbation_fort.x</span></code>”</a></li>
@@ -490,7 +540,7 @@ To judge whether a given fitting problem (that is, a given matrix) is suitable t
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">script.plt</span></code> is:</p>
-<div class="highlight-gnuplot notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="nb">terminal</span><span class="w"> </span><span class="n">pdfcairo</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">enhanced</span><span class="w"> </span><span class="n">font</span><span class="w"> </span><span class="s">&quot;Times,20&quot;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="mi">5</span><span class="o">,</span><span class="mf">3.5</span>
+<div class="highlight-gnuplot notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="nb">terminal</span><span class="w"> </span><span class="n">pdfcairo</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="n">enhanced</span><span class="w"> </span><span class="n">font</span><span class="w"> </span><span class="s">"Times,20"</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="mi">5</span><span class="o">,</span><span class="mf">3.5</span>
 <span class="k">set</span><span class="w"> </span><span class="err">colorsequence</span><span class="w"> </span><span class="err">classi</span><span class="nb">c</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">lmargin</span><span class="w"> </span><span class="mi">10</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">rmargin</span><span class="w"> </span><span class="mi">5</span>
@@ -499,110 +549,110 @@ To judge whether a given fitting problem (that is, a given matrix) is suitable t
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-580</span><span class="o">:</span><span class="mi">580</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">200</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;ν&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"ν"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mi">-0</span><span class="mf">.14</span><span class="o">:</span><span class="mf">0.14</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">0.05</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;Im G(iν, k)&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"Im G(iν, k)"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="err">no</span><span class="nb">logscale</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">top</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_g_k_freq_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_gkf_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">4</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;k = Γ&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_g_k_freq_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_gkf_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">4</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"k = Γ"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-4</span><span class="o">:</span><span class="mi">74</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">20</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"l"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mf">1E-9</span><span class="o">:</span><span class="mf">2E0</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">1E2</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;%.0E&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;|G(l, k)|&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"%.0E"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"|G(l, k)|"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">logscale</span><span class="w"> </span><span class="n">y</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">top</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_abs-g_k_l_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_gkl_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;k = Γ&quot;</span><span class="o">,</span><span class="w"> </span>\
-<span class="w">     </span><span class="s">&quot;./second_order_gkl_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nf">dt</span> <span class="p">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;Singular values&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_abs-g_k_l_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_gkl_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"k = Γ"</span><span class="o">,</span><span class="w"> </span>\
+<span class="w">     </span><span class="s">"./second_order_gkl_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nf">dt</span> <span class="p">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="s">"orange"</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"Singular values"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-50</span><span class="o">:</span><span class="mi">1050</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">200</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;τ&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"τ"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mi">-1</span><span class="mf">.05</span><span class="o">:</span><span class="mf">0.05</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">0.2</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;Re G(τ, k)&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"Re G(τ, k)"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="err">no</span><span class="nb">logscale</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">bottom</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_g_k_tau_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_gkt_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;k = Γ&quot;</span><span class="o">,</span><span class="w"> </span>\
-<span class="w">     </span><span class="s">&quot;./second_order_gkt_m.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;k = M&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_g_k_tau_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_gkt_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"k = Γ"</span><span class="o">,</span><span class="w"> </span>\
+<span class="w">     </span><span class="s">"./second_order_gkt_m.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="s">"orange"</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"k = M"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-50</span><span class="o">:</span><span class="mi">1050</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">200</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;τ&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"τ"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mi">-0</span><span class="mf">.51</span><span class="o">:</span><span class="mf">0.01</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">0.1</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;Re G(τ, r)&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"Re G(τ, r)"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="err">no</span><span class="nb">logscale</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="n">bottom</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_g_r_tau_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_grt_r_0.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;r = (0, 0)&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_g_r_tau_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_grt_r_0.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"r = (0, 0)"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-50</span><span class="o">:</span><span class="mi">1050</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">200</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;τ&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"τ"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mi">-0</span><span class="mf">.51</span><span class="o">:</span><span class="mf">0.01</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">0.1</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;Re Σ(τ, r)&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"Re Σ(τ, r)"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="err">no</span><span class="nb">logscale</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="n">bottom</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_sigma_r_tau_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_srt_r_0.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;r = (0, 0)&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_sigma_r_tau_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_srt_r_0.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"r = (0, 0)"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-4</span><span class="o">:</span><span class="mi">74</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">20</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"l"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mf">1E-8</span><span class="o">:</span><span class="mf">1E0</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">1E2</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;%.0E&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;|Σ(l, r)|&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"%.0E"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"|Σ(l, r)|"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">logscale</span><span class="w"> </span><span class="n">y</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">top</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_abs-sigma_r_l_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_srl_r_0.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">4</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;r = (0, 0)&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_abs-sigma_r_l_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_srl_r_0.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">4</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"r = (0, 0)"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-4</span><span class="o">:</span><span class="mi">74</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">20</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;l&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"l"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mf">1E-10</span><span class="o">:</span><span class="mf">5E0</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">1E-9</span><span class="o">,</span><span class="w"> </span><span class="mf">1E+2</span><span class="o">,</span><span class="w"> </span><span class="mf">1E-1</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;%.0E&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;|Σ(l, r)|&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"%.0E"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"|Σ(l, r)|"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">logscale</span><span class="w"> </span><span class="n">y</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">top</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_sigma_k_l_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_skl_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;k = Γ&quot;</span><span class="o">,</span><span class="w"> </span>\
-<span class="w">     </span><span class="s">&quot;./second_order_skl_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nf">dt</span> <span class="p">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;Singular values&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_sigma_k_l_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_skl_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"k = Γ"</span><span class="o">,</span><span class="w"> </span>\
+<span class="w">     </span><span class="s">"./second_order_skl_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nf">dt</span> <span class="p">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="n">rgb</span><span class="w"> </span><span class="s">"orange"</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"Singular values"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">xrange</span><span class="p">[</span><span class="mi">-580</span><span class="o">:</span><span class="mi">580</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">xtics</span><span class="w"> </span><span class="mi">200</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;ν&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"ν"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">0</span><span class="o">,</span><span class="w"> </span><span class="mf">0.5</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="p">[</span><span class="mi">-0</span><span class="mf">.14</span><span class="o">:</span><span class="mf">0.14</span><span class="p">]</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">ytics</span><span class="w"> </span><span class="mf">0.05</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">&quot;% g&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;Im Σ(iν, k)&quot;</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">format</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="s">"% g"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"Im Σ(iν, k)"</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="mi">0</span>
 <span class="k">set</span><span class="w"> </span><span class="err">no</span><span class="nb">logscale</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">key</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="n">top</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">&quot;second_order_sigma_k_freq_fort.pdf&quot;</span>
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;./second_order_skf_gamma.txt&quot;</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">4</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;k = Γ&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">out</span><span class="w"> </span><span class="s">"second_order_sigma_k_freq_fort.pdf"</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"./second_order_skf_gamma.txt"</span><span class="w"> </span><span class="nb">u</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">4</span><span class="w"> </span><span class="nb">w</span><span class="w"> </span><span class="n">lp</span><span class="w"> </span><span class="n">lw</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lt</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">pt</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">lc</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"k = Γ"</span>
 </pre></div>
 </div>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">sparse-ir-fortran</span></code> interface can evaluate functions only on sampling frequency points from a set of expansion coefficients. This tutorial does not evaluate the self-energy on a finer mesh of frequency.</p>
@@ -646,15 +696,17 @@ To judge whether a given fitting problem (that is, a given matrix) is suitable t
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-sparse-ir-fortran">How to use sparse-ir-fortran</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-tutorial-code">Building the tutorial code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-code-second-order-perturbation-fort-x">Running the code “<code class="docutils literal notranslate"><span class="pre">second_order_perturbation_fort.x</span></code>”</a></li>
@@ -706,8 +758,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

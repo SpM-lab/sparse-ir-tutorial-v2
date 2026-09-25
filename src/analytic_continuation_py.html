@@ -16,47 +16,56 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -66,6 +75,12 @@
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -73,40 +88,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/analytic_continuation_py';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SpM analytic continuation" href="spm_py.html" />
     <link rel="prev" title="Estimation of exchange interactions" href="liechtenstein_py.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -114,7 +126,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -122,15 +133,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -139,7 +194,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,23 +225,20 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLR.html">Discrete Lehmann representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matsubarasum.html">Summation over Matsubara axis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">Notation and conventions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html">Intermediate representation (IR)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html">Sparse sampling</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/DLR.html">Discrete Lehmann representation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html">Summation over Matsubara axis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -236,9 +289,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -321,7 +379,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -335,25 +393,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -375,7 +425,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#least-squares-form">Least squares form</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truncated-svd-regularization">Truncated-SVD regularization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a></li>
@@ -423,21 +473,21 @@ singular (IR basis) functions, the result of a singular value expansion of the k
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span> <span class="o">=</span> <span class="mf">40.0</span>
 <span class="n">wmax</span> <span class="o">=</span> <span class="mf">2.0</span>
-<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">2e-8</span><span class="p">)</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">2e-8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span> <span class="o">/</span> <span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-+&#39;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;singular values $s_\ell/s_0$ of $K(\tau, \omega)$&#39;</span><span class="p">)</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;index $\ell$&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span> <span class="o">/</span> <span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'-+'</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">'singular values $S_l/S_0$ of $K(\tau, \omega)$'</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'index $l$'</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ede1dfaa87846e3134fe1c063865487119118521276a566d486688130ea4b96.png" src="../_images/1ede1dfaa87846e3134fe1c063865487119118521276a566d486688130ea4b96.png" />
+<img alt="../_images/3e2ccaebf03adbcd7b0500026820cbc807c6e573972325370306679a54cc54ee.png" src="../_images/3e2ccaebf03adbcd7b0500026820cbc807c6e573972325370306679a54cc54ee.png" />
 </div>
 </div>
 <!-- #region tags=[] -->
@@ -452,22 +502,22 @@ singular (IR basis) functions, the result of a singular value expansion of the k
 For this, remember that for any imaginary-time propagator:</p>
 <div class="math notranslate nohighlight">
 \[
-    G(\tau) = \sum_{l=0}^{L-1} g_l U_l(\tau) + \epsilon_L(\tau),
+    G(\tau) = \sum_{l=0}^{L-1} G_l U_l(\tau) + \epsilon_L(\tau),
 \]</div>
 <p>where the error term <span class="math notranslate nohighlight">\(\epsilon_L\)</span> drops as <span class="math notranslate nohighlight">\(S_L/S_0\)</span>.  We can now choose the basis cutoff <span class="math notranslate nohighlight">\(L\)</span> large
 enough such that the error term is consistent with the intrinsic accuracy of the <span class="math notranslate nohighlight">\(G(\tau)\)</span>, e.g.,
 machine precision.  (If there is a covariance matrix, generalized least squares should be used.)  Since the IR basis functions <span class="math notranslate nohighlight">\(U_l\)</span> form an isometry, we also have that:</p>
 <div class="math notranslate nohighlight">
 \[
-    \int\ d\tau\ |G(\tau)|^2 = \sum_{l=0}^{L-1} |g_l|^2 + O(\epsilon_L)
+    \int\ d\tau\ |G(\tau)|^2 = \sum_{l=0}^{L-1} |G_l|^2 + O(\epsilon_L)
 \]</div>
 <p>allowing us to truncate our analytic continuation problem to (cf. <a class="reference external" href="https://doi.org/10.1016/0370-1573(95)00074-7">Jarrell and Gubernatis, 1996</a>):</p>
 <div class="math notranslate nohighlight">
 \[
-    \min_\rho \sum_{l=0}^{L-1} \Big| g_l + S_l \int d\omega\ V_l(\omega)\ \rho(\omega) \Big|^2.
+    \min_\rho \sum_{l=0}^{L-1} \Big| G_l + S_l \int d\omega\ V_l(\omega)\ \rho(\omega) \Big|^2.
     \qquad(1)
 \]</div>
-<p>This already is an improvement over many analytical continuation algorithms, as it maximally compresses the observed imaginary-time data <span class="math notranslate nohighlight">\(g_l\)</span> without relying on any <em>a priori</em> discretizations of the kernel.</p>
+<p>This already is an improvement over many analytical continuation algorithms, as it maximally compresses the observed imaginary-time data <span class="math notranslate nohighlight">\(G_l\)</span> without relying on any <em>a priori</em> discretizations of the kernel.</p>
 <!-- #endregion --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">semicirc_dos</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
@@ -502,7 +552,7 @@ machine precision.  (If there is a covariance matrix, generalized least squares 
 <p>where <span class="math notranslate nohighlight">\(L' \le L\)</span>.  The analytic continuation problem (1) then takes the following form:</p>
 <div class="math notranslate nohighlight">
 \[
-    \rho_l = -g_l / S_l.
+    \rho_l = -G_l / S_l.
 \]</div>
 <p>The choice of <span class="math notranslate nohighlight">\(L'\)</span> is now governed by a bias–variance tradeoff: as we increase <span class="math notranslate nohighlight">\(L'\)</span>, more and more features of the spectral function emerge by virtue of <span class="math notranslate nohighlight">\(\rho_l\)</span>, but at the same time <span class="math notranslate nohighlight">\(1/S_l\)</span> amplifies the stastical errors more strongly.</p>
 <div class="cell docutils container">
@@ -522,18 +572,18 @@ machine precision.  (If there is a covariance matrix, generalized least squares 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_plot_one</span><span class="p">(</span><span class="n">subplot</span><span class="p">,</span> <span class="n">dos</span><span class="p">,</span> <span class="n">rho_l</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">subplot</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">dos</span><span class="p">(</span><span class="n">w_plot</span><span class="p">),</span> <span class="s2">&quot;:k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">dos</span><span class="p">(</span><span class="n">w_plot</span><span class="p">),</span> <span class="s2">":k"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"true"</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">Vmat</span><span class="p">[:,</span> <span class="p">:</span><span class="n">Lprime1</span><span class="p">]</span> <span class="o">@</span> <span class="n">rho_l</span><span class="p">[:</span><span class="n">Lprime1</span><span class="p">],</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;reconstructed ($L&#39; = </span><span class="si">{</span><span class="n">Lprime1</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"reconstructed ($L' = </span><span class="si">{</span><span class="n">Lprime1</span><span class="si">}</span><span class="s2">$)"</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">Vmat</span> <span class="o">@</span> <span class="n">rho_l</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;reconstructed ($L&#39; = L = </span><span class="si">{</span><span class="n">basis</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\omega$&quot;</span><span class="p">)</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"reconstructed ($L' = L = </span><span class="si">{</span><span class="n">basis</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">$)"</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\omega$"</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.02</span> <span class="o">*</span> <span class="n">wmax</span><span class="p">,</span> <span class="mf">1.02</span> <span class="o">*</span> <span class="n">wmax</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="n">_plot_one</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">semicirc_dos</span><span class="p">,</span> <span class="n">rho1_l_noisy</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;semi-elliptic DOS $\rho(\omega)$&quot;</span><span class="p">)</span>
-<span class="n">_plot_one</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">insulator_dos</span><span class="p">,</span> <span class="n">rho2_l_noisy</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;insulating DOS $\rho(\omega)$&quot;</span><span class="p">)</span>
+<span class="n">_plot_one</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">semicirc_dos</span><span class="p">,</span> <span class="n">rho1_l_noisy</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"semi-elliptic DOS $\rho(\omega)$"</span><span class="p">)</span>
+<span class="n">_plot_one</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">insulator_dos</span><span class="p">,</span> <span class="n">rho2_l_noisy</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"insulating DOS $\rho(\omega)$"</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">w_pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">h_pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
@@ -541,7 +591,7 @@ machine precision.  (If there is a covariance matrix, generalized least squares 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/92abca9fb30a6ea33bba9a11d3f6744034a20ea2f252abe2fa2bed823b25b43c.png" src="../_images/92abca9fb30a6ea33bba9a11d3f6744034a20ea2f252abe2fa2bed823b25b43c.png" />
+<img alt="../_images/2a6054bd3788d4a79ec611163f500a0e10de2cffe3417da4423f6f4ae9bb04bc.png" src="../_images/2a6054bd3788d4a79ec611163f500a0e10de2cffe3417da4423f6f4ae9bb04bc.png" />
 </div>
 </div>
 </section>
@@ -560,7 +610,7 @@ a default model <span class="math notranslate nohighlight">\(\rho_0(\omega)\)</s
 <p>These constraints are often encoded into the least squares problem (1) by restricting the space of valid  solutions <span class="math notranslate nohighlight">\(\mathcal R\)</span> and by including a regularization term <span class="math notranslate nohighlight">\(f_\mathrm{reg}[\rho]\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-    \min_{\rho\in\mathcal R}\bigg[ \sum_{l=0}^{L-1} \Big| g_l +
+    \min_{\rho\in\mathcal R}\bigg[ \sum_{l=0}^{L-1} \Big| G_l +
     S_l \int d\omega\ V_l(\omega)\ \rho(\omega) \Big|^2 + f_\mathrm{reg}[\rho] \bigg].
     \qquad(2)
 \]</div>
@@ -573,7 +623,7 @@ a default model <span class="math notranslate nohighlight">\(\rho_0(\omega)\)</s
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is a hyperparameter (ideally tuned to the noise level).  This term prevents <span class="math notranslate nohighlight">\(\rho_l\)</span> becoming too large due to noise amplification. The regularized least squares problem (2) then amounts to:</p>
 <div class="math notranslate nohighlight">
 \[
-    \rho_l = -\frac{s_l}{s^2_l + \alpha^2} g_l
+    \rho_l = -\frac{S_l}{S^2_l + \alpha^2} G_l
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,17 +640,17 @@ a default model <span class="math notranslate nohighlight">\(\rho_0(\omega)\)</s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_plot_one</span><span class="p">(</span><span class="n">subplot</span><span class="p">,</span> <span class="n">dos</span><span class="p">,</span> <span class="n">rho_l</span><span class="p">,</span> <span class="n">rho_l_reg</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">subplot</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">dos</span><span class="p">(</span><span class="n">w_plot</span><span class="p">),</span> <span class="s2">&quot;:k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">Vmat</span> <span class="o">@</span> <span class="n">rho_l</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;t-SVD with $L&#39;=L$&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">Vmat</span> <span class="o">@</span> <span class="n">rho_l_reg</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Ridge regression&quot;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\omega$&quot;</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">dos</span><span class="p">(</span><span class="n">w_plot</span><span class="p">),</span> <span class="s2">":k"</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"true"</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">Vmat</span> <span class="o">@</span> <span class="n">rho_l</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"t-SVD with $L'=L$"</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">Vmat</span> <span class="o">@</span> <span class="n">rho_l_reg</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Ridge regression"</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\omega$"</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.02</span> <span class="o">*</span> <span class="n">wmax</span><span class="p">,</span> <span class="mf">1.02</span> <span class="o">*</span> <span class="n">wmax</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
 
-<span class="n">_plot_one</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">semicirc_dos</span><span class="p">,</span> <span class="n">rho1_l_noisy</span><span class="p">,</span> <span class="n">rho1_l_reg</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;semi-elliptic DOS $\rho(\omega)$&quot;</span><span class="p">)</span>
-<span class="n">_plot_one</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">insulator_dos</span><span class="p">,</span> <span class="n">rho2_l_noisy</span><span class="p">,</span> <span class="n">rho2_l_reg</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;insulating DOS $\rho(\omega)$&quot;</span><span class="p">)</span>
+<span class="n">_plot_one</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">semicirc_dos</span><span class="p">,</span> <span class="n">rho1_l_noisy</span><span class="p">,</span> <span class="n">rho1_l_reg</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"semi-elliptic DOS $\rho(\omega)$"</span><span class="p">)</span>
+<span class="n">_plot_one</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">insulator_dos</span><span class="p">,</span> <span class="n">rho2_l_noisy</span><span class="p">,</span> <span class="n">rho2_l_reg</span><span class="p">,</span> <span class="sa">r</span><span class="s2">"insulating DOS $\rho(\omega)$"</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">w_pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">h_pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
@@ -608,13 +658,13 @@ a default model <span class="math notranslate nohighlight">\(\rho_0(\omega)\)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d56a98f8bf3efe5df358c332f32a79c249da37c461a3364a7140e3a148677c3.png" src="../_images/3d56a98f8bf3efe5df358c332f32a79c249da37c461a3364a7140e3a148677c3.png" />
+<img alt="../_images/637e2f6dcc37bb88b11108412cf8104b179a55d363ea1ce7d1bca83c26fb7020.png" src="../_images/637e2f6dcc37bb88b11108412cf8104b179a55d363ea1ce7d1bca83c26fb7020.png" />
 </div>
 </div>
 </section>
 <section id="real-axis-basis">
 <h2>Real-axis basis<a class="headerlink" href="#real-axis-basis" title="Link to this heading">#</a></h2>
-<p>One problem we are facing when solving the <em>regularized</em> least squares problem (2) is that the regularization might “force” values of <span class="math notranslate nohighlight">\(g_l\)</span> well below the threshold <span class="math notranslate nohighlight">\(L\)</span>.  (For example, in general infinitely many <span class="math notranslate nohighlight">\(g_l\)</span> need to conspire to ensure that the spectral function is non-negative.)  This is a problem because, unlike <span class="math notranslate nohighlight">\(g_l\)</span>, which decay quickly by virtue of <span class="math notranslate nohighlight">\(S_l\)</span>, <strong>the expansion coefficients <span class="math notranslate nohighlight">\(\rho_l\)</span> are not compact</strong> (see also <a class="reference external" href="https://doi.org/10.1016/j.jcp.2012.12.023">Rothkopf, 2013</a>):</p>
+<p>One problem we are facing when solving the <em>regularized</em> least squares problem (2) is that the regularization might “force” values of <span class="math notranslate nohighlight">\(G_l\)</span> well below the threshold <span class="math notranslate nohighlight">\(L\)</span>.  (For example, in general infinitely many <span class="math notranslate nohighlight">\(G_l\)</span> need to conspire to ensure that the spectral function is non-negative.)  This is a problem because, unlike <span class="math notranslate nohighlight">\(G_l\)</span>, which decay quickly by virtue of <span class="math notranslate nohighlight">\(S_l\)</span>, <strong>the expansion coefficients <span class="math notranslate nohighlight">\(\rho_l\)</span> are not compact</strong> (see also <a class="reference external" href="https://doi.org/10.1016/j.jcp.2012.12.023">Rothkopf, 2013</a>):</p>
 <p>Let us illustrate the decay of <span class="math notranslate nohighlight">\(\rho_l\)</span> for two densities of states:</p>
 <ol class="arabic simple">
 <li><p>semielliptic (left), where the <span class="math notranslate nohighlight">\(\rho_l\)</span> decay roughly as <span class="math notranslate nohighlight">\(1/l\)</span>, and are thus not compact.</p></li>
@@ -636,38 +686,32 @@ any finite (or even infinite) expansion in the basis.</p></li>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_plot_one</span><span class="p">(</span><span class="n">subplot</span><span class="p">,</span> <span class="n">g_l</span><span class="p">,</span> <span class="n">rho_l</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">subplot</span><span class="p">)</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">g_l</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">g_l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">g_l</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">&#39;:+b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$|G_\ell/G_0|$&#39;</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho_l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">rho_l</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">&#39;:xr&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$|\rho_\ell/\rho_0|$&#39;</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">g_l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">g_l</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">':+b'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$|G_l/G_0|$'</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho_l</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="n">rho_l</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="s1">':xr'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$|\rho_l/\rho_0|$'</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$\ell$&#39;</span><span class="p">)</span>
+    <span class="n">pl</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$l$'</span><span class="p">)</span>
     <span class="n">pl</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="n">_plot_one</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">g1_l</span><span class="p">,</span> <span class="n">rho1_l</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;semielliptic $\rho(\omega)$&#39;</span><span class="p">)</span>
+<span class="n">_plot_one</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">g1_l</span><span class="p">,</span> <span class="n">rho1_l</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'semielliptic $\rho(\omega)$'</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">_plot_one</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">g3_l</span><span class="p">,</span> <span class="n">rho3_l</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;discrete $\rho(\omega)$&#39;</span><span class="p">)</span>
+<span class="n">_plot_one</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">g3_l</span><span class="p">,</span> <span class="n">rho3_l</span><span class="p">,</span> <span class="sa">r</span><span class="s1">'discrete $\rho(\omega)$'</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">w_pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">h_pad</span><span class="o">=</span><span class="mf">.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-/tmp/ipykernel_23585/1339597467.py:7: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-  pl.xlabel(&#39;$\ell$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/e784a09aa30a473f266d3c2b617e1e9bc34f8eaae20bf772899434d308781235.png" src="../_images/e784a09aa30a473f266d3c2b617e1e9bc34f8eaae20bf772899434d308781235.png" />
+<img alt="../_images/7b4671b9ec63a87ba679660414fddbe3e26ccfc4dfc410ba8917e34dba648ab5.png" src="../_images/7b4671b9ec63a87ba679660414fddbe3e26ccfc4dfc410ba8917e34dba648ab5.png" />
 </div>
 </div>
 <p>Thus, we need another representation for the real-frequency axis.  The simplest one is to choose a
 grid <span class="math notranslate nohighlight">\(\{\omega_1,\ldots,\omega_M\}\)</span> of frequencies and a function <span class="math notranslate nohighlight">\(f(x)\)</span> and expand:</p>
 <div class="math notranslate nohighlight">
 \[
-    \rho(\omega) = \sum_{m=1}^M a_i f(\omega - \omega_i),
+    \rho(\omega) = \sum_{m=1}^M a_m f(\omega - \omega_m),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(a_i\)</span> are now the expansion coefficients. (More advanced methods also optimize over <span class="math notranslate nohighlight">\(\omega_m\)</span> and/or add some shape parameter of <span class="math notranslate nohighlight">\(f\)</span> to the optimization parameters.)</p>
-<p>It is useful to use some probability distribution as <span class="math notranslate nohighlight">\(f(x)\)</span>, as this allows one to translate non-negativity and norm of <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> to non-negativity and norm of <span class="math notranslate nohighlight">\(a_i\)</span>. Since one can only observe “broadened” spectra in experiment for any given temperature, a natural choice is the Lorentz (Cauchy) distribution:</p>
+<p>where <span class="math notranslate nohighlight">\(a_m\)</span> are now the expansion coefficients. (More advanced methods also optimize over <span class="math notranslate nohighlight">\(\omega_m\)</span> and/or add some shape parameter of <span class="math notranslate nohighlight">\(f\)</span> to the optimization parameters.)</p>
+<p>It is useful to use some probability distribution as <span class="math notranslate nohighlight">\(f(x)\)</span>, as this allows one to translate non-negativity and norm of <span class="math notranslate nohighlight">\(\rho(\omega)\)</span> to non-negativity and norm of <span class="math notranslate nohighlight">\(a_m\)</span>. Since one can only observe “broadened” spectra in experiment for any given temperature, a natural choice is the Lorentz (Cauchy) distribution:</p>
 <div class="math notranslate nohighlight">
 \[
     f(\omega) = \frac1\pi \frac\eta{\omega^2 + \eta^2},
@@ -684,19 +728,19 @@ grid <span class="math notranslate nohighlight">\(\{\omega_1,\ldots,\omega_M\}\)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">cauchy</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">beta</span><span class="p">)</span><span class="o">.</span><span class="n">pdf</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_plot</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">w_plot</span><span class="p">))</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Cauchy distribution&quot;</span><span class="p">);</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Cauchy distribution"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25dee0c7b5335d4f686f1f3ec19b63ba8b95ea99b09683dbfd95bb7415645764.png" src="../_images/25dee0c7b5335d4f686f1f3ec19b63ba8b95ea99b09683dbfd95bb7415645764.png" />
+<img alt="../_images/03bb06301818eba1fb63e9affc3e58378d9b67d69ba22d3f6769d78aa98519e4.png" src="../_images/03bb06301818eba1fb63e9affc3e58378d9b67d69ba22d3f6769d78aa98519e4.png" />
 </div>
 </div>
 <p>Using this discretization, we finally arrive at a form of the analytic continuation problem suitable
 for a optimizer:</p>
 <div class="math notranslate nohighlight">
 \[
-    \min_{a\in\mathcal A}\bigg[ \sum_{l=0}^{L-1} \Big| g_l - \sum_{m=1}^M K_{lm} a_m \Big|^2 + f_\mathrm{reg}[\rho[a]] \bigg]
+    \min_{a\in\mathcal A}\bigg[ \sum_{l=0}^{L-1} \Big| G_l - \sum_{m=1}^M K_{lm} a_m \Big|^2 + f_\mathrm{reg}[\rho[a]] \bigg]
 \]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
@@ -771,15 +815,17 @@ for a optimizer:</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#least-squares-form">Least squares form</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#truncated-svd-regularization">Truncated-SVD regularization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a></li>
@@ -832,8 +878,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

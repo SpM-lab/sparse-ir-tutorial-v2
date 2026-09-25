@@ -16,47 +16,56 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -66,6 +75,12 @@
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -73,40 +88,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/second_order_perturbation_py';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The GF2 &amp; GW method" href="GW_py.html" />
     <link rel="prev" title="Discrete Lehmann Representation" href="DLR_py.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -114,7 +126,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -122,15 +133,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -139,7 +194,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,23 +225,20 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLR.html">Discrete Lehmann representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matsubarasum.html">Summation over Matsubara axis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">Notation and conventions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html">Intermediate representation (IR)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html">Sparse sampling</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/DLR.html">Discrete Lehmann representation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html">Summation over Matsubara axis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -236,9 +289,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -321,7 +379,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -335,25 +393,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -375,7 +425,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-generate-ir-basis-and-associated-sampling-points">Step 1: Generate IR basis and associated sampling points</a></li>
@@ -426,7 +476,7 @@ Hereafter, we ignore the spin dependence.</p>
 \[
     G(\mathrm{i}\nu, \boldsymbol{k}) = \frac{1}{\mathrm{i}\nu - \epsilon(\boldsymbol{k}) - \mu},
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\nu\)</span> is a fermionic frequency.</p>
+<p>where <span class="math notranslate nohighlight">\(\nu = n\pi/\beta\)</span> with odd <span class="math notranslate nohighlight">\(n\)</span> is a fermionic Matsubara frequency.</p>
 <p>In the imaginary-time domain, the self-energy reads</p>
 <div class="math notranslate nohighlight">
 \[
@@ -446,10 +496,10 @@ The Fourier transform of Green’s functions and self-energies between the momen
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(A\)</span> is either a Green’s function or a self-energy.</p>
 <p>We use regular 2D meshes for the real-space and momen spaces.
-More specifically, a point in the real space <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> is represented by three integers as
-<span class="math notranslate nohighlight">\(\boldsymbol{r}=(r_1, r_2)\)</span>, where <span class="math notranslate nohighlight">\(0 \le r_\alpha \le L-1\)</span>.
-A point in the momentum space <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> is represented by three integers as
-<span class="math notranslate nohighlight">\(\boldsymbol{k}=(2\pi k_1/L, 2\pi k_2/L)\)</span>, where <span class="math notranslate nohighlight">\(0 \le k_\alpha \le L-1\)</span>.</p>
+More specifically, a point in the real space <span class="math notranslate nohighlight">\(\boldsymbol{r}\)</span> is represented by two integers as
+<span class="math notranslate nohighlight">\(\boldsymbol{r}=(r_1, r_2)\)</span>, where <span class="math notranslate nohighlight">\(0 \le r_\alpha \le N_\mathrm{lin}-1\)</span> and <span class="math notranslate nohighlight">\(N_\mathrm{lin}\)</span> is the linear size of the lattice (<code class="docutils literal notranslate"><span class="pre">nk_lin</span></code> in the code).
+A point in the momentum space <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> is represented by two integers as
+<span class="math notranslate nohighlight">\(\boldsymbol{k}=(2\pi k_1/N_\mathrm{lin}, 2\pi k_2/N_\mathrm{lin})\)</span>, where <span class="math notranslate nohighlight">\(0 \le k_\alpha \le N_\mathrm{lin}-1\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
     G_{m,r_1, r_2} = \frac{1}{N} F(G_{m, k_1, k_2}),
@@ -462,16 +512,16 @@ A point in the momentum space <span class="math notranslate nohighlight">\(\bold
 which are defined as</p>
 <div class="math notranslate nohighlight">
 \[
-    x_{n_1, n_2} = \sum_{m_1,m_2=0}^{L-1} x_{m_1,m_2} e^{-\frac{2\pi \sum_\alpha n_\alpha m_\alpha}{L}\mathrm{i}}= F(x_{m_1, m_2}),
+    x_{n_1, n_2} = \sum_{m_1,m_2=0}^{N_\mathrm{lin}-1} x_{m_1,m_2} e^{-\frac{2\pi \sum_\alpha n_\alpha m_\alpha}{N_\mathrm{lin}}\mathrm{i}}= F(x_{m_1, m_2}),
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-    y_{m_1, m_2} = \frac{1}{L^2} \sum_{n_1,n_2=0}^{L-1} x_{n_1,n_2} e^{\frac{2\pi \sum_\alpha n_\alpha m_\alpha}{L}\mathrm{i}} = F^{-1}(x_{n_1, n_2}).
+    y_{m_1, m_2} = \frac{1}{N_\mathrm{lin}^2} \sum_{n_1,n_2=0}^{N_\mathrm{lin}-1} x_{n_1,n_2} e^{\frac{2\pi \sum_\alpha n_\alpha m_\alpha}{N_\mathrm{lin}}\mathrm{i}} = F^{-1}(x_{n_1, n_2}).
 \]</div>
 <p>The DFT can be performed efficiently by the fast Fourier transform algorithm,
 which is implemented in many numerical libraries such as FFTW and FFTPACK.
-The computational complexity of FFT scales as <span class="math notranslate nohighlight">\(O(L^2 \log L)\)</span>,
-which is considerably smaller than that of the naive implementation [<span class="math notranslate nohighlight">\(O(L^3)\)</span>] for large <span class="math notranslate nohighlight">\(L\)</span>.</p>
+The computational complexity of FFT scales as <span class="math notranslate nohighlight">\(O(N_\mathrm{lin}^2 \log N_\mathrm{lin})\)</span>,
+which is considerably smaller than that of the naive implementation [<span class="math notranslate nohighlight">\(O(N_\mathrm{lin}^3)\)</span>] for large <span class="math notranslate nohighlight">\(N_\mathrm{lin}\)</span>.</p>
 </section>
 <section id="implementation">
 <h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
@@ -480,7 +530,7 @@ which is considerably smaller than that of the naive implementation [<span class
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.size'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sparse_ir</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">numpy.fft</span><span class="w"> </span><span class="kn">import</span> <span class="n">fftn</span><span class="p">,</span> <span class="n">ifftn</span>
 </pre></div>
@@ -491,10 +541,10 @@ which is considerably smaller than that of the naive implementation [<span class
 <h3>Step 1: Generate IR basis and associated sampling points<a class="headerlink" href="#step-1-generate-ir-basis-and-associated-sampling-points" title="Link to this heading">#</a></h3>
 <p>The following code works only for a single-orbital problem.
 <code class="docutils literal notranslate"><span class="pre">numpy.linalg.inv</span></code> can be used instead for computing matrix-valued Green’s functons, i.e., for multi-orbital systems.
-The condition numbers are around 180 and 250 for imaginary-time and Matsubara-frequency samplings,
+The condition numbers are around 160 and 470 for imaginary-time and Matsubara-frequency samplings,
 repspectively.
-This means that we may lose two significant digits when fitting numerical data on the sampling points.
-Thus, the results of fits are expected to have an accuracy of five significant digits (<span class="math notranslate nohighlight">\(10^{-7} \times 10^2 = 10^{-5}\)</span>).
+This means that we may lose two to three significant digits when fitting numerical data on the sampling points.
+Thus, the results of fits are expected to have an accuracy of four to five significant digits (<span class="math notranslate nohighlight">\(10^{-7} \times 470 \approx 5 \times 10^{-5}\)</span>).
 If you want more significant digits, you can decrease the cutoff.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -508,26 +558,26 @@ If you want more significant digits, you can decrease the cutoff.</p>
 <span class="n">U</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="c1"># Onsite repulsion</span>
 
 <span class="n">wmax</span> <span class="o">=</span> <span class="n">lambda_</span><span class="o">/</span><span class="n">beta</span>
-<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">)</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="s2">"F"</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">)</span>
 <span class="n">L</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">size</span>
 
 <span class="c1"># Sparse sampling in tau</span>
 <span class="n">smpl_tau</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">TauSampling</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
 <span class="n">ntau</span> <span class="o">=</span> <span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">.</span><span class="n">size</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cond (tau): &quot;</span><span class="p">,</span> <span class="n">smpl_tau</span><span class="o">.</span><span class="n">cond</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"cond (tau): "</span><span class="p">,</span> <span class="n">smpl_tau</span><span class="o">.</span><span class="n">cond</span><span class="p">)</span>
 
 <span class="c1"># Sparse sampling in Matsubara frequencies</span>
 <span class="n">smpl_matsu</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">MatsubaraSampling</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
 <span class="n">nw</span> <span class="o">=</span> <span class="n">smpl_matsu</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">.</span><span class="n">size</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cond (matsu): &quot;</span><span class="p">,</span> <span class="n">smpl_matsu</span><span class="o">.</span><span class="n">cond</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"cond (matsu): "</span><span class="p">,</span> <span class="n">smpl_matsu</span><span class="o">.</span><span class="n">cond</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (tau):  162.99257534879928
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (tau):  162.99257535464983
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (matsu):  461.2407253765136
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cond (matsu):  465.8004686064526
 </pre></div>
 </div>
 </div>
@@ -543,16 +593,16 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <span class="n">nk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">kps</span><span class="p">)</span>
 <span class="n">nr</span> <span class="o">=</span> <span class="n">nk</span>
 <span class="n">kgrid</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">kp</span><span class="p">)</span><span class="o">/</span><span class="n">kp</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">kps</span><span class="p">]</span>
-<span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="o">*</span><span class="n">kgrid</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s2">&quot;ij&quot;</span><span class="p">)</span>
+<span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="o">*</span><span class="n">kgrid</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s2">"ij"</span><span class="p">)</span>
 <span class="n">ek</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k2</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">k2</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ek</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="n">iv</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">smpl_matsu</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">/</span><span class="n">beta</span>
 <span class="n">gkf</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">iv</span><span class="p">[:,</span><span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="n">ek</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="kc">None</span><span class="p">,:])</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_matsu</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">gkf</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$k=\Gamma$&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Im}</span><span class="s2">~G(\mathrm</span><span class="si">{i}</span><span class="s2">\nu)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_matsu</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">gkf</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$k=\Gamma$"</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathrm</span><span class="si">{Im}</span><span class="s2">~G(\mathrm</span><span class="si">{i}</span><span class="s2">\nu)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -563,7 +613,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(256, 256) (256, 256) (256, 256)
 </pre></div>
 </div>
-<img alt="../_images/7a5b99ddcfa08b17f39744a4078af03397aa134edc6718cd40a29f63e705f8f3.png" src="../_images/7a5b99ddcfa08b17f39744a4078af03397aa134edc6718cd40a29f63e705f8f3.png" />
+<img alt="../_images/fd81c202bf01158e91402242d27cd83699d1362a31889b970d017ba228ddf5db.png" src="../_images/fd81c202bf01158e91402242d27cd83699d1362a31889b970d017ba228ddf5db.png" />
 </div>
 </div>
 </section>
@@ -578,15 +628,15 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <span class="k">assert</span> <span class="n">gkl</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">nk</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">gkl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$l$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$|G(l, \Gamma)|$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$l$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$|G(l, \Gamma)|$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7a554cc6ba47fd879d76a5a74b735b54456ac4c5a7e02bff7c66342601bd9a98.png" src="../_images/7a554cc6ba47fd879d76a5a74b735b54456ac4c5a7e02bff7c66342601bd9a98.png" />
+<img alt="../_images/94b85d1fc040fb48ffb975406d3548c93a697e1a83375add557b05feb2b97563.png" src="../_images/94b85d1fc040fb48ffb975406d3548c93a697e1a83375add557b05feb2b97563.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -595,11 +645,11 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 
 <span class="k">assert</span> <span class="n">gkt</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">ntau</span><span class="p">,</span> <span class="n">nk</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">gkt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\Gamma$&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">gkt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$\Gamma$'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> 
-    <span class="n">gkt</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">*</span><span class="n">kps</span><span class="p">)[:,</span><span class="n">nk_lin</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="n">nk_lin</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$M$&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Re}</span><span class="s2">~G(\tau, k)$&quot;</span><span class="p">)</span>
+    <span class="n">gkt</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">*</span><span class="n">kps</span><span class="p">)[:,</span><span class="n">nk_lin</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="n">nk_lin</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">'$M$'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"+"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\tau$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathrm</span><span class="si">{Re}</span><span class="s2">~G(\tau, k)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -607,7 +657,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/20a1f8ffa7f3c4ecb1b3bd46134c847e14befd12f1012252c8bf5e88323c09cd.png" src="../_images/20a1f8ffa7f3c4ecb1b3bd46134c847e14befd12f1012252c8bf5e88323c09cd.png" />
+<img alt="../_images/5dcc3fafa1156c8d7fac143b57b579d856bd472afddf5732852b8995af0527bf.png" src="../_images/5dcc3fafa1156c8d7fac143b57b579d856bd472afddf5732852b8995af0527bf.png" />
 </div>
 </div>
 </section>
@@ -623,9 +673,9 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <span class="c1"># G(tau, k): (ntau, nk)</span>
 <span class="n">grt</span> <span class="o">=</span> <span class="n">fftn</span><span class="p">(</span><span class="n">gkt</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ntau</span><span class="p">,</span> <span class="o">*</span><span class="n">kps</span><span class="p">),</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ntau</span><span class="p">,</span> <span class="n">nk</span><span class="p">)</span><span class="o">/</span><span class="n">nk</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">grt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$r=(0,0)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Re}</span><span class="s2">~G(\tau, r)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">grt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$r=(0,0)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\tau$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathrm</span><span class="si">{Re}</span><span class="s2">~G(\tau, r)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -633,18 +683,19 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a059d43ed93102196698b61ef5e3b5a89e3ee75fcdfaf63c1245d370e3943c13.png" src="../_images/a059d43ed93102196698b61ef5e3b5a89e3ee75fcdfaf63c1245d370e3943c13.png" />
+<img alt="../_images/f9e7f28cbca094ab605d6a7b45a82195009be423fff196d2b300cf309e01a18e.png" src="../_images/f9e7f28cbca094ab605d6a7b45a82195009be423fff196d2b300cf309e01a18e.png" />
 </div>
 </div>
 <p>Compute the second-order term of the self-energy on the sampling points</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sigma(tau, r): (ntau, nr)</span>
-<span class="n">srt</span> <span class="o">=</span> <span class="o">-</span> <span class="n">U</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
+<span class="c1"># The default sampling times lie in (0, beta), so grt[::-1,:] is G(beta - tau, r).</span>
+<span class="n">srt</span> <span class="o">=</span> <span class="n">U</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="o">*</span><span class="n">grt</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">srt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$r=(0,0)$&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Re}</span><span class="s2">~\Sigma(\tau, r)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_tau</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">,</span> <span class="n">srt</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$r=(0,0)$'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\tau$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathrm</span><span class="si">{Re}</span><span class="s2">~\Sigma(\tau, r)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -652,7 +703,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dc6139249620191dd8733bc2ed65fbfee8c57b3c21678770e6628f884096b1a7.png" src="../_images/dc6139249620191dd8733bc2ed65fbfee8c57b3c21678770e6628f884096b1a7.png" />
+<img alt="../_images/f59d470ae629ad2773b03de81c541cc3b436c37f5373c7497c0e523fe531fec9.png" src="../_images/f59d470ae629ad2773b03de81c541cc3b436c37f5373c7497c0e523fe531fec9.png" />
 </div>
 </div>
 </section>
@@ -665,9 +716,9 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <span class="n">srl</span> <span class="o">=</span> <span class="n">smpl_tau</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">srt</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">srl</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">nr</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">srl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$r=(0,0)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$l$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$|\Sigma(l, r)|$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">srl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$r=(0,0)$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$l$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$|\Sigma(l, r)|$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -675,7 +726,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/55b74ffdb417fd189924b800d840311407d2c3135eb538488ff8d2894458baf7.png" src="../_images/55b74ffdb417fd189924b800d840311407d2c3135eb538488ff8d2894458baf7.png" />
+<img alt="../_images/24f3d05a970ae67a2c4886992864ee7df219de88d5eed104641648203bc3222a.png" src="../_images/24f3d05a970ae67a2c4886992864ee7df219de88d5eed104641648203bc3222a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -685,11 +736,11 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <span class="n">skl</span> <span class="o">=</span> <span class="n">ifftn</span><span class="p">(</span><span class="n">srl</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="n">nk</span>
 <span class="n">skl</span> <span class="o">=</span> <span class="n">skl</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="o">*</span><span class="n">kps</span><span class="p">)</span>
 
-<span class="c1">#plt.semilogy(np.max(np.abs(skl),axis=(1,2)), label=&quot;max, abs&quot;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">skl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;$k=\Gamma$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Singular values&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$l$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$|\Sigma(l, k)|$&quot;</span><span class="p">)</span>
+<span class="c1">#plt.semilogy(np.max(np.abs(skl),axis=(1,2)), label="max, abs")</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">skl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s2">"$k=\Gamma$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Singular values"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$l$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$|\Sigma(l, k)|$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -697,13 +748,13 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-/tmp/ipykernel_34674/1387464666.py:7: SyntaxWarning: invalid escape sequence &#39;\G&#39;
-  plt.semilogy(np.abs(skl[:,0,0]), label=&quot;$k=\Gamma$&quot;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\G'
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\G'
+/tmp/ipykernel_5520/1387464666.py:7: SyntaxWarning: invalid escape sequence '\G'
+  plt.semilogy(np.abs(skl[:,0,0]), label="$k=\Gamma$")
 </pre></div>
 </div>
-<img alt="../_images/9fe0da3c26c41225fe40a1462d350a60d7c0a40d28025915fa49ff98cd40927d.png" src="../_images/9fe0da3c26c41225fe40a1462d350a60d7c0a40d28025915fa49ff98cd40927d.png" />
+<img alt="../_images/c9331d89051866a9071e4190c61b37b4d4d580e5ceb0a733192ff88346e1f3ff.png" src="../_images/c9331d89051866a9071e4190c61b37b4d4d580e5ceb0a733192ff88346e1f3ff.png" />
 </div>
 </div>
 </section>
@@ -713,9 +764,9 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma_iv</span> <span class="o">=</span> <span class="n">smpl_matsu</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">skl</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_matsu</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$k=\Gamma$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Im}</span><span class="s2">~\Sigma(\mathrm</span><span class="si">{i}</span><span class="s2">\nu)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smpl_matsu</span><span class="o">.</span><span class="n">sampling_points</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$k=\Gamma$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathrm</span><span class="si">{Im}</span><span class="s2">~\Sigma(\mathrm</span><span class="si">{i}</span><span class="s2">\nu)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -723,7 +774,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f2fbdc1723dbcc53b76237e1ced8f1aba2c5d1374e90657dfe039dff2b8a3ce9.png" src="../_images/f2fbdc1723dbcc53b76237e1ced8f1aba2c5d1374e90657dfe039dff2b8a3ce9.png" />
+<img alt="../_images/73641bbaacada393cf913eb2a6602f46781aa527f402786feea061a4f79ca5d3.png" src="../_images/73641bbaacada393cf913eb2a6602f46781aa527f402786feea061a4f79ca5d3.png" />
 </div>
 </div>
 <p>You can evaluate the self-energy on arbitrary frequencies.</p>
@@ -732,9 +783,9 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_freqs</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># odd</span>
 <span class="n">smpl_matsu2</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">MatsubaraSampling</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">my_freqs</span><span class="p">)</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">smpl_matsu2</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">skl</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">my_freqs</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">res</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$k=\Gamma$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\mathrm</span><span class="si">{Im}</span><span class="s2">~\Sigma(\mathrm</span><span class="si">{i}</span><span class="s2">\nu)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">my_freqs</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">res</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$k=\Gamma$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\mathrm</span><span class="si">{Im}</span><span class="s2">~\Sigma(\mathrm</span><span class="si">{i}</span><span class="s2">\nu)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -742,7 +793,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/49c86b3356e9c4c779feaf36bb3b810b944fcba68824236b8f96b320f1a7aa11.png" src="../_images/49c86b3356e9c4c779feaf36bb3b810b944fcba68824236b8f96b320f1a7aa11.png" />
+<img alt="../_images/eb9d0f0d292bdaf88d2f9014a5d53f2ccadc7cb4fa55bc30fcaf2dd6c8579c49.png" src="../_images/eb9d0f0d292bdaf88d2f9014a5d53f2ccadc7cb4fa55bc30fcaf2dd6c8579c49.png" />
 </div>
 </div>
 </section>
@@ -804,15 +855,17 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-generate-ir-basis-and-associated-sampling-points">Step 1: Generate IR basis and associated sampling points</a></li>
@@ -871,8 +924,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

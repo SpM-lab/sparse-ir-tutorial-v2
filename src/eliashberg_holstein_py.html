@@ -16,47 +16,56 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -66,6 +75,12 @@
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -73,40 +88,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/eliashberg_holstein_py';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Orbital magnetic susceptibility" href="orbital_magnetic_susceptibility_py.html" />
     <link rel="prev" title="TPSC approximation" href="TPSC_py.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -114,7 +126,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -122,15 +133,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -139,7 +194,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,23 +225,20 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLR.html">Discrete Lehmann representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matsubarasum.html">Summation over Matsubara axis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">Notation and conventions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html">Intermediate representation (IR)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html">Sparse sampling</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/DLR.html">Discrete Lehmann representation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html">Summation over Matsubara axis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -236,9 +289,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -321,7 +379,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -335,25 +393,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -375,7 +425,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-consistent-calculation">Self-consistent calculation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paramaters">Paramaters</a></li>
@@ -435,7 +485,7 @@ where</p>
 \end{align}
 \end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(\gamma\)</span> is an orbital index. The <span class="math notranslate nohighlight">\(\eta\)</span> distinguish the types of charge-orbital moments for electrons and vibration modes for phonons, respectively,
-where <span class="math notranslate nohighlight">\(M=\sum_\gamma 1\)</span>, <span class="math notranslate nohighlight">\({\rm Tr}(\hat \lambda^\eta)^2=2\)</span>, <span class="math notranslate nohighlight">\(\sum_\eta 1 = \frac{M(M+1)}{2}\)</span>.
+where <span class="math notranslate nohighlight">\(M=\sum_\gamma 1\)</span>, <span class="math notranslate nohighlight">\({\rm Tr}(\boldsymbol{\lambda}^\eta)^2=2\)</span>, <span class="math notranslate nohighlight">\(\sum_\eta 1 = \frac{M(M+1)}{2}\)</span>.
 We may use <span class="math notranslate nohighlight">\(M=1\)</span> (single-orbital) or <span class="math notranslate nohighlight">\(M=3\)</span> (three-orbital).
 For examples, the charge operator is given by <span class="math notranslate nohighlight">\(T_{i,\eta=0} = \sqrt 2 \sum_\sigma n_{i\sigma}\)</span> for <span class="math notranslate nohighlight">\(M=1\)</span> and <span class="math notranslate nohighlight">\(T_{i,\eta=0} = \sqrt{\tfrac 2 3} \sum_\sigma (n_{i1\sigma}+n_{i2\sigma}+n_{i3\sigma})\)</span> for <span class="math notranslate nohighlight">\(M=3\)</span>.</p>
 <p>We have introduced displacement and momentum operators by <span class="math notranslate nohighlight">\(\phi_{i\eta} = a_{i\eta}+ a_{i\eta}^\dagger\)</span> and <span class="math notranslate nohighlight">\(p_{i\eta} = (a_{i\eta} - a_{i\eta}^\dagger)/{\rm i}\)</span>, which satisfy the canonical commutation relation <span class="math notranslate nohighlight">\([\phi_{i\eta},p_{j\eta'}] = 2{\rm i} \delta_{ij} \delta_{\eta\eta'}\)</span>.
@@ -465,24 +515,24 @@ The phase of the superconducting order parameter is fixed as <span class="math n
 If we take <span class="math notranslate nohighlight">\(M=1\)</span> and correspondingly <span class="math notranslate nohighlight">\(J=0\)</span>, it reproduces the single-orbital Holstein-Hubbard model.</p>
 <p>The internal energy may be evaluated through the single-particle Green functions.
 In a manner similar to Ref. [5],
-we have the following relations</p>
+we have the following relations for the fermionic and bosonic Matsubara frequencies <span class="math notranslate nohighlight">\(\nu^{\rm F} = n\pi T\)</span> (odd <span class="math notranslate nohighlight">\(n\)</span>) and <span class="math notranslate nohighlight">\(\nu^{\rm B} = n\pi T\)</span> (even <span class="math notranslate nohighlight">\(n\)</span>)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-    2MT\sum_{n}{\rm i}\omega_n G({\rm i}\omega_n) {\rm e}^{{\rm i} \omega_n 0^+}
+    2MT\sum_{\nu^{\rm F}}{\rm i}\nu^{\rm F} G({\rm i}\nu^{\rm F}) {\rm e}^{{\rm i} \nu^{\rm F} 0^+}
     &amp;= \langle \mathscr H_{e0} \rangle + 2\langle \mathscr H_{ee} \rangle
     + \langle \mathscr H_{ep} \rangle
     \\
-    \frac{M(M+1)}{2} T\sum_m \frac{({\rm i}\nu_m)^2}{2\omega_0} D({\rm i}\nu_m) {\rm e}^{{\rm i} \nu_m 0^+}
+    \frac{M(M+1)}{2} T\sum_{\nu^{\rm B}} \frac{({\rm i}\nu^{\rm B})^2}{2\omega_0} D({\rm i}\nu^{\rm B}) {\rm e}^{{\rm i} \nu^{\rm B} 0^+}
     &amp;= - 2\langle \mathscr H_{p,{\rm pot}}\rangle
     - \langle \mathscr H_{ep}\rangle
     = - 2\langle \mathscr H_{p,{\rm kin}}\rangle
     \\
-    2M T\sum_n \Sigma({\rm i}\omega_n) G({\rm i}\omega_n) {\rm e}^{{\rm i} \omega_n 0^+}
+    2M T\sum_{\nu^{\rm F}} \Sigma({\rm i}\nu^{\rm F}) G({\rm i}\nu^{\rm F}) {\rm e}^{{\rm i} \nu^{\rm F} 0^+}
     &amp;= 2\langle \mathscr H_{ee} \rangle
     + \langle \mathscr H_{ep} \rangle
     \\
-    \frac{M(M+1)}{2} T\sum_m \Pi({\rm i}\nu_m) D({\rm i}\nu_m) {\rm e}^{{\rm i} \nu_m 0^+}&amp;= - \langle \mathscr H_{ep} \rangle
+    \frac{M(M+1)}{2} T\sum_{\nu^{\rm B}} \Pi({\rm i}\nu^{\rm B}) D({\rm i}\nu^{\rm B}) {\rm e}^{{\rm i} \nu^{\rm B} 0^+}&amp;= - \langle \mathscr H_{ep} \rangle
 \end{align}
 \end{split}\]</div>
 <p>Thus the internal energy <span class="math notranslate nohighlight">\(\langle \mathscr H \rangle = \langle \mathscr H_{e0} + \mathscr H_{ee} + \mathscr H_{p,{\rm kin}} + \mathscr H_{p,{\rm pot}} + \mathscr H_{ep} \rangle\)</span> is obtained.
@@ -492,22 +542,22 @@ The Green functions are given in the Fourier domain:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-    G({\rm i}\omega_n) &amp;= \int {\rm d} \varepsilon \rho(\varepsilon)
-    \frac{\zeta ({\rm i}\omega_n) + \varepsilon}{\zeta({\rm i}\omega_n)^2- \Delta({\rm i}\omega_n)^2 - \varepsilon^2}
+    G({\rm i}\nu^{\rm F}) &amp;= \int {\rm d} \varepsilon \rho(\varepsilon)
+    \frac{\xi ({\rm i}\nu^{\rm F}) + \varepsilon}{\xi({\rm i}\nu^{\rm F})^2- \Delta({\rm i}\nu^{\rm F})^2 - \varepsilon^2}
     \\
-    F({\rm i}\omega_n) &amp;= \int {\rm d} \varepsilon \rho(\varepsilon)
-    \frac{\Delta ({\rm i}\omega_n)}{\zeta({\rm i}\omega_n)^2- \Delta({\rm i}\omega_n)^2 - \varepsilon^2}
+    F({\rm i}\nu^{\rm F}) &amp;= \int {\rm d} \varepsilon \rho(\varepsilon)
+    \frac{\Delta ({\rm i}\nu^{\rm F})}{\xi({\rm i}\nu^{\rm F})^2- \Delta({\rm i}\nu^{\rm F})^2 - \varepsilon^2}
     \\
-    \zeta({\rm i}\omega_n) &amp;=  {\rm i}\omega_n+\mu-\Sigma({\rm i}\omega_n)
+    \xi({\rm i}\nu^{\rm F}) &amp;=  {\rm i}\nu^{\rm F}+\mu-\Sigma({\rm i}\nu^{\rm F})
 \end{align}
 \end{split}\]</div>
 <p>for electrons, and</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-    D({\rm i}\nu_m)^{-1} &amp;= D_0({\rm i}\nu_m)^{-1} - \Pi({\rm i}\nu_m)
+    D({\rm i}\nu^{\rm B})^{-1} &amp;= D_0({\rm i}\nu^{\rm B})^{-1} - \Pi({\rm i}\nu^{\rm B})
     \\
-    D_0({\rm i}\nu_m) &amp;= \frac{2\omega_0}{({\rm i}\nu_m)^2 - \omega_0^2}
+    D_0({\rm i}\nu^{\rm B}) &amp;= \frac{2\omega_0}{({\rm i}\nu^{\rm B})^2 - \omega_0^2}
 \end{align}
 \end{split}\]</div>
 <p>for phonons.
@@ -522,25 +572,25 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 <span class="c1"># Get sparse-ir version</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">importlib.metadata</span><span class="w"> </span><span class="kn">import</span> <span class="n">version</span>
-    <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">(</span><span class="s1">&#39;sparse-ir&#39;</span><span class="p">)</span>
+    <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">(</span><span class="s1">'sparse-ir'</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="kn">import</span><span class="w"> </span><span class="nn">pkg_resources</span>
-        <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">&#39;sparse-ir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
+        <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">get_distribution</span><span class="p">(</span><span class="s1">'sparse-ir'</span><span class="p">)</span><span class="o">.</span><span class="n">version</span>
     <span class="k">except</span><span class="p">:</span>
-        <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span>
+        <span class="n">sparse_ir_version</span> <span class="o">=</span> <span class="s2">"unknown"</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sparse-ir version: </span><span class="si">{</span><span class="n">sparse_ir_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"sparse-ir version: </span><span class="si">{</span><span class="n">sparse_ir_version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
-    <span class="s2">&quot;font.family&quot;</span><span class="p">:</span> <span class="s2">&quot;serif&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">"font.family"</span><span class="p">:</span> <span class="s2">"serif"</span><span class="p">,</span>
+    <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
 <span class="p">})</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparse-ir version: 2.0.0a7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparse-ir version: 2.1.4
 </pre></div>
 </div>
 </div>
@@ -550,7 +600,7 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">numpy.polynomial.legendre</span><span class="w"> </span><span class="kn">import</span> <span class="n">leggauss</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">scale_quad</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Scale weights and notes of quadrature to the interval [xmin, xmax] &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">""" Scale weights and notes of quadrature to the interval [xmin, xmax] """</span>
     <span class="k">assert</span> <span class="n">xmin</span> <span class="o">&lt;</span> <span class="n">xmax</span>
     <span class="n">dx</span> <span class="o">=</span> <span class="n">xmax</span> <span class="o">-</span> <span class="n">xmin</span>
     <span class="n">w_</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">w</span>
@@ -583,76 +633,76 @@ We take the semi-circular density of states <span class="math notranslate nohigh
         <span class="bp">self</span><span class="o">.</span><span class="n">d0_iv</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">omega0</span><span class="o">/</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iv_b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">omega0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">xi_iv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute xi(iv)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">iv_f</span> <span class="o">+</span> <span class="n">mu</span> <span class="o">-</span> <span class="n">sigma_iv</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">g_f_iv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="n">delta_iv</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute G(iv) and F(iv) from sigma(iv), Delta(iv)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">xi_iv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xi_iv</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">)</span>
         <span class="n">denominator</span> <span class="o">=</span> <span class="p">(</span><span class="n">xi_iv</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">delta_iv</span><span class="o">**</span><span class="mi">2</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
         <span class="n">numerator_G</span> <span class="o">=</span> <span class="n">xi_iv</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
         <span class="n">numerator_F</span> <span class="o">=</span> <span class="n">delta_iv</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">]</span>
-        <span class="n">g_iv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;q,wq-&gt;w&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_coeff</span><span class="p">,</span> <span class="n">numerator_G</span><span class="o">/</span><span class="n">denominator</span><span class="p">,</span>
+        <span class="n">g_iv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">'q,wq-&gt;w'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_coeff</span><span class="p">,</span> <span class="n">numerator_G</span><span class="o">/</span><span class="n">denominator</span><span class="p">,</span>
                         <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">f_iv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;q,wq-&gt;w&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_coeff</span><span class="p">,</span> <span class="n">numerator_F</span><span class="o">/</span><span class="n">denominator</span><span class="p">,</span>
+        <span class="n">f_iv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">'q,wq-&gt;w'</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">omega_coeff</span><span class="p">,</span> <span class="n">numerator_F</span><span class="o">/</span><span class="n">denominator</span><span class="p">,</span>
                         <span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">g_iv</span><span class="p">,</span> <span class="n">f_iv</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">pi_tau</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g_tau</span><span class="p">,</span> <span class="n">f_tau</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute Pi(tau)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">g_tau</span> <span class="o">*</span> <span class="n">g_tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f_tau</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
   
     <span class="k">def</span><span class="w"> </span><span class="nf">d_iv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_iv</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute D(iv)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">d0_iv</span> <span class="o">-</span> <span class="n">phi_iv</span><span class="p">)</span>
   
     <span class="k">def</span><span class="w"> </span><span class="nf">sigma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g_tau</span><span class="p">,</span> <span class="n">d_tau</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute Sigma(tau) and Sigma(iv)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">sigma_tau</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">d_tau</span> <span class="o">*</span> <span class="n">g_tau</span>
-        <span class="n">sigma_iv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_matsu</span><span class="p">(</span><span class="n">sigma_tau</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+        <span class="n">sigma_iv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_matsu</span><span class="p">(</span><span class="n">sigma_tau</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">sigma_tau</span><span class="p">,</span> <span class="n">sigma_iv</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">delta_iv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f_tau</span><span class="p">,</span> <span class="n">d_tau</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute Delta(iv)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">tl_delta_tau</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">d_tau</span> <span class="o">*</span> <span class="n">f_tau</span>
-        <span class="n">tl_delta_iv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_matsu</span><span class="p">(</span><span class="n">tl_delta_tau</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+        <span class="n">tl_delta_iv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_matsu</span><span class="p">(</span><span class="n">tl_delta_tau</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">tl_delta_iv</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">U</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">J</span><span class="p">)</span> <span class="o">*</span> <span class="n">f_tau</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     
     <span class="k">def</span><span class="w"> </span><span class="nf">_smpl_tau</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stat</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_tau_f</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_tau_b</span><span class="p">}[</span><span class="n">stat</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"F"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_tau_f</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_tau_b</span><span class="p">}[</span><span class="n">stat</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_smpl_wn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stat</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_wn_b</span><span class="p">}[</span><span class="n">stat</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"F"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">smpl_wn_b</span><span class="p">}[</span><span class="n">stat</span><span class="p">]</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">to_tau</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj_iv</span><span class="p">,</span> <span class="n">stat</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Transform to tau</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_smpl_tau</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_smpl_wn</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">obj_iv</span><span class="p">))</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">to_matsu</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj_tau</span><span class="p">,</span> <span class="n">stat</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Transform to Matsubara</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_smpl_wn</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_smpl_tau</span><span class="p">(</span><span class="n">stat</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">obj_tau</span><span class="p">))</span>
     
     <span class="k">def</span><span class="w"> </span><span class="nf">internal_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_iv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">g_iv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">d_iv</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Compute internal energy</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">stat_sign</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}[</span><span class="n">tau</span><span class="p">]</span>
         <span class="n">smpl_tau0</span> <span class="o">=</span> <span class="p">[</span><span class="n">sparse_ir</span><span class="o">.</span><span class="n">TauSampling</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="p">[</span><span class="n">tau</span><span class="p">])</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">basis_f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bset</span><span class="o">.</span><span class="n">basis_b</span><span class="p">]]</span>
 
@@ -675,31 +725,31 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">elsh</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="n">delta_iv</span><span class="p">,</span> <span class="n">niter</span><span class="p">,</span> <span class="n">mixing</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ph</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Solve the self-consistent equation</span>
 
 <span class="sd">    ph: Force ph symmetry</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">sigma_iv_prev</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">delta_iv_prev</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="nb">iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niter</span><span class="p">):</span>
         <span class="c1"># Update G and F</span>
         <span class="n">g_iv</span><span class="p">,</span> <span class="n">f_iv</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">g_f_iv</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="n">delta_iv</span><span class="p">)</span>
-        <span class="n">g_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">g_iv</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
-        <span class="n">f_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">f_iv</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+        <span class="n">g_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">g_iv</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">)</span>
+        <span class="n">f_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">f_iv</span><span class="p">,</span> <span class="s2">"F"</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ph</span><span class="p">:</span>
             <span class="n">g_tau</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">g_tau</span> <span class="o">+</span> <span class="n">g_tau</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">g_tau</span><span class="p">[</span><span class="n">g_tau</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
         
         <span class="c1"># Update Phi</span>
         <span class="n">phi_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">pi_tau</span><span class="p">(</span><span class="n">g_tau</span><span class="p">,</span> <span class="n">f_tau</span><span class="p">)</span>
-        <span class="n">phi_iv</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_matsu</span><span class="p">(</span><span class="n">phi_tau</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+        <span class="n">phi_iv</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_matsu</span><span class="p">(</span><span class="n">phi_tau</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)</span>
         <span class="n">phi_iv</span><span class="o">.</span><span class="n">imag</span> <span class="o">=</span> <span class="mi">0</span>
     
         <span class="c1"># Update D</span>
         <span class="n">d_iv</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">d_iv</span><span class="p">(</span><span class="n">phi_iv</span><span class="p">)</span>
-        <span class="n">d_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">d_iv</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+        <span class="n">d_tau</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">to_tau</span><span class="p">(</span><span class="n">d_iv</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)</span>
     
         <span class="c1"># Update Sigma</span>
         <span class="n">sigma_tau</span><span class="p">,</span> <span class="n">sigma_iv_new</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">sigma</span><span class="p">(</span><span class="n">g_tau</span><span class="p">,</span> <span class="n">d_tau</span><span class="p">)</span>
@@ -716,7 +766,7 @@ We take the semi-circular density of states <span class="math notranslate nohigh
         <span class="n">diff_sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">sigma_iv_new</span> <span class="o">-</span> <span class="n">sigma_iv_prev</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
         <span class="n">diff_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">delta_iv_new</span> <span class="o">-</span> <span class="n">delta_iv_prev</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">verbose</span> <span class="ow">and</span> <span class="nb">iter</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;iter= </span><span class="si">{</span><span class="nb">iter</span><span class="si">}</span><span class="s2"> : diff_sigma= </span><span class="si">{</span><span class="n">diff_sigma</span><span class="si">}</span><span class="s2">, diff_delta=</span><span class="si">{</span><span class="n">diff_delta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"iter= </span><span class="si">{</span><span class="nb">iter</span><span class="si">}</span><span class="s2"> : diff_sigma= </span><span class="si">{</span><span class="n">diff_sigma</span><span class="si">}</span><span class="s2">, diff_delta=</span><span class="si">{</span><span class="n">diff_delta</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         
         <span class="c1">#print(max(diff_sigma, diff_delta), atol)</span>
         <span class="k">if</span> <span class="n">atol</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">max</span><span class="p">(</span><span class="n">diff_sigma</span><span class="p">,</span> <span class="n">diff_delta</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">atol</span><span class="p">:</span>
@@ -724,7 +774,7 @@ We take the semi-circular density of states <span class="math notranslate nohigh
             <span class="k">break</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">converged</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not converged!&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Not converged!"</span><span class="p">)</span>
 
     <span class="c1"># Internal energy</span>
     <span class="n">u</span> <span class="o">=</span> <span class="n">elsh</span><span class="o">.</span><span class="n">internal_energy</span><span class="p">(</span>
@@ -734,15 +784,15 @@ We take the semi-circular density of states <span class="math notranslate nohigh
         <span class="n">tau</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
 
     <span class="n">others</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;sigma_tau&#39;</span><span class="p">:</span> <span class="n">sigma_tau</span><span class="p">,</span>
-        <span class="s1">&#39;phi_iv&#39;</span><span class="p">:</span> <span class="n">phi_iv</span><span class="p">,</span>
-        <span class="s1">&#39;g_iv&#39;</span><span class="p">:</span> <span class="n">g_iv</span><span class="p">,</span>
-        <span class="s1">&#39;f_iv&#39;</span><span class="p">:</span> <span class="n">f_iv</span><span class="p">,</span>
-        <span class="s1">&#39;d_iv&#39;</span><span class="p">:</span> <span class="n">d_iv</span><span class="p">,</span>
-        <span class="s1">&#39;d_tau&#39;</span><span class="p">:</span> <span class="n">d_tau</span><span class="p">,</span>
-        <span class="s1">&#39;f_tau&#39;</span><span class="p">:</span> <span class="n">f_tau</span><span class="p">,</span>
-        <span class="s1">&#39;g_tau&#39;</span><span class="p">:</span> <span class="n">g_tau</span><span class="p">,</span>
-        <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="n">u</span>
+        <span class="s1">'sigma_tau'</span><span class="p">:</span> <span class="n">sigma_tau</span><span class="p">,</span>
+        <span class="s1">'phi_iv'</span><span class="p">:</span> <span class="n">phi_iv</span><span class="p">,</span>
+        <span class="s1">'g_iv'</span><span class="p">:</span> <span class="n">g_iv</span><span class="p">,</span>
+        <span class="s1">'f_iv'</span><span class="p">:</span> <span class="n">f_iv</span><span class="p">,</span>
+        <span class="s1">'d_iv'</span><span class="p">:</span> <span class="n">d_iv</span><span class="p">,</span>
+        <span class="s1">'d_tau'</span><span class="p">:</span> <span class="n">d_tau</span><span class="p">,</span>
+        <span class="s1">'f_tau'</span><span class="p">:</span> <span class="n">f_tau</span><span class="p">,</span>
+        <span class="s1">'g_tau'</span><span class="p">:</span> <span class="n">g_tau</span><span class="p">,</span>
+        <span class="s1">'u'</span> <span class="p">:</span> <span class="n">u</span>
         <span class="p">}</span>
     <span class="k">return</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="n">delta_iv</span><span class="p">,</span> <span class="n">others</span>
 </pre></div>
@@ -752,9 +802,9 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_noise</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">noise</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Add Gaussian noise to an array</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">arr</span> <span class="o">+=</span> <span class="n">noise</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="n">arr</span> <span class="o">+=</span> <span class="n">noise</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">arr</span>
@@ -828,13 +878,13 @@ We consider a semicircular density of state with a half bandwidth of <span class
 <span class="n">sigma_iv</span><span class="p">,</span> <span class="n">delta_iv</span><span class="p">,</span> <span class="n">others</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">elsh</span><span class="p">,</span> <span class="n">sigma_iv0</span><span class="p">,</span> <span class="n">delta_iv0</span><span class="p">,</span> <span class="n">max_niter</span><span class="p">,</span> <span class="n">mixing</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Result</span>
-<span class="n">res</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;bset&quot;</span><span class="p">:</span> <span class="n">bset</span><span class="p">,</span> <span class="s2">&quot;sigma_iv&quot;</span><span class="p">:</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="s2">&quot;delta_iv&quot;</span><span class="p">:</span> <span class="n">delta_iv</span><span class="p">,</span> <span class="o">**</span><span class="n">others</span><span class="p">}</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"bset"</span><span class="p">:</span> <span class="n">bset</span><span class="p">,</span> <span class="s2">"sigma_iv"</span><span class="p">:</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="s2">"delta_iv"</span><span class="p">:</span> <span class="n">delta_iv</span><span class="p">,</span> <span class="o">**</span><span class="n">others</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 0 : diff_sigma= 0.04204279647136623, diff_delta=1.9999012499686777
-iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 0 : diff_sigma= 0.04588534196664189, diff_delta=2.000439801523027
+iter= 100 : diff_sigma= 1.5578629003476507e-07, diff_delta=3.6296599062457524e-07
 </pre></div>
 </div>
 </div>
@@ -842,9 +892,9 @@ iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let us check `F` is represented compactly in IR</span>
-<span class="n">f_l</span> <span class="o">=</span> <span class="n">bset</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s1">&#39;f_iv&#39;</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f_l</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$|F_l|$&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">bset</span><span class="o">.</span><span class="n">basis_f</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">bset</span><span class="o">.</span><span class="n">basis_f</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$S_l/S_0$&quot;</span><span class="p">)</span>
+<span class="n">f_l</span> <span class="o">=</span> <span class="n">bset</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s1">'f_iv'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f_l</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$|F_l|$"</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"o"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">bset</span><span class="o">.</span><span class="n">basis_f</span><span class="o">.</span><span class="n">s</span><span class="o">/</span><span class="n">bset</span><span class="o">.</span><span class="n">basis_f</span><span class="o">.</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$S_l/S_0$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">1e-8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -852,7 +902,7 @@ iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ef17e7fb1365a67b48558e43761e3453d1cd1c165cba317cfe00cd217df564e9.png" src="../_images/ef17e7fb1365a67b48558e43761e3453d1cd1c165cba317cfe00cd217df564e9.png" />
+<img alt="../_images/bbe4b74d45df5d6e4213ca3a4be5a3e5065a29fdcf86c2aafd59250f0b801979.png" src="../_images/bbe4b74d45df5d6e4213ca3a4be5a3e5065a29fdcf86c2aafd59250f0b801979.png" />
 </div>
 </div>
 </section>
@@ -861,54 +911,54 @@ iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_res</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; For plotting results &quot;&quot;&quot;</span>
-    <span class="n">beta</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;bset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">beta</span>
-    <span class="n">iv_f</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;bset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">wn_f</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span>
-    <span class="n">iv_b</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;bset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">wn_b</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">""" For plotting results """</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">"bset"</span><span class="p">]</span><span class="o">.</span><span class="n">beta</span>
+    <span class="n">iv_f</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">"bset"</span><span class="p">]</span><span class="o">.</span><span class="n">wn_f</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span>
+    <span class="n">iv_b</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">"bset"</span><span class="p">]</span><span class="o">.</span><span class="n">wn_b</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">beta</span><span class="p">)</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_f</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;sigma_iv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\omega_n$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Im $\Sigma(\mathrm</span><span class="si">{i}</span><span class="s2">\omega_n)$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_f</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">'sigma_iv'</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu^\mathrm</span><span class="si">{F}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Im $\Sigma(\mathrm</span><span class="si">{i}</span><span class="s2">\nu^\mathrm</span><span class="si">{F}</span><span class="s2">)$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_b</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;d_iv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu_m$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Re $D(\mathrm</span><span class="si">{i}</span><span class="s2">\nu_m)$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_b</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">'d_iv'</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu^\mathrm</span><span class="si">{B}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Re $D(\mathrm</span><span class="si">{i}</span><span class="s2">\nu^\mathrm</span><span class="si">{B}</span><span class="s2">)$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="c1">#plt.ylim([-0.1, 0.1])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bset</span><span class="o">.</span><span class="n">tau</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;d_tau&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\tau$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Re $D(\tau)$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bset</span><span class="o">.</span><span class="n">tau</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">'d_tau'</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\tau$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Re $D(\tau)$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_f</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;delta_iv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu_m$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Re $\Delta(\mathrm</span><span class="si">{i}</span><span class="s2">\nu_m)$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_f</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">'delta_iv'</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu^\mathrm</span><span class="si">{F}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Re $\Delta(\mathrm</span><span class="si">{i}</span><span class="s2">\nu^\mathrm</span><span class="si">{F}</span><span class="s2">)$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_f</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;f_iv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\omega_n$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Re $F(\mathrm</span><span class="si">{i}</span><span class="s2">\omega_n)$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">iv_f</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">'f_iv'</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu^\mathrm</span><span class="si">{F}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Re $F(\mathrm</span><span class="si">{i}</span><span class="s2">\nu^\mathrm</span><span class="si">{F}</span><span class="s2">)$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">elsh</span><span class="o">.</span><span class="n">iv_b</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;phi_iv&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nu_m$&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Re $\Pi(\mathrm</span><span class="si">{i}</span><span class="s2">\nu_m)$&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">elsh</span><span class="o">.</span><span class="n">iv_b</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">res</span><span class="p">[</span><span class="s1">'phi_iv'</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$\nu^\mathrm</span><span class="si">{B}</span><span class="s2">$"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"Re $\Pi(\mathrm</span><span class="si">{i}</span><span class="s2">\nu^\mathrm</span><span class="si">{B}</span><span class="s2">)$"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -918,12 +968,12 @@ iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/23e0ab0b88e2a90ac1b04efaec7a41d9c4babcfcb17a08bd385b05ccfd492cef.png" src="../_images/23e0ab0b88e2a90ac1b04efaec7a41d9c4babcfcb17a08bd385b05ccfd492cef.png" />
-<img alt="../_images/7f22874fbc2d4ab8310cd39dbad1bf8261e3c0625e93a0c7cf8c9b7610ad37d6.png" src="../_images/7f22874fbc2d4ab8310cd39dbad1bf8261e3c0625e93a0c7cf8c9b7610ad37d6.png" />
-<img alt="../_images/55be198f33bb88408205281755ed1c3adec6cc3e603fed8c1736556946cf7d26.png" src="../_images/55be198f33bb88408205281755ed1c3adec6cc3e603fed8c1736556946cf7d26.png" />
-<img alt="../_images/faf6fb18572fdf26193f86438cfd21a85772be0a158646a29b105f3427b30060.png" src="../_images/faf6fb18572fdf26193f86438cfd21a85772be0a158646a29b105f3427b30060.png" />
-<img alt="../_images/56356b9ed82592ea9a57ce8a0321fbd81884679b187c2fd8d0b5c807c9785cbb.png" src="../_images/56356b9ed82592ea9a57ce8a0321fbd81884679b187c2fd8d0b5c807c9785cbb.png" />
-<img alt="../_images/d09db8cd3d0cfb5f8c2edfd76b9a215050d2b5f3b51ac786aa67fc4bf9140c7a.png" src="../_images/d09db8cd3d0cfb5f8c2edfd76b9a215050d2b5f3b51ac786aa67fc4bf9140c7a.png" />
+<img alt="../_images/79ae6718726010b88207f4e6cb806435c5fc65c981a8cae68d2d82b3a0115a18.png" src="../_images/79ae6718726010b88207f4e6cb806435c5fc65c981a8cae68d2d82b3a0115a18.png" />
+<img alt="../_images/78030c5383bb8b9b8843209929be4c5f5021c2445f83e08415876cc92f9ce7fe.png" src="../_images/78030c5383bb8b9b8843209929be4c5f5021c2445f83e08415876cc92f9ce7fe.png" />
+<img alt="../_images/99820ad59061d0452a98ff9d1aad1fa2ba62eb9e25e1a3524f20931fdbd6921e.png" src="../_images/99820ad59061d0452a98ff9d1aad1fa2ba62eb9e25e1a3524f20931fdbd6921e.png" />
+<img alt="../_images/d17250cb96543611b1790bf34853b29b1ab394caa26951df77066f2138dcb951.png" src="../_images/d17250cb96543611b1790bf34853b29b1ab394caa26951df77066f2138dcb951.png" />
+<img alt="../_images/989dff6055e142ab83eb7f1e33d9b7e93131edec9e22e99ccaa00f1a4b43c44d.png" src="../_images/989dff6055e142ab83eb7f1e33d9b7e93131edec9e22e99ccaa00f1a4b43c44d.png" />
+<img alt="../_images/8249331f98509b4a1160f1822e16e8aa3b128e0cd6a6846a072c53172f858944.png" src="../_images/8249331f98509b4a1160f1822e16e8aa3b128e0cd6a6846a072c53172f858944.png" />
 </div>
 </div>
 </section>
@@ -977,46 +1027,46 @@ iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
     <span class="c1"># Solve!</span>
     <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">100000</span>
     <span class="n">sigma_iv</span><span class="p">,</span> <span class="n">delta_iv</span><span class="p">,</span> <span class="n">others</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">elsh</span><span class="p">,</span> <span class="n">sigma_iv0</span><span class="p">,</span> <span class="n">delta_iv0</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">,</span> <span class="n">mixing</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ph</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;sigma_iv&quot;</span><span class="p">:</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="s2">&quot;delta_iv&quot;</span><span class="p">:</span> <span class="n">delta_iv</span><span class="p">}</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"sigma_iv"</span><span class="p">:</span> <span class="n">sigma_iv</span><span class="p">,</span> <span class="s2">"delta_iv"</span><span class="p">:</span> <span class="n">delta_iv</span><span class="p">}</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">others</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
     <span class="n">res_temp</span><span class="p">[</span><span class="n">temp</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
 
     <span class="c1"># Use the converged result for an initial guess for the next temperature</span>
-    <span class="n">sigma_iv0</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;sigma_iv&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">delta_iv0</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;delta_iv&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">sigma_iv0</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">"sigma_iv"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">delta_iv0</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s2">"delta_iv"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_temps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">res_temp</span><span class="p">[</span><span class="n">temp</span><span class="p">][</span><span class="s2">&quot;u&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temps_all</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_all</span><span class="p">,</span> <span class="n">u_temps</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$T$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$E(T)$&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_temps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">res_temp</span><span class="p">[</span><span class="n">temp</span><span class="p">][</span><span class="s2">"u"</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temps_all</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps_all</span><span class="p">,</span> <span class="n">u_temps</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"x"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$T$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$E(T)$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/015dabef780f0537fbc093d3be049baf3dc7e8c8ec1a145534c5024f424ff3b3.png" src="../_images/015dabef780f0537fbc093d3be049baf3dc7e8c8ec1a145534c5024f424ff3b3.png" />
+<img alt="../_images/46a045fad5978e4f9093fa45cbe4aedeb8e52b2ef76c07247a354c139b51a778.png" src="../_images/46a045fad5978e4f9093fa45cbe4aedeb8e52b2ef76c07247a354c139b51a778.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">temp</span><span class="p">:</span> <span class="n">res_temp</span><span class="p">[</span><span class="n">temp</span><span class="p">][</span><span class="s2">&quot;u&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temps_all</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">temp</span><span class="p">:</span> <span class="n">res_temp</span><span class="p">[</span><span class="n">temp</span><span class="p">][</span><span class="s2">"u"</span><span class="p">]</span><span class="o">.</span><span class="n">real</span> <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temps_all</span><span class="p">}</span>
 <span class="n">specific_heat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">u_dict</span><span class="p">[</span><span class="n">temp</span><span class="o">+</span><span class="n">dt</span><span class="p">]</span> <span class="o">-</span> <span class="n">u_dict</span><span class="p">[</span><span class="n">temp</span><span class="p">]</span> <span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temps</span><span class="p">])</span><span class="o">/</span><span class="n">dt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">specific_heat</span><span class="o">/</span><span class="n">temps</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span> <span class="n">specific_heat</span><span class="o">/</span><span class="n">temps</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"o"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1200</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$T$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$C(T)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$T$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$C(T)/T$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1dfb84f401f4cd18eef2de7579cbed332c7ec31636182be4af407bc2d98b371c.png" src="../_images/1dfb84f401f4cd18eef2de7579cbed332c7ec31636182be4af407bc2d98b371c.png" />
+<img alt="../_images/d90e686904cb025da25c28cde1063553cf57c1152a82dda268ae43da95a18b7f.png" src="../_images/d90e686904cb025da25c28cde1063553cf57c1152a82dda268ae43da95a18b7f.png" />
 </div>
 </div>
 <!-- [1] Y. Kaga, P. Werner and S. Hoshino arXiv:2203.06946. -->
@@ -1085,15 +1135,17 @@ iter= 100 : diff_sigma= 2.3364917707546784e-07, diff_delta=5.443851032460589e-07
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self-consistent-calculation">Self-consistent calculation</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paramaters">Paramaters</a></li>
@@ -1151,8 +1203,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

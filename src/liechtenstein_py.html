@@ -16,47 +16,56 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-RD8N0K0C9Y"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -66,6 +75,12 @@
     <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){ dataLayer.push(arguments); }
+                gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', 'G-RD8N0K0C9Y');
             </script>
@@ -73,40 +88,37 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/liechtenstein_py';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Numerical analytic continuation" href="analytic_continuation_py.html" />
     <link rel="prev" title="Orbital magnetic susceptibility" href="orbital_magnetic_susceptibility_py.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -114,7 +126,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -122,15 +133,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -139,7 +194,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -169,23 +225,20 @@
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="IR_py.html">Intermediate representation (IR)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_sampling_py.html">Sparse sampling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DLR.html">Discrete Lehmann representation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="matsubarasum.html">Summation over Matsubara axis</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/notation.html">Notation and conventions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html">Intermediate representation (IR)</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html">Sparse sampling</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/DLR.html">Discrete Lehmann representation</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html">Summation over Matsubara axis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
@@ -236,9 +289,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -321,7 +379,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -335,25 +393,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -375,7 +425,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liechtenstein-method">Liechtenstein method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liechtenstein-formula-in-single-orbital-model">Liechtenstein formula in single-orbital model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-ir">Sparse_ir</a></li>
@@ -419,28 +469,28 @@ H=-t\sum_{&lt;i,j&gt;}\sum_s c^\dagger_{is} c_{js} - \sum_i \sum_{ss'} c^\dagger
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
-J_{ij} = -B^2T\sum_{\omega_n} G_{ij,+}(i\omega_n)G_{ji ,-}(i\omega_n)
+J_{ij} = -B^2T\sum_{\nu} G_{ij,+}(\mathrm{i}\nu)G_{ji ,-}(\mathrm{i}\nu)
 \end{align}
 \]</div>
-<p>where the Green function <span class="math notranslate nohighlight">\(G_{ij,\sigma}(i\omega_n)\)</span> is a Fourier transform of <span class="math notranslate nohighlight">\(G_{\boldsymbol{k},\sigma}(i\omega_n) = [i\omega_n - (\varepsilon_{\boldsymbol{k}}-B\sigma-\mu)]^{-1}\)</span> with the single-particle dispersion <span class="math notranslate nohighlight">\(\varepsilon_{\boldsymbol{k}}\)</span> and chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>. <span class="math notranslate nohighlight">\(i\omega_n=(2n+1)\pi T\)</span> is the Matsubara frequency and <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> is the crystal momentum. An important quantity here is defined by <span class="math notranslate nohighlight">\(J_0=\sum_{0\neq i}J_{0i}\)</span>, which is related to the mean-filed transition temperature <span class="math notranslate nohighlight">\(T_c^{\rm mf}\)</span> in the classical Heisenberg model by <span class="math notranslate nohighlight">\(T_c^{\rm mf}=2J_0/3\)</span>. This can be evaluated from the above <span class="math notranslate nohighlight">\(J_{ij}\)</span>, or the direct comparison of the second derivatives of the total energy, which gives</p>
+<p>where the Green function <span class="math notranslate nohighlight">\(G_{ij,\sigma}(\mathrm{i}\nu)\)</span> is a Fourier transform of <span class="math notranslate nohighlight">\(G_{\boldsymbol{k},\sigma}(\mathrm{i}\nu) = [\mathrm{i}\nu - (\varepsilon_{\boldsymbol{k}}-B\sigma-\mu)]^{-1}\)</span> with the single-particle dispersion <span class="math notranslate nohighlight">\(\varepsilon_{\boldsymbol{k}}\)</span> and chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>. <span class="math notranslate nohighlight">\(\nu = n\pi T\)</span> with odd <span class="math notranslate nohighlight">\(n\)</span> is the fermionic Matsubara frequency and <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> is the crystal momentum. An important quantity here is defined by <span class="math notranslate nohighlight">\(J_0=\sum_{0\neq i}J_{0i}\)</span>, which is related to the mean-filed transition temperature <span class="math notranslate nohighlight">\(T_c^{\rm mf}\)</span> in the classical Heisenberg model by <span class="math notranslate nohighlight">\(T_c^{\rm mf}=2J_0/3\)</span>. This can be evaluated from the above <span class="math notranslate nohighlight">\(J_{ij}\)</span>, or the direct comparison of the second derivatives of the total energy, which gives</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
-J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{00,-}(i\omega_n)
+J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\nu} G_{00,+}(\mathrm{i}\nu)G_{00,-}(\mathrm{i}\nu)
 \end{align}
 \]</div>
-<p>In practice, <span class="math notranslate nohighlight">\(G_{00,\sigma}(i\omega_n)\)</span> can be obtained by the <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> summation of <span class="math notranslate nohighlight">\(G_{\boldsymbol{k},\sigma}(i\omega_n)\)</span> since all sites are equivalent in this model. Thus, the number of operations is <span class="math notranslate nohighlight">\(\mathcal{O}(N_M N_k^{tot})\)</span> where <span class="math notranslate nohighlight">\(N_M\)</span> is the number of Matsubara frequency and <span class="math notranslate nohighlight">\(N_k^{tot}\)</span> is the total number of k-points. Since the typical value of <span class="math notranslate nohighlight">\(N_M\)</span> is <span class="math notranslate nohighlight">\(N_M\sim \beta W\)</span>, the total cost is given by <span class="math notranslate nohighlight">\(\mathcal{O}(\beta W  N_k)\)</span>. On the other hand, we need <span class="math notranslate nohighlight">\(G_{ij,+}(i\omega_n)\)</span> to evaluate <span class="math notranslate nohighlight">\(J_{ij}\)</span>, and in this case, the number of operations becomes <span class="math notranslate nohighlight">\(\mathcal{O}(N_M (N_k\ln N_k)^d)\)</span> since the Fourier transform requires <span class="math notranslate nohighlight">\(N_k\ln N_k\)</span> operations for a single axis, where <span class="math notranslate nohighlight">\(N_k\)</span> is the number of k-points for a single axis and <span class="math notranslate nohighlight">\(d\)</span> is the dimension. Thus, we need <span class="math notranslate nohighlight">\(\mathcal{O}(\beta W (N_k\ln N_k)^d)\)</span> in total.</p>
+<p>In practice, <span class="math notranslate nohighlight">\(G_{00,\sigma}(\mathrm{i}\nu)\)</span> can be obtained by the <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> summation of <span class="math notranslate nohighlight">\(G_{\boldsymbol{k},\sigma}(\mathrm{i}\nu)\)</span> since all sites are equivalent in this model. Thus, the number of operations is <span class="math notranslate nohighlight">\(\mathcal{O}(N_M N_k^{tot})\)</span> where <span class="math notranslate nohighlight">\(N_M\)</span> is the number of Matsubara frequency and <span class="math notranslate nohighlight">\(N_k^{tot}\)</span> is the total number of k-points. Since the typical value of <span class="math notranslate nohighlight">\(N_M\)</span> is <span class="math notranslate nohighlight">\(N_M\sim \beta W\)</span>, the total cost is given by <span class="math notranslate nohighlight">\(\mathcal{O}(\beta W  N_k)\)</span>. On the other hand, we need <span class="math notranslate nohighlight">\(G_{ij,+}(\mathrm{i}\nu)\)</span> to evaluate <span class="math notranslate nohighlight">\(J_{ij}\)</span>, and in this case, the number of operations becomes <span class="math notranslate nohighlight">\(\mathcal{O}(N_M (N_k\ln N_k)^d)\)</span> since the Fourier transform requires <span class="math notranslate nohighlight">\(N_k\ln N_k\)</span> operations for a single axis, where <span class="math notranslate nohighlight">\(N_k\)</span> is the number of k-points for a single axis and <span class="math notranslate nohighlight">\(d\)</span> is the dimension. Thus, we need <span class="math notranslate nohighlight">\(\mathcal{O}(\beta W (N_k\ln N_k)^d)\)</span> in total.</p>
 </section>
 <section id="sparse-ir">
 <h3>Sparse_ir<a class="headerlink" href="#sparse-ir" title="Link to this heading">#</a></h3>
-<p>Since <span class="math notranslate nohighlight">\(G_{ij,\sigma}(i\omega_n)\)</span> as well as <span class="math notranslate nohighlight">\(G_{00,\sigma}(i\omega_n)\)</span> are just linear conbinations of <span class="math notranslate nohighlight">\(G_{\boldsymbol{k},\sigma}(i\omega_n)\)</span>, all terms we need take the following form,</p>
+<p>Since <span class="math notranslate nohighlight">\(G_{ij,\sigma}(\mathrm{i}\nu)\)</span> as well as <span class="math notranslate nohighlight">\(G_{00,\sigma}(\mathrm{i}\nu)\)</span> are just linear conbinations of <span class="math notranslate nohighlight">\(G_{\boldsymbol{k},\sigma}(\mathrm{i}\nu)\)</span>, all terms we need take the following form,</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align}
-\frac{1}{i\omega_n - \varepsilon_a}\frac{1}{i\omega_n - \varepsilon_b}=\frac{1}{\varepsilon_a-\varepsilon_b}\left(\frac{1}{i\omega_n - \varepsilon_a}-\frac{1}{i\omega_n - \varepsilon_b} \right)
+\frac{1}{\mathrm{i}\nu - \varepsilon_a}\frac{1}{\mathrm{i}\nu - \varepsilon_b}=\frac{1}{\varepsilon_a-\varepsilon_b}\left(\frac{1}{\mathrm{i}\nu - \varepsilon_a}-\frac{1}{\mathrm{i}\nu - \varepsilon_b} \right)
 \end{align}
 \]</div>
-<p>Thus, we can expand <span class="math notranslate nohighlight">\(G_{ij,+}(i\omega_n)G_{ji ,-}(i\omega_n)\)</span> in the expression for <span class="math notranslate nohighlight">\(J_{ij}\)</span> and <span class="math notranslate nohighlight">\(G_{00,+}(i\omega_n)G_{00,-}(i\omega_n)\)</span> for <span class="math notranslate nohighlight">\(J_{0}\)</span> by the intermadiate representation. Since the summation over <span class="math notranslate nohighlight">\(i\omega_n\)</span> is equivalent to evaluating the Fourier transform at <span class="math notranslate nohighlight">\(\tau=0\)</span>, we need only <span class="math notranslate nohighlight">\(\mathcal{O}(\ln (\beta W))\)</span> operations for the Matsubara frequancy axis. Thus, the computational cost becomes <span class="math notranslate nohighlight">\(\mathcal{O}(\ln(\beta W)  N_k^{tot})\)</span> for <span class="math notranslate nohighlight">\(J_0\)</span> and <span class="math notranslate nohighlight">\(\mathcal{O}(\ln(\beta W) (N_k\ln N_k)^d)\)</span> for <span class="math notranslate nohighlight">\(J_{ij}\)</span>.</p>
+<p>Thus, we can expand <span class="math notranslate nohighlight">\(G_{ij,+}(\mathrm{i}\nu)G_{ji ,-}(\mathrm{i}\nu)\)</span> in the expression for <span class="math notranslate nohighlight">\(J_{ij}\)</span> and <span class="math notranslate nohighlight">\(G_{00,+}(\mathrm{i}\nu)G_{00,-}(\mathrm{i}\nu)\)</span> for <span class="math notranslate nohighlight">\(J_{0}\)</span> by the intermadiate representation. Since the summation over <span class="math notranslate nohighlight">\(\mathrm{i}\nu\)</span> is equivalent to evaluating the Fourier transform at <span class="math notranslate nohighlight">\(\tau=0\)</span>, we need only <span class="math notranslate nohighlight">\(\mathcal{O}(\ln (\beta W))\)</span> operations for the Matsubara frequancy axis. Thus, the computational cost becomes <span class="math notranslate nohighlight">\(\mathcal{O}(\ln(\beta W)  N_k^{tot})\)</span> for <span class="math notranslate nohighlight">\(J_0\)</span> and <span class="math notranslate nohighlight">\(\mathcal{O}(\ln(\beta W) (N_k\ln N_k)^d)\)</span> for <span class="math notranslate nohighlight">\(J_{ij}\)</span>.</p>
 </section>
 </section>
 <section id="code-implementation">
@@ -483,7 +533,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
     
     <span class="bp">self</span><span class="o">.</span><span class="n">basis</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">M</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">T</span> <span class="o">=</span> <span class="n">basis</span><span class="p">,</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">MatsubaraSampling</span><span class="p">(</span><span class="n">basis</span><span class="p">),</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">TauSampling</span><span class="p">(</span><span class="n">basis</span><span class="p">)</span>
     <span class="n">t</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">b_eff</span><span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-    <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)</span>
+    <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">'ij'</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">ek</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span> <span class="n">t</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">k1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">k2</span><span class="p">))</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">nkt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="o">**</span><span class="mi">2</span>
 
@@ -545,7 +595,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
     <span class="c1"># arrange the format to ouput the data</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">jij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">jij</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">jij</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">jij_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">),</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">&#39;ij&#39;</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">jij_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">),</span> <span class="n">indexing</span><span class="o">=</span><span class="s1">'ij'</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -557,7 +607,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lambda</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="n">b_eff</span><span class="p">)</span> <span class="o">*</span> <span class="n">beta</span>
-<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="n">statistics</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="o">=</span><span class="n">Lambda</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">)</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="n">statistics</span><span class="o">=</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="o">=</span><span class="n">Lambda</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">)</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">liechtenstein</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">nk</span><span class="p">,</span> <span class="n">b_eff</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -569,20 +619,20 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
 <p>Here, let us evaluate J_0 as a function of the chemmical potential <span class="math notranslate nohighlight">\(\mu\)</span>. To check the validity of the sparse sampleing method, we will compare it with that evaluated by the conventional Matsubara frequency grid. This can be done as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;mu&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;J_0&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"mu"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"J_0"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">nm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">1600</span><span class="p">]):</span>
       <span class="n">l</span><span class="o">.</span><span class="n">j0_calc</span><span class="p">(</span><span class="n">e_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">41</span><span class="p">),</span> <span class="n">NM</span><span class="o">=</span><span class="n">nm</span><span class="p">)</span>
-      <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">j0_e_range</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">j0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">nm</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">cool</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mf">5.</span><span class="p">))</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">j0_e_range</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">j0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">nm</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">cool</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mf">5.</span><span class="p">))</span>
 <span class="n">l</span><span class="o">.</span><span class="n">j0_calc</span><span class="p">(</span><span class="n">e_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">41</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">j0_e_range</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">j0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sparse_IR&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">cool</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">j0_e_range</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">j0</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Sparse_IR'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">cool</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3b396f2f8359b54e0314b67c74c598f5eb7010ef42d090905a6a757d96a2088d.png" src="../_images/3b396f2f8359b54e0314b67c74c598f5eb7010ef42d090905a6a757d96a2088d.png" />
+<img alt="../_images/33a3dc674bad95abd6143b7f87a43b07794d1858f548eefcc21f96badd4ea755.png" src="../_images/33a3dc674bad95abd6143b7f87a43b07794d1858f548eefcc21f96badd4ea755.png" />
 </div>
 </div>
 <p>As is expected, the system favors the antiferromagnetic state at the half-filling while it favors the ferromagnetic state at the low-carrier regime. This feature is consistent with the super-exchange and the doule-exchange interactions.</p>
@@ -593,17 +643,17 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">clf</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;distance&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;J_ij&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"distance"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"J_ij"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
 <span class="n">l</span><span class="o">.</span><span class="n">jij_calc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">jij_r</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">jij</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">jij_r</span><span class="p">,</span> <span class="n">l</span><span class="o">.</span><span class="n">jij</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'.'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1713ad69f185cc60c1842046412daf31a5ee1697b57a7513e7f44f4e8dfd9d7a.png" src="../_images/1713ad69f185cc60c1842046412daf31a5ee1697b57a7513e7f44f4e8dfd9d7a.png" />
+<img alt="../_images/98f8b931468f59a472d2608ff39c661c7000bfb83bb1e68befa23f1cf2284f01.png" src="../_images/98f8b931468f59a472d2608ff39c661c7000bfb83bb1e68befa23f1cf2284f01.png" />
 </div>
 </div>
 <p>We can easily check <span class="math notranslate nohighlight">\(J_0=\sum_j J_{0j}\)</span> as follows.</p>
@@ -616,7 +666,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.29545914030838905 -0.29545913991670514
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.29545914000386975 -0.2954591398005782
 </pre></div>
 </div>
 </div>
@@ -681,15 +731,17 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\omega_n} G_{00,+}(i\omega_n)G_{
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#liechtenstein-method">Liechtenstein method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liechtenstein-formula-in-single-orbital-model">Liechtenstein formula in single-orbital model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-ir">Sparse_ir</a></li>
@@ -751,8 +803,8 @@ By sparse-ir developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
