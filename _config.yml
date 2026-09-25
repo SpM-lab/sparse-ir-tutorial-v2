@@ -50,8 +50,19 @@ sphinx:
   config:
     bibtex_reference_style: author_year
     language: en
+    # Setting exclude_patterns replaces Jupyter Book's defaults, so they are
+    # repeated here; .venv keeps Sphinx out of the installed packages.
     exclude_patterns:
       - src_disabled
+      - _build
+      - .venv
+      - Thumbs.db
+      - .DS_Store
+      - "**.ipynb_checkpoints"
+    # The notebooks name "julia-x.y" kernels; run them all with the "julia"
+    # kernel that register_julia_kernel.jl installs.
+    nb_kernel_rgx_aliases:
+      "julia-.*": julia
 
 parse:
   myst_substitutions:
