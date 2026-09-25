@@ -512,7 +512,7 @@
 
 <span class="n">T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="w">    </span><span class="c"># temperature</span>
 <span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">T</span><span class="w">    </span><span class="c"># inverse temperature</span>
-<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.85</span><span class="w">   </span><span class="c"># electron filling, here per spin per lattice site (n=1: half filling)</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.85</span><span class="w">   </span><span class="c"># electron filling per lattice site, summed over both spins (n=1: half filling)</span>
 <span class="n">U</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w">    </span><span class="c"># Hubbard interaction</span>
 
 <span class="c">### Numerical parameters</span>
@@ -549,15 +549,13 @@
 <span class="w">    </span><span class="n">bnw</span><span class="o">::</span><span class="kt">Int64</span>
 <span class="w">    </span><span class="n">bntau</span><span class="o">::</span><span class="kt">Int64</span>
 <span class="w">    </span><span class="n">IR_basis_set</span><span class="o">::</span><span class="kt">FiniteTempBasisSet</span>
-<span class="w">    </span><span class="n">use_positive_taus</span><span class="o">::</span><span class="kt">Bool</span>
 <span class="k">end</span>
 
 <span class="s">"""Initiarize function"""</span>
 <span class="k">function</span><span class="w"> </span><span class="n">Mesh</span><span class="p">(</span>
 <span class="w">    </span><span class="n">nk1</span><span class="o">::</span><span class="kt">Int64</span><span class="p">,</span>
 <span class="w">    </span><span class="n">nk2</span><span class="o">::</span><span class="kt">Int64</span><span class="p">,</span>
-<span class="w">    </span><span class="n">IR_basis_set</span><span class="o">::</span><span class="kt">FiniteTempBasisSet</span><span class="p">;</span>
-<span class="w">    </span><span class="n">use_positive_taus</span><span class="o">::</span><span class="kt">Bool</span><span class="o">=</span><span class="nb">false</span>
+<span class="w">    </span><span class="n">IR_basis_set</span><span class="o">::</span><span class="kt">FiniteTempBasisSet</span>
 <span class="p">)</span><span class="o">::</span><span class="kt">Mesh</span>
 
 <span class="w">    </span><span class="n">nk</span><span class="o">::</span><span class="kt">Int64</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nk1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nk2</span>
@@ -585,7 +583,7 @@
 <span class="w">    </span><span class="k">end</span>
 
 <span class="w">    </span><span class="c"># Return</span>
-<span class="w">    </span><span class="n">Mesh</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">,</span><span class="w"> </span><span class="n">nk</span><span class="p">,</span><span class="w"> </span><span class="n">ek</span><span class="p">,</span><span class="w"> </span><span class="n">iw0_f</span><span class="p">,</span><span class="w"> </span><span class="n">iw0_b</span><span class="p">,</span><span class="w"> </span><span class="n">fnw</span><span class="p">,</span><span class="w"> </span><span class="n">fntau</span><span class="p">,</span><span class="w"> </span><span class="n">bnw</span><span class="p">,</span><span class="w"> </span><span class="n">bntau</span><span class="p">,</span><span class="w"> </span><span class="n">IR_basis_set</span><span class="p">,</span><span class="w"> </span><span class="n">use_positive_taus</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Mesh</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">,</span><span class="w"> </span><span class="n">nk</span><span class="p">,</span><span class="w"> </span><span class="n">ek</span><span class="p">,</span><span class="w"> </span><span class="n">iw0_f</span><span class="p">,</span><span class="w"> </span><span class="n">iw0_b</span><span class="p">,</span><span class="w"> </span><span class="n">fnw</span><span class="p">,</span><span class="w"> </span><span class="n">fntau</span><span class="p">,</span><span class="w"> </span><span class="n">bnw</span><span class="p">,</span><span class="w"> </span><span class="n">bntau</span><span class="p">,</span><span class="w"> </span><span class="n">IR_basis_set</span><span class="p">)</span>
 <span class="k">end</span>
 
 <span class="k">function</span><span class="w"> </span><span class="n">smpl_obj</span><span class="p">(</span><span class="n">mesh</span><span class="o">::</span><span class="kt">Mesh</span><span class="p">,</span><span class="w"> </span><span class="n">statistics</span><span class="o">::</span><span class="kt">SparseIR</span><span class="o">.</span><span class="n">Statistics</span><span class="p">)</span>
@@ -817,23 +815,9 @@
 
 <span class="k">function</span><span class="w"> </span><span class="n">ckio_calc</span><span class="p">(</span><span class="n">solver</span><span class="o">::</span><span class="kt">FLEXSolver</span><span class="p">)</span>
 <span class="w">    </span><span class="s">""" Calculate irreducible susciptibility chi0(iv,q) """</span>
-<span class="w">    </span><span class="c"># chi0(tau, r) = -G(tau, r) * G(-tau, -r)</span>
-<span class="w">    </span><span class="c"># For positive taus in (0, beta): G(-tau, -r) = -G(beta-tau, -r) = -G(beta-tau, r) (inversion symmetry),</span>
-<span class="w">    </span><span class="c">#   and G(beta-tau, r) is obtained by reversing the tau array</span>
-<span class="w">    </span><span class="c">#   =&gt; chi0(tau, r) = G(tau, r) * G(beta-tau, r)</span>
-<span class="w">    </span><span class="c"># For taus in (-beta/2, beta/2]: G(-tau, r) is obtained by reversing the tau array</span>
-<span class="w">    </span><span class="c">#   only for an even number of points (for an odd number, beta/2 is a point but -beta/2 is not)</span>
-<span class="w">    </span><span class="c">#   =&gt; chi0(tau, r) = -G(tau, r) * G(-tau, r)</span>
-<span class="w">    </span><span class="n">grit_reversed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reverse</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">grit</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">solver</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">use_positive_taus</span>
-<span class="w">        </span><span class="c"># G(tau) * G(beta - tau)</span>
-<span class="w">        </span><span class="n">crit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solver</span><span class="o">.</span><span class="n">grit</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">grit_reversed</span>
-<span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="c"># - G(tau) * G(- tau)</span>
-<span class="w">        </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solver</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_tau_f</span><span class="o">.</span><span class="n">sampling_points</span>
-<span class="w">        </span><span class="nd">@assert</span><span class="w"> </span><span class="n">reverse</span><span class="p">(</span><span class="n">tau</span><span class="p">)</span><span class="w"> </span><span class="o">≈</span><span class="w"> </span><span class="o">-</span><span class="n">tau</span>
-<span class="w">        </span><span class="n">crit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">solver</span><span class="o">.</span><span class="n">grit</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">grit_reversed</span>
-<span class="w">    </span><span class="k">end</span>
+<span class="w">    </span><span class="c"># chi0(tau, r) = -G(tau, r) * G(-tau, -r) = G(tau, r) * G(beta-tau, r) (inversion symmetry).</span>
+<span class="w">    </span><span class="c"># The default sampling times lie in (0, beta), so reversing the tau array gives G(beta-tau, r).</span>
+<span class="w">    </span><span class="n">crit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solver</span><span class="o">.</span><span class="n">grit</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">reverse</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">grit</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c"># Fourier transform</span>
 <span class="w">    </span><span class="n">ckit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r_to_k</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">crit</span><span class="p">)</span>
@@ -909,10 +893,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="c"># initialize calculation</span>
-<span class="n">use_positive_taus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
-
-<span class="n">IR_basis_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="kt">Float64</span><span class="p">(</span><span class="n">wmax</span><span class="p">),</span><span class="w"> </span><span class="n">IR_tol</span><span class="p">;</span><span class="w"> </span><span class="n">use_positive_taus</span><span class="o">=</span><span class="n">use_positive_taus</span><span class="p">)</span>
-<span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mesh</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">,</span><span class="w"> </span><span class="n">IR_basis_set</span><span class="p">;</span><span class="w"> </span><span class="n">use_positive_taus</span><span class="o">=</span><span class="n">use_positive_taus</span><span class="p">)</span>
+<span class="n">IR_basis_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="kt">Float64</span><span class="p">(</span><span class="n">wmax</span><span class="p">),</span><span class="w"> </span><span class="n">IR_tol</span><span class="p">)</span>
+<span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mesh</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">,</span><span class="w"> </span><span class="n">IR_basis_set</span><span class="p">)</span>
 <span class="n">sigma_init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="kt">ComplexF64</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">fnw</span><span class="p">,</span><span class="w"> </span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">))</span>
 <span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FLEXSolver</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">sigma_init</span><span class="p">,</span><span class="w"> </span><span class="n">sfc_tol</span><span class="o">=</span><span class="n">sfc_tol</span><span class="p">,</span><span class="w"> </span><span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span><span class="w"> </span><span class="n">U_maxiter</span><span class="o">=</span><span class="n">U_maxiter</span><span class="p">,</span><span class="w"> </span><span class="n">mix</span><span class="o">=</span><span class="n">mix</span><span class="p">)</span>
 
@@ -928,38 +910,43 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initiate U renormalization loop.
 1	2.367980269171819	4.0
 2	2.6631530509592727	4.0
-3	2.9528432011375303	4.0
-4	3.2372665027423193	4.0
-5	3.5175353553179804	4.0
-6	
+3	
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.795074730529624	4.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.9528432011375303	4.0
+4	3.2372665027423193	4.0
+5	3.5175353553179804	4.0
+6	3.795074730529624	4.0
 Leaving U renormalization...
-1	0.08848089073838862
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1	0.08848089073838859
 2	0.1456952273460961
-3	0.022615814131256178
-4	0.011893505710469092
+3	0.022615814131256174
+4	0.011893505710469094
 5	0.0076277090501725665
-6	0.005337914476433699
+6	0.0053379144764337
 7	0.0038932542370176673
 8	0.0028971360061488772
 9	0.002176317020926998
-10	0.0016421546589787585
-11	0.0012421091833959017
-12	0.0009414202269465862
-13	0.0007150642109608558
-14	0.0005445167053368651
-15	
+10	
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0004159378093371236
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0016421546589787583
+11	0.0012421091833959017
+12	0.0009414202269465864
+13	0.0007150642109608558
+14	0.000544516705336865
+15	0.0004159378093371236
 16	0.00031889817047073884
 17	0.0002455469581967536
 18	0.0001899484647515126
-19	0.0001476827551311854
-20	0.00011544934333202396
-21	9.075049525105415e-5
+19	0.00014768275513118536
+20	0.00011544934333202392
+21	
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.075049525105415e-5
 FLEX loop converged at desired accuracy
 </pre></div>
 </div>
@@ -1146,13 +1133,13 @@ FLEX loop converged at desired accuracy
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.11526419859554092	0.11526419859554092
 2	0.4061742076753687	0.2909100090798278
-3	0.449451978395577	0.043277770720208275
-4	0.4561789508412747	0.006726972445697699
-5	0.4577778252013472	0.0015988743600724997
+3	0.44945197839557705	0.04327777072020833
+4	0.45617895084127474	0.006726972445697699
+5	0.4577778252013472	0.0015988743600724442
 6	0.4581565074117362	0.00037868221038900307
 7	0.4582583764424921	0.00010186903075593001
-8	0.4582848415126446	2.646507015247046e-5
-The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
+8	0.45828484151264465	2.646507015252597e-5
+The superconducting eigenvalue at T=0.1 is lambda_d=0.45828484151264465
 </pre></div>
 </div>
 </div>
@@ -1212,7 +1199,7 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
 <div class="highlight-julia notranslate"><div class="highlight"><pre><span></span><span class="n">println</span><span class="p">(</span><span class="s">"Initialization..."</span><span class="p">)</span>
 <span class="c"># system parameters</span>
 <span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">      </span><span class="c"># hopping amplitude</span>
-<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.85</span><span class="w">   </span><span class="c"># electron filling, here per spin per lattice site (n=1: half filling)</span>
+<span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.85</span><span class="w">   </span><span class="c"># electron filling per lattice site, summed over both spins (n=1: half filling)</span>
 <span class="n">U</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w">    </span><span class="c"># Hubbard interaction</span>
 
 <span class="n">W</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="w">    </span><span class="c"># bandwidth</span>
@@ -1231,8 +1218,7 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
 
 <span class="c"># initialize first IR basis set (no recalculation afterwrds)</span>
 <span class="n">beta_init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">T_values</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">use_positive_taus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
-<span class="n">IR_basis_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta_init</span><span class="p">,</span><span class="w"> </span><span class="n">IR_Lambda</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">beta_init</span><span class="p">,</span><span class="w"> </span><span class="n">IR_tol</span><span class="p">;</span><span class="w"> </span><span class="n">use_positive_taus</span><span class="o">=</span><span class="n">use_positive_taus</span><span class="p">)</span>
+<span class="n">IR_basis_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta_init</span><span class="p">,</span><span class="w"> </span><span class="n">IR_Lambda</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">beta_init</span><span class="p">,</span><span class="w"> </span><span class="n">IR_tol</span><span class="p">)</span>
 
 <span class="c"># set initial self_energy - will be set to previous calculation step afterwards</span>
 <span class="n">sigma_init</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">zeros</span><span class="p">(</span><span class="kt">ComplexF64</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">length</span><span class="p">(</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">smpl_wn_f</span><span class="o">.</span><span class="n">sampling_points</span><span class="p">),</span><span class="w"> </span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">))</span>
@@ -1240,41 +1226,12 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
 <span class="c"># empty arrays for results</span>
 <span class="n">lam_T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">T_values</span><span class="p">))</span>
 <span class="n">chiSmax_T</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">(</span><span class="n">T_values</span><span class="p">))</span>
-<span class="n">chi_s_plt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span><span class="w"> </span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">)</span>
+<span class="n">chi_s_plt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Array</span><span class="p">{</span><span class="kt">Float64</span><span class="p">}(</span><span class="nb">undef</span><span class="p">,</span><span class="w"> </span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialization...
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>64×64 Matrix{Float64}:
- 4.83859e-315    0.0             0.0           …  4.77111e-315  4.97167e-315
- 8.0e-323      NaN             NaN                4.83854e-315  4.97166e-315
- 4.9715e-315     4.97151e-315    4.97152e-315     4.97166e-315  6.90612e-310
- 4.9715e-315     4.97151e-315    4.97151e-315     6.90612e-310  4.90682e-315
- 0.0             0.0             4.97643e-315     4.83854e-315  4.97166e-315
- 1.6e-322        6.90604e-310  NaN             …  4.97166e-315  1.65781e-316
- 4.9715e-315     4.97151e-315    4.97151e-315     1.65781e-316  0.0
- 4.9715e-315     4.97151e-315    4.97151e-315     0.0           4.81569e-315
- 0.0             0.0             4.81074e-315     4.87398e-315  1.06418e-310
- 2.37e-322       1.5e-321        2.767e-321       1.06524e-310  2.67438e-312
- 4.9715e-315     4.97151e-315    4.97151e-315  …  4.34346e-314  4.97166e-315
- 4.9715e-315     4.97151e-315    4.97151e-315     4.97166e-315  4.97165e-315
- 0.0             4.8689e-315     4.81074e-315     4.97165e-315  4.97166e-315
- ⋮                                             ⋱                
- 4.8689e-315     4.97166e-315    4.81075e-315     0.0           6.90612e-310
- 1.107e-321      2.37e-321     NaN                6.90612e-310  0.0
- 4.9715e-315     4.97151e-315    4.97151e-315     0.0           4.97166e-315
- 4.97151e-315    4.97151e-315    4.97151e-315  …  4.97166e-315  5.0e-324
- 4.8689e-315     4.97166e-315    4.9764e-315      5.0e-324      0.0
- 8.34405e-309    9.73472e-309    9.73472e-309     0.0           4.81569e-315
- 4.97151e-315    4.97151e-315    4.97151e-315     4.87398e-315  4.21428e-311
- 4.97151e-315    4.97151e-315    4.97151e-315     4.21428e-311  4.97166e-315
- 0.0             4.97166e-315    0.0           …  4.97166e-315  4.97166e-315
- 1.265e-321      2.53e-321       3.794e-321       4.97166e-315  4.90682e-315
- 4.97151e-315    4.97151e-315    4.97151e-315     4.90682e-315  4.77111e-315
- 4.97151e-315    4.97152e-315    4.97151e-315     4.77111e-315  4.90683e-315
 </pre></div>
 </div>
 </div>
@@ -1289,8 +1246,8 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
 <span class="w">    </span><span class="k">local</span><span class="w"> </span><span class="n">beta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">T</span>
 
 <span class="w">    </span><span class="c"># initialize meshes</span>
-<span class="w">    </span><span class="n">IR_basis_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">IR_Lambda</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">IR_tol</span><span class="p">;</span><span class="w"> </span><span class="n">sve_result</span><span class="o">=</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">basis_f</span><span class="o">.</span><span class="n">sve_result</span><span class="p">,</span><span class="w"> </span><span class="n">use_positive_taus</span><span class="o">=</span><span class="n">use_positive_taus</span><span class="p">)</span>
-<span class="w">    </span><span class="k">local</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mesh</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">,</span><span class="w"> </span><span class="n">IR_basis_set</span><span class="p">;</span><span class="w"> </span><span class="n">use_positive_taus</span><span class="o">=</span><span class="n">use_positive_taus</span><span class="p">)</span>
+<span class="w">    </span><span class="n">IR_basis_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FiniteTempBasisSet</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">IR_Lambda</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">IR_tol</span><span class="p">;</span><span class="w"> </span><span class="n">sve_result</span><span class="o">=</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">basis_f</span><span class="o">.</span><span class="n">sve_result</span><span class="p">)</span>
+<span class="w">    </span><span class="k">local</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mesh</span><span class="p">(</span><span class="n">nk1</span><span class="p">,</span><span class="w"> </span><span class="n">nk2</span><span class="p">,</span><span class="w"> </span><span class="n">IR_basis_set</span><span class="p">)</span>
 
 <span class="w">    </span><span class="c"># calculate FLEX loop</span>
 <span class="w">    </span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FLEXSolver</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="n">U</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">sigma_init</span><span class="p">,</span><span class="w"> </span><span class="n">sfc_tol</span><span class="o">=</span><span class="n">sfc_tol</span><span class="p">,</span><span class="w"> </span><span class="n">maxiter</span><span class="o">=</span><span class="n">it_max</span><span class="p">,</span><span class="w"> </span><span class="n">U_maxiter</span><span class="o">=</span><span class="n">U_it_max</span><span class="p">,</span><span class="w"> </span><span class="n">mix</span><span class="o">=</span><span class="n">mix</span><span class="p">,</span><span class="w"> </span><span class="n">verbose</span><span class="o">=</span><span class="nb">false</span><span class="p">)</span>
@@ -1317,9 +1274,7 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.08
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!
+WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initiate U renormalization loop.
@@ -1333,21 +1288,22 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.4582848415126446
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	2.895248126887132	4.0
-5	3.100420210116604	4.0
-6
+5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	3.306838740354502	4.0
-7	3.515637815518826	4.0
-8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	3.100420210116604	4.0
+6	3.306838740354502	4.0
+7
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	3.727285244908972	4.0
-9	3.941718177793707	4.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	3.515637815518826	4.0
+8	3.727285244908972	4.0
+9
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	3.941718177793707	4.0
 Leaving U renormalization...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
+FLEX loop converged at desired accuracy
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 
@@ -1376,7 +1332,10 @@ FLEX loop converged at desired accuracy
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FLEX loop converged at desired accuracy
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Now: T = 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.03
 FLEX loop converged at desired accuracy
 </pre></div>
 </div>

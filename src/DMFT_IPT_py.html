@@ -617,7 +617,7 @@ Z = \frac{1}{1-\frac{\partial \mathrm{Re} \Sigma(\omega+\mathrm{i}0^+)}{\partial
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">IPTSolver</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">g_weiss</span><span class="p">,</span> <span class="n">U</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">"""</span>
 <span class="sd">    IPT solver to calculate the impurity problem.</span>
 <span class="sd">    Input:</span>
 <span class="sd">        mesh - Holding class of IR basis with sparsely sampled grids.</span>
@@ -635,14 +635,6 @@ Z = \frac{1}{1-\frac{\partial \mathrm{Re} \Sigma(\omega+\mathrm{i}0^+)}{\partial
     <span class="c1"># Fourier transform back to Matsubara frequency</span>
     <span class="n">sigma</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">tau_to_wn</span><span class="p">(</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sigma</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
-&lt;&gt;:6: SyntaxWarning: invalid escape sequence '\m'
-/tmp/ipykernel_5239/390228342.py:6: SyntaxWarning: invalid escape sequence '\m'
-  g_weiss - Weiss field of the bath (\mathcal(G); cavity Green function)
 </pre></div>
 </div>
 </div>
@@ -958,7 +950,7 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5239/5493488.py:34: RuntimeWarning: invalid value encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5405/5493488.py:34: RuntimeWarning: invalid value encountered in scalar divide
   sfc_check = np.sum(abs(self.sigma-sigma_old))/np.sum(abs(self.sigma))
 </pre></div>
 </div>
@@ -1000,7 +992,7 @@ DMFT loop converged at desired accuracy of 1e-05
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$U/t_</span><span class="se">\\</span><span class="s1">star$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">U_min</span><span class="p">,</span> <span class="n">U_max</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$Z = (1-\partial\Sigma/\partial\omega)^{-1}$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$Z = (1-\partial\Sigma/\partial\omega)^{-1}$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1008,11 +1000,7 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:31: SyntaxWarning: invalid escape sequence '\p'
-&lt;&gt;:31: SyntaxWarning: invalid escape sequence '\p'
-/tmp/ipykernel_5239/2815060308.py:31: SyntaxWarning: invalid escape sequence '\p'
-  ax.set_ylabel('$Z = (1-\partial\Sigma/\partial\omega)^{-1}$', fontsize=12)
-/tmp/ipykernel_5239/5493488.py:34: RuntimeWarning: invalid value encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5405/5493488.py:34: RuntimeWarning: invalid value encountered in scalar divide
   sfc_check = np.sum(abs(self.sigma-sigma_old))/np.sum(abs(self.sigma))
 </pre></div>
 </div>

@@ -737,7 +737,7 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 <span class="n">skl</span> <span class="o">=</span> <span class="n">skl</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="o">*</span><span class="n">kps</span><span class="p">)</span>
 
 <span class="c1">#plt.semilogy(np.max(np.abs(skl),axis=(1,2)), label="max, abs")</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">skl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s2">"$k=\Gamma$"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">skl</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">"$k=\Gamma$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">basis</span><span class="o">.</span><span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Singular values"</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">"--"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$l$"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">"$|\Sigma(l, k)|$"</span><span class="p">)</span>
@@ -748,12 +748,6 @@ The Green’s function computed at <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\G'
-&lt;&gt;:7: SyntaxWarning: invalid escape sequence '\G'
-/tmp/ipykernel_5520/1387464666.py:7: SyntaxWarning: invalid escape sequence '\G'
-  plt.semilogy(np.abs(skl[:,0,0]), label="$k=\Gamma$")
-</pre></div>
-</div>
 <img alt="../_images/c9331d89051866a9071e4190c61b37b4d4d580e5ceb0a733192ff88346e1f3ff.png" src="../_images/c9331d89051866a9071e4190c61b37b4d4d580e5ceb0a733192ff88346e1f3ff.png" />
 </div>
 </div>

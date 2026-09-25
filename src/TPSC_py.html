@@ -550,7 +550,7 @@ G(\mathrm{i}\nu^\mathrm{F},\boldsymbol{k}) &amp;= [G_0^{-1}(\mathrm{i}\nu^\mathr
 
 <span class="n">T</span>    <span class="o">=</span> <span class="mf">0.1</span>    <span class="c1"># temperature</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">T</span>    <span class="c1"># inverse temperature</span>
-<span class="n">n</span>    <span class="o">=</span> <span class="mf">0.85</span>   <span class="c1"># electron filling, here per spin per lattice site (n=1: half filling)</span>
+<span class="n">n</span>    <span class="o">=</span> <span class="mf">0.85</span>   <span class="c1"># electron filling per lattice site, summed over both spins (n=1: half filling)</span>
 <span class="n">U</span>    <span class="o">=</span> <span class="mi">4</span>      <span class="c1"># Hubbard interaction</span>
 
 <span class="c1">### Numerical parameters</span>
@@ -901,7 +901,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Initialization...'</span><span class="p">)</span>
 <span class="c1"># system parameters</span>
 <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span>         <span class="c1"># hopping amplitude</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>         <span class="c1"># electron filling, here per spin per lattice site (n=1: half filling)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>         <span class="c1"># electron filling per lattice site, summed over both spins (n=1: half filling)</span>
 <span class="n">T</span> <span class="o">=</span> <span class="mf">0.4</span>       <span class="c1"># temperature</span>
 <span class="n">beta</span> <span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">T</span>
 <span class="n">U_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">51</span><span class="p">)</span>  <span class="c1"># Hubbard interaction</span>
@@ -956,7 +956,9 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initialization...
-Start TPSC loop...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start TPSC loop...
 Setting U_sp = 0.009988853647895993
 Setting U_sp = 0.10844539767253612
 Setting U_sp = 0.2046254238519328
@@ -975,12 +977,12 @@ Setting U_sp = 1.1674487557881672
 Setting U_sp = 1.2312258126058022
 Setting U_sp = 1.292508911221959
 Setting U_sp = 1.3513326589721473
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.4077381703028393
+Setting U_sp = 1.4077381703028393
 Setting U_sp = 1.4617726179865578
 Setting U_sp = 1.513488708827768
-Setting U_sp = 1.5629440990822858
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.5629440990822858
 Setting U_sp = 1.6102007660232773
 Setting U_sp = 1.6553243524696426
 Setting U_sp = 1.6983835006942019
@@ -1001,7 +1003,9 @@ Setting U_sp = 2.1249748885017787
 Setting U_sp = 2.1456260165332446
 Setting U_sp = 2.1652962658462203
 Setting U_sp = 2.184037298310433
-Setting U_sp = 2.2018983151632434
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.2018983151632434
 Setting U_sp = 2.2189260988095905
 Setting U_sp = 2.2351650684989757
 Setting U_sp = 2.2506573469711544
@@ -1013,7 +1017,7 @@ Setting U_sp = 2.318241822249699
 Finished. Plotting now.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f7c38ecfcb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0cc4cffcb0&gt;
 </pre></div>
 </div>
 <img alt="../_images/dc2e2eecb553fb5d0e555e02074aa910936aae2c7fc758c1c3061d349359708e.png" src="../_images/dc2e2eecb553fb5d0e555e02074aa910936aae2c7fc758c1c3061d349359708e.png" />

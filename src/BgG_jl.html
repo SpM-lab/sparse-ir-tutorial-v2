@@ -576,8 +576,9 @@ N(\omega,i) = -\frac{1}{2\pi \mathrm{i}} \vec{e}(i)^T \boldsymbol{d}(\omega) \ve
 <p>The superconducting mean-fielads are expressed as</p>
 <div class="math notranslate nohighlight">
 \[
-\langle c_i c_j \rangle =  \vec{e}(j)^T \boldsymbol{G}(\tau = \beta^-) \vec{h}(i) = \sum_{l=0}^{L-1} U_l(\beta^-) \vec{e}(j)^T \boldsymbol{G}_l \vec{h}(i)
+\langle c_i c_j \rangle = -\vec{e}(j)^T \boldsymbol{G}(\tau = \beta^-) \vec{h}(i) = -\sum_{l=0}^{L-1} U_l(\beta^-) \vec{e}(j)^T \boldsymbol{G}_l \vec{h}(i)
 \]</div>
+<p>The minus sign appears because this component of <span class="math notranslate nohighlight">\(\boldsymbol{G}(\tau)\)</span> is continuous at <span class="math notranslate nohighlight">\(\tau = 0\)</span>: the Matsubara sum above equals <span class="math notranslate nohighlight">\(\boldsymbol{G}(\tau = 0) = -\boldsymbol{G}(\tau = \beta^-)\)</span>.</p>
 <p>Since the Matsubara Green’s function is expressed as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -825,9 +826,6 @@ We calculate the set of Matsubara frequencies below the cutoff as</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>num. of Matsubara freq: 9998
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9998-element Vector{ComplexF64}:
  -0.0 - 314.06501757937167im
  -0.0 - 314.00218572629984im
@@ -957,99 +955,99 @@ We calculate the set of Matsubara frequencies below the cutoff as</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.1902294176234082 0.8018647273876987
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 4.235164736271502e-24im
-2 0.15123442822555655 0.6746530155705805
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 2.117582368135751e-24im
+2 0.15123443192441202 0.6746530176099472
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 2.6469779601696887e-24im
-3 0.11957204965620309 0.589596822206215
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 1.3234889800848444e-24im
+3 0.11957204743443357 0.5895968350084984
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 7.940933880509066e-25im
-4 0.0942471411136122 0.5308635551862919
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 3.57342024622908e-24im
+4 0.09424712332962025 0.5308635610898678
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 8.867376166568457e-24im
-5 0.07417361876830968 0.4892647591885178
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.0257039595657543e-23im
+5 0.07417361866251067 0.4892647742385436
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 5.492479267352104e-24im
-6 0.0583451970342362 0.4592081340609435
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 5.128519797828772e-24im
+6 0.05834519988320925 0.45920812943518474
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 2.2168440416421143e-24im
-7 0.04589794126563928 0.4371468597691819
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.5808035111654464e-24im
+7 0.0458979472657755 0.4371468567456477
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 1.1011841904612181e-24im
-8 0.03612064034874045 0.4207509883736887
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.257314531080602e-24im
+8 0.03612064566171571 0.42075099839120444
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 1.0799876872645468e-24im
-9 0.028441879539583298 0.40844386531671534
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 6.121136532892405e-25im
+9 0.028441887415330623 0.40844387045711783
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 5.399938436322734e-25im
-10 0.022409026181419565 0.399131700336098
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 3.3914405114674133e-25im
+10 0.022409032624178787 0.39913170398373754
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 2.78268727941667e-25im
-11 0.017666263920763765 0.3920398661901948
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.3648480107124955e-25im
+11 0.01766626250373233 0.3920398680048093
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 1.5567797622189404e-25im
-12 0.013934921170186554 0.38661027389562225
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 5.99705944100945e-26im
+12 0.013934918286732068 0.38661027685111893
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 9.438260036200757e-26im
-13 0.010997081824500963 0.3824351076146323
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 3.0502285087892894e-26im
+13 0.01099707744800014 0.38243510677717507
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 5.95990093692992e-26im
-14 0.008682345654590438 0.37921284472751127
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.3522948669476722e-26im
+14 0.008682351767640187 0.3792128448756981
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 1.377288031643469e-26im
-15 0.0068573848128275165 0.3767183914118743
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 9.693522803355792e-27im
+15 0.006857386446432465 0.3767183883517615
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.6200784343903764e-26im
-16 0.005417754730957463 0.3747823492672957
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.0098712056536066e-24im
+16 0.0054177465500519426 0.37478234449089953
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 4.397157638702998e-24im
-17 0.004281513079168488 0.3732763796749947
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.9731811901084276e-24im
+17 0.004281511396042435 0.3732763763328385
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.0662299213430146e-24im
-18 0.003384351295476971 0.37210271392004424
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 6.677552819740697e-23im
+18 0.0033843527997194593 0.37210271093900976
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.0346659243200443e-24im
-19 0.0026757056354466202 0.37118651326261065
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 5.133207423897761e-23im
+19 0.002675708865944852 0.37118651067898145
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 4.925175437834313e-25im
-20 0.0021157970661399832 0.3704702721480035
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.5897647691003654e-23im
+20 0.0021157971427848694 0.37047026393571914
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.139098738832312e-25im
-21 0.0016732892945625333 0.3699096282589239
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 4.7376080939958836e-23im
+21 0.0016732833053001242 0.3699096289951638
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.5547828395434223e-25im
-22 0.0013234853159767223 0.36947029711859614
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 4.496948444258745e-21im
+22 0.001323480742062457 0.3694702970154061
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.6082636647929223e-25im
-23 0.0010469107269486112 0.36912568054672446
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.316336119583223e-21im
+23 0.0010469103549874002 0.3691256823175846
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 1.181101637730805e-25im
-24 0.0008282054112189644 0.368855126432858
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.1580687981181051e-21im
+24 0.000828209530961163 0.36885513767813344
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 4.372532856452764e-25im
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> - 2.055973159085608e-20im
 </pre></div>
 </div>
 </div>
@@ -1154,61 +1152,73 @@ We calculate the set of Matsubara frequencies below the cutoff as</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.18921615094610264 0.8028780021237006
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.18921615094610267 0.8028780021237006
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.5548843600997813e-15im
-2 0.15045798139918476 0.6761326629215194 + 4.49468007103988e-15im
-3 0.11898342342120362 0.5912904867717412 + 6.041263846567097e-15im
+2 0.15045798139918473 0.6761326629215194 + 4.49468007103988e-15im
+3 0.11898342342120359 0.5912904867717412 + 6.041263846567097e-15im
 4 0.09380324333639316 0.5326506236311763 + 7.332410181772224e-15im
-5 0.07383909522645085 0.4910866507112619 + 8.455257543093044e-15im
+5 0.0738390952264509 0.4910866507112619
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 8.455257543093044e-15im
 6 0.05809241179712884 0.46103661716540467 + 9.479723808578923e-15im
-7 0.045706076366783525 0.4389689415418111
+7 0.04570607636678354 0.4389689415418111 + 1.0440184608237502e-14im
+8 0.03597425437427823 0.4225613935433079
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.0440184608237502e-14im
-8 0.03597425437427823 0.4225613935433079 + 1.1333367612441168e-14im
-9 0.028329629905811435 0.4102411650143477 + 1.2259144705372987e-14im
-10 0.02232253081603069 0.4009163648735136 + 1.3118913469129473e-14im
-11 0.01759932624462321 0.3938131909263177 + 1.3974137632948804e-14im
-12 0.01388292802645721 0.38837383465779174
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.1333367612441168e-14im
+9 0.028329629905811442 0.4102411650143477 + 1.2259144705372987e-14im
+10 0.022322530816030684 0.4009163648735136 + 1.3118913469129473e-14im
+11 0.01759932624462321 0.3938131909263177
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.4859512168934082e-14im
-13 0.010956578024312044 0.38419047908851334 + 1.5727924457316814e-14im
-14 0.00865071020178731 0.38096147303607125 + 1.6633217619368096e-14im
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.3974137632948804e-14im
+12 0.013882928026457209 0.38837383465779174 + 1.4859512168934082e-14im
+13 0.010956578024312042 0.38419047908851334 + 1.5727924457316814e-14im
+14 0.00865071020178731 0.38096147303607125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.6633217619368096e-14im
 15 0.006832620301648558 0.3784615418002472 + 1.7586954826191532e-14im
-16 0.005398329607008121 0.3765210916179384 + 1.8518562873138352e-14im
+16 0.005398329607008122 0.3765210916179384 + 1.8518562873138352e-14im
 17 0.004266260336350907 0.375011606313921
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 1.9450055817221456e-14im
 18 0.00337236746181678 0.3738351519301256 + 2.033110846039551e-14im
 19 0.0026662721812999697 0.37291674869684094 + 2.1233556867399113e-14im
-20 0.0021083650379676872 0.37219877008962776 + 2.218142630801442e-14im
-21 0.0016674359409139608 0.37163677007472895 + 2.311839791449868e-14im
-22 0.0013188652651484926 0.3711963761206866
+20 0.0021083650379676877 0.37219877008962776
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.406410151067116e-14im
-23 0.0010432653331405375 0.37085093425140436 + 2.5025400565632628e-14im
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.218142630801442e-14im
+21 0.0016674359409139606 0.37163677007472895 + 2.311839791449868e-14im
+22 0.0013188652651484928 0.3711963761206866 + 2.406410151067116e-14im
+23 0.0010432653331405375 0.37085093425140436
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.5025400565632628e-14im
 24 0.000825342940164907 0.3705797358118389 + 2.5954337108073787e-14im
-25 0.0006529802802839817 0.37036665525784207 + 2.6918668032317417e-14im
-26 0.000516650363807655 0.37019912124971893 + 2.7860052299943708e-14im
-27 0.00040880595362388595 0.3700673143489269
+25 0.0006529802802839816 0.37036665525784207 + 2.6918668032317417e-14im
+26 0.0005166503638076549 0.37019912124971893
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.8803983400193804e-14im
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 2.7860052299943708e-14im
+27 0.00040880595362388606 0.3700673143489269 + 2.8803983400193804e-14im
 28 0.0003234779257323362 0.3699635559053176 + 2.977317232973773e-14im
-29 0.0002559811361421386 0.3698818374941478 + 3.0747489367576655e-14im
+29 0.0002559811361421386 0.3698818374941478
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 3.0747489367576655e-14im
 30 0.00020257539836651946 0.3698174446838591 + 3.1681468399732315e-14im
 31 0.0001603151263472213 0.36976668252775613 + 3.266367743675367e-14im
 32 0.00012687301885506077 0.3697266546042827
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> + 3.3631250672899116e-14im
-33 0.00010040982892594585 0.36969507720682054 + 3.454906592151774e-14im
-34 7.946651853608451e-5 0.36967016163314703 + 3.5505002920509556e-14im
+33 0.00010040982892594588 0.36969507720682054 + 3.454906592151774e-14im
+34 7.946651853608453e-5 0.36967016163314703 + 3.5505002920509556e-14im
 </pre></div>
 </div>
 </div>
@@ -1467,7 +1477,7 @@ Here, <span class="math notranslate nohighlight">\(\sigma_{x,y,z}\)</span> are t
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.37282720316638235 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8802286062787665 + 4.800666792933517e-15im ave: 1.881518390621764
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8802286062787665 + 4.800666792933517e-15im ave: 1.8815183906217645
 2 0.2096507423373042 
 </pre></div>
 </div>
@@ -1475,76 +1485,76 @@ Here, <span class="math notranslate nohighlight">\(\sigma_{x,y,z}\)</span> are t
 3 0.13563820776510016 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.283017021007842 - 1.5348043017149453e-11im ave: 1.285355106279202
-4 0.097252316168414 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.283017021007842 - 1.5348043017149453e-11im ave: 1.2853551062792017
+4 0.09725231616841398 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.155286844256218 - 2.9903840581472804e-11im ave: 1.1603520154197335
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.155286844256218 - 2.9903840581472804e-11im ave: 1.1603520154197338
 5 0.07521015847839346 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0644744384155111 + 5.716271723175996e-11im ave: 1.073083747210568
-6 0.06140791113760693 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0644744384155111 + 5.716271723175996e-11im ave: 1.0730837472105677
+6 0.06140791113760695 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9944949291194695 + 9.900118516157432e-10im ave: 1.0071922112396008
-7 0.05209959307720135 
+7 0.052099593077201335 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.937569793420669 + 1.056719289905343e-9im ave: 0.9547254445226233
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.937569793420669 + 1.056719289905343e-9im ave: 0.9547254445226234
 8 0.045387786472700795 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8895959984547445 + 6.632231462418081e-10im ave: 0.9114040610730443
-9 0.04023538484871654 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8895959984547445 + 6.632231462418081e-10im ave: 0.9114040610730442
+9 0.04023538484871653 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8482975323699119 + 3.662365993902571e-10im ave: 0.8747492190932568
-10 0.036048572954421335 
+10 0.03604857295442133 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8123534579185442 + 4.666216768613061e-10im ave: 0.8432360739621051
 11 0.03248396624526532 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.780937396513441 + 6.459442315600627e-10im ave: 0.8158690569614788
-12 0.029346577232634743 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.780937396513441 + 6.459442315600627e-10im ave: 0.8158690569614789
+12 0.02934657723263474 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7534685623897325 + 4.690958903221124e-10im ave: 0.7919547208971388
-13 0.02652863300806765 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7534685623897325 + 4.690958903221124e-10im ave: 0.7919547208971387
+13 0.02652863300806766 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.729484748052548 + 1.0354767882293576e-11im ave: 0.770977425603341
-14 0.023971221160305874 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.729484748052548 + 1.0354767882293576e-11im ave: 0.7709774256033411
+14 0.023971221160305867 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7085845320318623 + 2.448070562796707e-10im ave: 0.7525313882516885
-15 0.021641015460103663 
+15 0.021641015460103653 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6904049981737346 - 1.5139082798232033e-10im ave: 0.736283609543743
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6904049981737346 - 1.5139082798232033e-10im ave: 0.7362836095437428
 16 0.01951704665083068 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6746151747085362 - 1.0860107807910189e-10im ave: 0.721953311234226
-17 0.01758378588092275 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6746151747085362 - 1.0860107807910189e-10im ave: 0.7219533112342261
+17 0.017583785880922742 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6609149194584523 - 1.0908686259982105e-9im ave: 0.7092999526588616
-18 0.015827818002667013 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6609149194584523 - 1.0908686259982105e-9im ave: 0.7092999526588617
+18 0.015827818002667016 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6490348005594341 - 1.1602125842150518e-9im ave: 0.6981156744333116
-19 0.014236471221249165 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6490348005594341 - 1.1602125842150518e-9im ave: 0.6981156744333117
+19 0.01423647122124916 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6387354472317804 - 1.4018194955110123e-9im ave: 0.6882200307336945
-20 0.01279734356857585 
+20 0.012797343568575847 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6298060251622642 - 1.3551063423547312e-9im ave: 0.679456003101488
-21 0.011498270076685538 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6298060251622642 - 1.3551063423547312e-9im ave: 0.6794560031014881
+21 0.01149827007668553 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6220620995321828 - 1.4218459352135933e-9im ave: 0.6716867719816694
@@ -1552,10 +1562,10 @@ Here, <span class="math notranslate nohighlight">\(\sigma_{x,y,z}\)</span> are t
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6153432217251735 - 1.3349646329587935e-9im ave: 0.6647929938758319
-23 0.00927356150045356 
+23 0.009273561500453558 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6095102630638767 - 1.2173867023631076e-9im ave: 0.6586704813105208
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6095102630638767 - 1.2173867023631076e-9im ave: 0.6586704813105206
 </pre></div>
 </div>
 </div>
