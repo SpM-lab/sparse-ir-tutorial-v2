@@ -20,6 +20,9 @@ This online document provides comprehensive tutorials of the Python library [spa
 
 **For information on the whole sparse-ir ecosystem (including Rust, C-API, and Fortran bindings), please refer to [the sparse-ir documentation](https://spm-lab.github.io/sparse-ir-doc).**
 
+The tutorials follow the notation defined on the [notation and conventions page](https://spm-lab.github.io/sparse-ir-doc/src/notation.html) of the sparse-ir documentation.
+The basic theory is explained there as well: the [intermediate representation](https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html), [sparse sampling](https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html), the [discrete Lehmann representation](https://spm-lab.github.io/sparse-ir-doc/src/DLR.html), and [summation over the Matsubara axis](https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html).
+
 Please free to make a contact with the authors of each tutorial page if you have any questions!
 
 ## Contributors

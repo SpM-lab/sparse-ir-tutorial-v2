@@ -6,10 +6,16 @@ parts:
   #- file: src/migration.md
 - caption: Basic theory
   chapters:
-  - file: src/IR_py.ipynb
-  - file: src/sparse_sampling_py
-  - file: src/DLR
-  - file: src/matsubarasum
+  - url: https://spm-lab.github.io/sparse-ir-doc/src/notation.html
+    title: Notation and conventions
+  - url: https://spm-lab.github.io/sparse-ir-doc/src/IR_py.html
+    title: Intermediate representation (IR)
+  - url: https://spm-lab.github.io/sparse-ir-doc/src/sparse_sampling_py.html
+    title: Sparse sampling
+  - url: https://spm-lab.github.io/sparse-ir-doc/src/DLR.html
+    title: Discrete Lehmann representation
+  - url: https://spm-lab.github.io/sparse-ir-doc/src/matsubarasum.html
+    title: Summation over Matsubara axis
 - caption: Reference
   chapters:
   - file: src/api
