@@ -140,8 +140,10 @@ if abspath(PROGRAM_FILE) == @__FILE__
     
     @printf "Registering kernel with project directory: %s\n" project_dir
     
-    # Register kernel with name "julia-x.y" to match the notebooks
-    success = register_julia_kernel("julia-$(VERSION.major).$(VERSION.minor)", "julia", project_arg)
+    # Register the kernel as "julia", without the version. The notebooks name
+    # "julia-x.y" kernels of different versions; _config.yml maps all of them
+    # to this one (nb_kernel_rgx_aliases), so the build works with any Julia.
+    success = register_julia_kernel("julia", "julia", project_arg)
     
     if success
         println("✓ Kernel registration completed successfully")
