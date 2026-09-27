@@ -607,7 +607,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\nu} G_{00,+}(\mathrm{i}\nu)G_{0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Lambda</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="n">b_eff</span><span class="p">)</span> <span class="o">*</span> <span class="n">beta</span>
-<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="n">statistics</span><span class="o">=</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="o">=</span><span class="n">Lambda</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">)</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="n">sparse_ir</span><span class="o">.</span><span class="n">FiniteTempBasis</span><span class="p">(</span><span class="n">statistics</span><span class="o">=</span><span class="s1">'F'</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">beta</span><span class="p">,</span> <span class="n">wmax</span><span class="o">=</span><span class="n">Lambda</span><span class="o">/</span><span class="n">beta</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">)</span>
 <span class="n">l</span> <span class="o">=</span> <span class="n">liechtenstein</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">nk</span><span class="p">,</span> <span class="n">b_eff</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -632,7 +632,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\nu} G_{00,+}(\mathrm{i}\nu)G_{0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/33a3dc674bad95abd6143b7f87a43b07794d1858f548eefcc21f96badd4ea755.png" src="../_images/33a3dc674bad95abd6143b7f87a43b07794d1858f548eefcc21f96badd4ea755.png" />
+<img alt="../_images/657f88aa9f9244e42244f02bde445ea154bc678e2b213da4ef435136f9a88fad.png" src="../_images/657f88aa9f9244e42244f02bde445ea154bc678e2b213da4ef435136f9a88fad.png" />
 </div>
 </div>
 <p>As is expected, the system favors the antiferromagnetic state at the half-filling while it favors the ferromagnetic state at the low-carrier regime. This feature is consistent with the super-exchange and the doule-exchange interactions.</p>
@@ -666,7 +666,7 @@ J_0 = \frac{B}{2} (n_{0,+}- n_{0,-})+ B^2T\sum_{\nu} G_{00,+}(\mathrm{i}\nu)G_{0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.29545914000386975 -0.2954591398005782
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.29545899076768456 -0.2954590331918875
 </pre></div>
 </div>
 </div>

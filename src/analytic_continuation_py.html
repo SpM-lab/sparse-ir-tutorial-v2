@@ -521,10 +521,10 @@ machine precision.  (If there is a covariance matrix, generalized least squares 
 <!-- #endregion --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">semicirc_dos</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">wmax</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="n">wmax</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">wmax</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">wmax</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="n">wmax</span><span class="p">)))</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">insulator_dos</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">semicirc_dos</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">wmax</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">semicirc_dos</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">wmax</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="n">wmax</span> <span class="o">*</span> <span class="p">(</span><span class="n">semicirc_dos</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">wmax</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">semicirc_dos</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">wmax</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span>
 
 <span class="c1"># For testing, compute exact coefficients g_l for two models</span>
 <span class="n">rho1_l</span> <span class="o">=</span> <span class="n">basis</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">semicirc_dos</span><span class="p">)</span>
@@ -591,7 +591,7 @@ machine precision.  (If there is a covariance matrix, generalized least squares 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a6054bd3788d4a79ec611163f500a0e10de2cffe3417da4423f6f4ae9bb04bc.png" src="../_images/2a6054bd3788d4a79ec611163f500a0e10de2cffe3417da4423f6f4ae9bb04bc.png" />
+<img alt="../_images/944a3f93333512886e79c207a09d4c4d3ccd5ed61d29912e39bd5b72ac0342e4.png" src="../_images/944a3f93333512886e79c207a09d4c4d3ccd5ed61d29912e39bd5b72ac0342e4.png" />
 </div>
 </div>
 </section>
@@ -618,7 +618,7 @@ a default model <span class="math notranslate nohighlight">\(\rho_0(\omega)\)</s
 <p>As a simple example, let us consider <strong>Ridge regression</strong> in the above problem.  We again expand the spectral function in the right singular functions with <span class="math notranslate nohighlight">\(L'=L\)</span>, but include a regularization term:</p>
 <div class="math notranslate nohighlight">
 \[
-    f_\mathrm{reg}[\rho] = \alpha \sum_{l=0}^{L-1} | \rho_l |^2,
+    f_\mathrm{reg}[\rho] = \alpha^2 \sum_{l=0}^{L-1} | \rho_l |^2,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is a hyperparameter (ideally tuned to the noise level).  This term prevents <span class="math notranslate nohighlight">\(\rho_l\)</span> becoming too large due to noise amplification. The regularized least squares problem (2) then amounts to:</p>
 <div class="math notranslate nohighlight">
@@ -658,7 +658,7 @@ a default model <span class="math notranslate nohighlight">\(\rho_0(\omega)\)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/637e2f6dcc37bb88b11108412cf8104b179a55d363ea1ce7d1bca83c26fb7020.png" src="../_images/637e2f6dcc37bb88b11108412cf8104b179a55d363ea1ce7d1bca83c26fb7020.png" />
+<img alt="../_images/22d2c300ba1f06019e6d25abbc4816eaa6dc3870703042618d64043135a47a72.png" src="../_images/22d2c300ba1f06019e6d25abbc4816eaa6dc3870703042618d64043135a47a72.png" />
 </div>
 </div>
 </section>

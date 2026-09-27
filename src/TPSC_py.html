@@ -494,7 +494,7 @@
 \[ f(U_{\mathrm{sp}}) = 2\frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{B},\boldsymbol{q}}\chi_{\mathrm{sp}}(U_{\mathrm{sp}}) - n + \frac{U_{\mathrm{sp}}}{2U}n^2\;. \]</div>
 <p>Afterwards we can calculate the double occupancy <span class="math notranslate nohighlight">\(\langle n_{\uparrow}n_{\downarrow}\rangle = \frac{U_{\mathrm{sp}}}{4U} n^2\)</span> and then perform a similar root finding for <span class="math notranslate nohighlight">\(U_{\mathrm{ch}}\)</span> from the function</p>
 <div class="math notranslate nohighlight">
-\[ g(U_{\mathrm{ch}}) = 2 \frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{B},\boldsymbol{q}} \chi_{\mathrm{ch}}(U_{\mathrm{ch}}) - n - 2\langle n_{\uparrow}n_{\downarrow}\rangle^2 + n^2\;. \]</div>
+\[ g(U_{\mathrm{ch}}) = 2 \frac{T}{N_{\boldsymbol{k}}} \sum_{\nu^\mathrm{B},\boldsymbol{q}} \chi_{\mathrm{ch}}(U_{\mathrm{ch}}) - n - 2\langle n_{\uparrow}n_{\downarrow}\rangle + n^2\;. \]</div>
 <p>In TPSC, a self-energy <span class="math notranslate nohighlight">\(\Sigma\)</span> can be derived that is calculated from the interaction <span class="bibtex-citation" id="id4">[<a class="reference internal" href="bibliography.html#id50" title="S. Moukouri, S. Allen, F. Lemay, B. Kyung, D. Poulin, Y. M. Vilk, and A.-M. S. Tremblay. Many-body theory versus simulations for the pseudogap in the hubbard model. Phys. Rev. B, 61:7887–7892, Mar 2000. URL: https://link.aps.org/doi/10.1103/PhysRevB.61.7887, doi:10.1103/PhysRevB.61.7887.">Moukouri <em>et al.</em>, 2000</a>]</span></p>
 <div class="math notranslate nohighlight">
 \[ V(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) = \frac{U}{4} \left(3 U_{\mathrm{sp}} \chi_{\mathrm{sp}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q}) + U_{\mathrm{ch}} \chi_{\mathrm{ch}}(\mathrm{i}\nu^\mathrm{B}, \boldsymbol{q})\right) + U\;. \]</div>
@@ -623,14 +623,15 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">k_to_r</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj_k</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">""" Fourier transform from k-space to real space """</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from k-space to real space, A(r) = sum_k exp(-ik.r) A(k), without a factor 1/nk """</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">obj_k</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">)</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">obj_k</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">obj_r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">obj_r</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">r_to_k</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj_r</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">""" Fourier transform from real space to k-space """</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from real space to k-space, A(k) = (1/nk^2) sum_r exp(ik.r) A(r) (1/nk from ifftn and 1/nk here),</span>
+<span class="sd">        so that the product of two k_to_r arrays A(r)B(r) gives the convolution (1/nk) sum_q A(q)B(k-q) """</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">obj_r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">)</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftn</span><span class="p">(</span><span class="n">obj_r</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">obj_k</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span>
@@ -777,7 +778,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
         <span class="n">U_b</span> <span class="o">=</span> <span class="mi">100</span>
 
         <span class="n">chi_trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chi_qtrace_calc</span>
-        <span class="n">sfc_eq</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">U_ch</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">chi_trace</span><span class="p">(</span><span class="o">-</span><span class="n">U_ch</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">docc</span><span class="p">)</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">sfc_eq</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">U_ch</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">chi_trace</span><span class="p">(</span><span class="o">-</span><span class="n">U_ch</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">docc</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">U_ch</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">sfc_eq</span><span class="p">,</span> <span class="n">U_a</span><span class="p">,</span> <span class="n">U_b</span><span class="p">,</span> <span class="n">rtol</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">U_sfc_tol</span><span class="p">)</span>
 
@@ -821,7 +822,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.101134834340028
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.1011348343400282
 </pre></div>
 </div>
 </div>
@@ -845,7 +846,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6868d2fc0466166f774fdbfb170cf66b4db2c15b7fa2f01efee98facc8e7f29c.png" src="../_images/6868d2fc0466166f774fdbfb170cf66b4db2c15b7fa2f01efee98facc8e7f29c.png" />
+<img alt="../_images/53e9c4d1a63e5b506c888ac5b91586634bfa56632fbd70272dc1abb39086b0a9.png" src="../_images/53e9c4d1a63e5b506c888ac5b91586634bfa56632fbd70272dc1abb39086b0a9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -865,7 +866,7 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/30fd51453062c2bbb8acb0a82fe765b6e9d818e9a73b7139af8e77e0c50a4b0d.png" src="../_images/30fd51453062c2bbb8acb0a82fe765b6e9d818e9a73b7139af8e77e0c50a4b0d.png" />
+<img alt="../_images/33c3767d3c941db40a3362c41bcc7410cad6b65c801a741c01345b421a7b77ae.png" src="../_images/33c3767d3c941db40a3362c41bcc7410cad6b65c801a741c01345b421a7b77ae.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -959,65 +960,65 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Start TPSC loop...
-Setting U_sp = 0.009988853647895993
-Setting U_sp = 0.10844539767253612
-Setting U_sp = 0.2046254238519328
-Setting U_sp = 0.2984789555689596
-Setting U_sp = 0.38995933428489726
-Setting U_sp = 0.4790237958356733
-Setting U_sp = 0.5656340453518746
-Setting U_sp = 0.6497568174617768
-Setting U_sp = 0.7313644072750961
-Setting U_sp = 0.8104351570125634
-Setting U_sp = 0.886953883161324
-Setting U_sp = 0.9609122297728372
-Setting U_sp = 1.0323089350516328
-Setting U_sp = 1.1011500006196002
-Setting U_sp = 1.1674487557881672
-Setting U_sp = 1.2312258126058022
-Setting U_sp = 1.292508911221959
-Setting U_sp = 1.3513326589721473
-Setting U_sp = 1.4077381703028393
-Setting U_sp = 1.4617726179865578
-Setting U_sp = 1.513488708827768
+Setting U_sp = 0.009988853647896
+Setting U_sp = 0.10844539767253622
+Setting U_sp = 0.20462542385193294
+Setting U_sp = 0.2984789555689598
+Setting U_sp = 0.38995933428489765
+Setting U_sp = 0.4790237958356736
+Setting U_sp = 0.565634045351875
+Setting U_sp = 0.6497568174617774
+Setting U_sp = 0.7313644072750964
+Setting U_sp = 0.8104351570125639
+Setting U_sp = 0.8869538831613245
+Setting U_sp = 0.9609122297728379
+Setting U_sp = 1.0323089350516337
+Setting U_sp = 1.1011500006196007
+Setting U_sp = 1.1674487557881674
+Setting U_sp = 1.2312258126058024
+Setting U_sp = 1.2925089112219597
+Setting U_sp = 1.3513326589721484
+Setting U_sp = 1.4077381703028404
+Setting U_sp = 1.4617726179865584
+Setting U_sp = 1.513488708827769
+Setting U_sp = 1.5629440990822872
+Setting U_sp = 1.6102007660232784
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.5629440990822858
-Setting U_sp = 1.6102007660232773
-Setting U_sp = 1.6553243524696426
-Setting U_sp = 1.6983835006942019
-Setting U_sp = 1.7394491910491898
-Setting U_sp = 1.7785940990215277
-Setting U_sp = 1.8158919824173194
-Setting U_sp = 1.851417108135162
-Setting U_sp = 1.8852437256723946
-Setting U_sp = 1.9174455922480047
-Setting U_sp = 1.9480955523246615
-Setting U_sp = 1.9772651724445816
-Setting U_sp = 2.005024430705449
-Setting U_sp = 2.0314414589133407
-Setting U_sp = 2.056582334458672
-Setting U_sp = 2.0805109182454786
-Setting U_sp = 2.1032887345616404
-Setting U_sp = 2.1249748885017787
-Setting U_sp = 2.1456260165332446
-Setting U_sp = 2.1652962658462203
-Setting U_sp = 2.184037298310433
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 1.6553243524696442
+Setting U_sp = 1.6983835006942025
+Setting U_sp = 1.7394491910491903
+Setting U_sp = 1.7785940990215285
+Setting U_sp = 1.8158919824173199
+Setting U_sp = 1.8514171081351636
+Setting U_sp = 1.8852437256723953
+Setting U_sp = 1.9174455922480051
+Setting U_sp = 1.9480955523246621
+Setting U_sp = 1.9772651724445822
+Setting U_sp = 2.0050244307054497
+Setting U_sp = 2.0314414589133416
+Setting U_sp = 2.0565823344586733
+Setting U_sp = 2.080510918245479
+Setting U_sp = 2.103288734561642
+Setting U_sp = 2.1249748885017796
+Setting U_sp = 2.145626016533246
+Setting U_sp = 2.1652962658462207
+Setting U_sp = 2.1840372983104337
+Setting U_sp = 2.2018983151632447
+Setting U_sp = 2.2189260988095914
+Setting U_sp = 2.2351650684989766
+Setting U_sp = 2.2506573469711557
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.2018983151632434
-Setting U_sp = 2.2189260988095905
-Setting U_sp = 2.2351650684989757
-Setting U_sp = 2.2506573469711544
-Setting U_sp = 2.2654428355149765
-Setting U_sp = 2.2795592952152535
-Setting U_sp = 2.2930424324769048
-Setting U_sp = 2.3059259871986892
-Setting U_sp = 2.318241822249699
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setting U_sp = 2.265442835514978
+Setting U_sp = 2.279559295215254
+Setting U_sp = 2.2930424324769056
+Setting U_sp = 2.30592598719869
+Setting U_sp = 2.3182418222497003
 Finished. Plotting now.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0cc4cffcb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f22c8a53b60&gt;
 </pre></div>
 </div>
 <img alt="../_images/dc2e2eecb553fb5d0e555e02074aa910936aae2c7fc758c1c3061d349359708e.png" src="../_images/dc2e2eecb553fb5d0e555e02074aa910936aae2c7fc758c1c3061d349359708e.png" />

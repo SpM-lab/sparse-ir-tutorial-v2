@@ -590,7 +590,7 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparse-ir version: 2.1.4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sparse-ir version: 2.1.5
 </pre></div>
 </div>
 </div>
@@ -801,12 +801,13 @@ We take the semi-circular density of states <span class="math notranslate nohigh
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_noise</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">noise</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_noise</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">noise</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Add Gaussian noise to an array</span>
+<span class="sd">    Add Gaussian noise to an array (seeded, so that the results are reproducible)</span>
 <span class="sd">    """</span>
-    <span class="n">arr</span> <span class="o">+=</span> <span class="n">noise</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-    <span class="n">arr</span> <span class="o">+=</span> <span class="n">noise</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">+=</span> <span class="n">noise</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">arr</span> <span class="o">+=</span> <span class="n">noise</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">arr</span>
 </pre></div>
 </div>
@@ -883,8 +884,8 @@ We consider a semicircular density of state with a half bandwidth of <span class
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 0 : diff_sigma= 0.04334685173954539, diff_delta=1.999646480967737
-iter= 100 : diff_sigma= 2.4519507961506815e-07, diff_delta=5.712867313101277e-07
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>iter= 0 : diff_sigma= 0.042764926056321054, diff_delta=1.9967780084350102
+iter= 100 : diff_sigma= 1.5646447838746358e-07, diff_delta=3.645461397888683e-07
 </pre></div>
 </div>
 </div>
@@ -1050,7 +1051,7 @@ iter= 100 : diff_sigma= 2.4519507961506815e-07, diff_delta=5.712867313101277e-07
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/46a045fad5978e4f9093fa45cbe4aedeb8e52b2ef76c07247a354c139b51a778.png" src="../_images/46a045fad5978e4f9093fa45cbe4aedeb8e52b2ef76c07247a354c139b51a778.png" />
+<img alt="../_images/78cc35861913d3f9044b3f40b07a3a34a35c2f0f5fb7d117dcff7ca26778fded.png" src="../_images/78cc35861913d3f9044b3f40b07a3a34a35c2f0f5fb7d117dcff7ca26778fded.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1066,7 +1067,7 @@ iter= 100 : diff_sigma= 2.4519507961506815e-07, diff_delta=5.712867313101277e-07
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5367ac2b9efbce211c0d19a1667067196486af02b534303bfe29623955712dd7.png" src="../_images/5367ac2b9efbce211c0d19a1667067196486af02b534303bfe29623955712dd7.png" />
+<img alt="../_images/77bda1ea599b4915eb836ed07cd2952068dcbe4b5288576793e27a5e3896f95f.png" src="../_images/77bda1ea599b4915eb836ed07cd2952068dcbe4b5288576793e27a5e3896f95f.png" />
 </div>
 </div>
 <!-- [1] Y. Kaga, P. Werner and S. Hoshino arXiv:2203.06946. -->

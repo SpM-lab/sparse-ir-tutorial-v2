@@ -616,14 +616,15 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 
     
     <span class="k">def</span><span class="w"> </span><span class="nf">k_to_r</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj_k</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">""" Fourier transform from k-space to real space """</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from k-space to real space, A(r) = sum_k exp(-ik.r) A(k), without a factor 1/nk """</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">obj_k</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">)</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftn</span><span class="p">(</span><span class="n">obj_k</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">obj_r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">obj_r</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">r_to_k</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">obj_r</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">""" Fourier transform from real space to k-space """</span>
+<span class="w">        </span><span class="sd">""" Fourier transform from real space to k-space, A(k) = (1/nk^2) sum_r exp(ik.r) A(r) (1/nk from ifftn and 1/nk here),</span>
+<span class="sd">        so that the product of two k_to_r arrays A(r)B(r) gives the convolution (1/nk) sum_q A(q)B(k-q) """</span>
         <span class="n">obj_r</span> <span class="o">=</span> <span class="n">obj_r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk2</span><span class="p">)</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifftn</span><span class="p">(</span><span class="n">obj_r</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nk</span>
         <span class="n">obj_k</span> <span class="o">=</span> <span class="n">obj_k</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nk</span><span class="p">)</span>
@@ -825,36 +826,34 @@ In addition, we set calculation routines to Fourier transform <span class="math 
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!
 Initiate U renormalization loop.
-1 2.3679802691718326 4
-2 2.6631530509592896 4
-3 2.9528432011375583 4
-4 3.2372665027423513 4
-5 3.5175353553180138 4
+1 2.3679802691718295 4
+2 2.6631530509592856 4
+3 2.952843201137554 4
+4 3.2372665027423446 4
+5 3.5175353553180098 4
 6 3.795074730529654 4
 Leaving U renormalization...
-0 0.08848089073842162
-1 0.14569522734604973
-2 0.022615814131259786
-3 0.011893505710469598
-4 0.007627709050175331
-5 0.005337914476431367
-6 0.003893254237014355
-7 0.0028971360061508995
-8 0.002176317020927867
-9 0.0016421546589771535
-10 0.0012421091833949025
-11 0.0009414202269492817
-12 0.0007150642109596808
-13 0.0005445167053372086
-14 0.000415937809337824
-15 0.00031889817046910733
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16 0.0002455469581971671
-17 0.00018994846475094352
-18 0.00014768275513226683
-19 0.00011544934333148394
-20 9.07504952512532e-05
+0 0.0884808907384262
+1 0.1456952273460475
+2 0.022615814131260285
+3 0.01189350571046843
+4 0.007627709050175058
+5 0.005337914476432261
+6 0.003893254237014989
+7 0.002897136006150571
+8 0.0021763170209279747
+9 0.0016421546589775484
+10 0.0012421091833942945
+11 0.0009414202269494306
+12 0.0007150642109588732
+13 0.0005445167053383086
+14 0.0004159378093372493
+15 0.0003188981704691164
+16 0.00024554695819746465
+17 0.00018994846475082596
+18 0.00014768275513167648
+19 0.00011544934333198189
+20 9.075049525105146e-05
 FLEX loop converged at desired accuracy
 </pre></div>
 </div>
@@ -1032,14 +1031,16 @@ FLEX loop converged at desired accuracy
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0.11528824873274644 0.11528824873274644
-1 0.4062309652005692 0.29094271646782277
-2 0.4495082072516423 0.043277242051073084
-3 0.45623539005754365 0.006727182805901344
-4 0.4578340878881212 0.0015986978305775335
-5 0.45821272019053 0.0003786323024088101
-6 0.45831455837674956 0.00010183818621956053
-7 0.45834101326525756 2.6454888507998486e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0.1152882487327467 0.1152882487327467
+1 0.40623096520057 0.2909427164678233
+2 0.449508207251643 0.04327724205107297
+3 0.45623539005754427 0.006727182805901288
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 0.45783408788812185 0.001598697830577589
+5 0.45821272019053083 0.0003786323024089766
+6 0.45831455837675045 0.00010183818621961604
+7 0.4583410132652581 2.645488850766542e-05
 The superconducting eigenvalue at T=0.1 is lambda_d=0.458
 </pre></div>
 </div>
@@ -1182,19 +1183,17 @@ The superconducting eigenvalue at T=0.1 is lambda_d=0.458
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING: U is too large and the spin susceptibility denominator will diverge/turn unphysical!
 Initiate U renormalization loop.
-1 2.2871467924426105 4
-2 2.4856847329902765 4
-3 2.6890780185958474 4
-4 2.895247551053964 4
+1 2.2871467924426048 4
+2 2.485684732990275 4
+3 2.689078018595848 4
+4 2.895247551053963 4
+5 3.100419483903483 4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 3.1004194839034858 4
-6 3.306837927955802 4
-7 3.5156369594103567 4
-8 3.7272843762091323 4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 3.94171731993827 4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 3.306837927955802 4
+7 3.515636959410358 4
+8 3.7272843762091385 4
+9 3.941717319938273 4
 Leaving U renormalization...
 </pre></div>
 </div>
