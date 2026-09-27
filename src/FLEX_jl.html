@@ -618,13 +618,14 @@
 <span class="k">end</span>
 
 <span class="k">function</span><span class="w"> </span><span class="n">k_to_r</span><span class="p">(</span><span class="n">mesh</span><span class="o">::</span><span class="kt">Mesh</span><span class="p">,</span><span class="w"> </span><span class="n">obj_k</span><span class="p">)</span>
-<span class="w">    </span><span class="s">""" Fourier transform from k-space to real space """</span>
+<span class="w">    </span><span class="s">""" Fourier transform from k-space to real space, A(r) = sum_k exp(-ik.r) A(k), without a factor 1/nk """</span>
 <span class="w">    </span><span class="n">obj_r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fft</span><span class="p">(</span><span class="n">obj_k</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">obj_r</span>
 <span class="k">end</span>
 
 <span class="k">function</span><span class="w"> </span><span class="n">r_to_k</span><span class="p">(</span><span class="n">mesh</span><span class="o">::</span><span class="kt">Mesh</span><span class="p">,</span><span class="w"> </span><span class="n">obj_r</span><span class="p">)</span>
-<span class="w">    </span><span class="s">""" Fourier transform from real space to k-space """</span>
+<span class="w">    </span><span class="s">""" Fourier transform from real space to k-space, A(k) = (1/nk^2) sum_r exp(ik.r) A(r) (1/nk from ifft and 1/nk here),</span>
+<span class="s">    so that the product of two k_to_r arrays A(r)B(r) gives the convolution (1/nk) sum_q A(q)B(k-q) """</span>
 <span class="w">    </span><span class="n">obj_k</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ifft</span><span class="p">(</span><span class="n">obj_r</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">mesh</span><span class="o">.</span><span class="n">nk</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">obj_k</span>
 <span class="k">end</span>
