@@ -522,6 +522,7 @@ Z = \frac{1}{1-\frac{\partial \mathrm{Re} \Sigma(\omega+\mathrm{i}0^+)}{\partial
 <ul class="simple">
 <li><p>We will try to find the Mott transition which is a phase transition of first order. To illustrate this, we will do calculations starting from the metallic and the insulating phase at the end of this tutorial. This will show a hysteresis, signaling the metastable/coexistence region of both solutions. For converged results, this will need many iteration steps.</p></li>
 <li><p>In the insulating phase, the low-frequency part of the self-energy turns downwards and diverges. Using the above formula for calculating the renormalization factor <span class="math notranslate nohighlight">\(Z\)</span> from a linearized self-energy, it would be negative. To circumvent this unphysical notion, <span class="math notranslate nohighlight">\(Z\)</span> then is defined as zero in the implementation.</p></li>
+<li><p>At half filling with a symmetric density of states the exact self-energy is particle-hole symmetric: <span class="math notranslate nohighlight">\(\Sigma(\mathrm{i}\nu)\)</span> is purely imaginary and odd in <span class="math notranslate nohighlight">\(\nu\)</span>. The Fourier transform via the IR basis preserves this only up to rounding errors, and the symmetric solution is an <em>unstable</em> fixed point of the DMFT iteration with respect to perturbations that break the symmetry: a deviation of <span class="math notranslate nohighlight">\(10^{-16}\)</span> grows by roughly 40% per iteration until, after a few hundred iterations, the loop ends up in an unphysical, symmetry-broken state. We therefore project each new self-energy onto its symmetric part, <span class="math notranslate nohighlight">\(\Sigma(\mathrm{i}\nu) \to \mathrm{i}\,\frac{1}{2}[\mathrm{Im}\,\Sigma(\mathrm{i}\nu) - \mathrm{Im}\,\Sigma(-\mathrm{i}\nu)]\)</span>. Without this projection, the converged calculations below show a spurious “transition” near <span class="math notranslate nohighlight">\(U/t_\star \approx 3.5\)</span>.</p></li>
 <li><p>We include a mixing <span class="math notranslate nohighlight">\(p&lt;1\)</span> in each iteration step, such that the Green function of step <span class="math notranslate nohighlight">\(n+1\)</span> is partially constructed from the old and new Green function as <span class="math notranslate nohighlight">\(G^{n+1} = p\,G^{n+1} + (1-p)\,G^{n}\)</span>. This smoothes too strong oscillations of the solution which is important especially near the phase transition point.</p></li>
 </ul>
 </section>
@@ -584,6 +585,14 @@ Z = \frac{1}{1-\frac{\partial \mathrm{Re} \Sigma(\omega+\mathrm{i}0^+)}{\partial
 
         <span class="c1"># frequency mesh (for plotting Green function/self-energy)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">iwn_f</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">wn_f</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">T</span>
+
+        <span class="c1"># index of -n for every fermionic sampling frequency n (they come in ± pairs)</span>
+        <span class="n">wn_f</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">IR_basis_set</span><span class="o">.</span><span class="n">wn_f</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mirror_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">wn_f</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">wn_f</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">ph_symmetrize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj_wn</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">""" Particle-hole symmetric part of a fermionic function at half filling: i*Im, odd in iwn """</span>
+        <span class="k">return</span> <span class="mf">0.5</span><span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="n">obj_wn</span><span class="o">.</span><span class="n">imag</span> <span class="o">-</span> <span class="n">obj_wn</span><span class="o">.</span><span class="n">imag</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">mirror_f</span><span class="p">])</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">smpl_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statistics</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">""" Return sampling object for given statistic """</span>
@@ -671,6 +680,8 @@ Z = \frac{1}{1-\frac{\partial \mathrm{Re} \Sigma(\omega+\mathrm{i}0^+)}{\partial
 
             <span class="c1"># Solve impurity problem in IPT</span>
             <span class="n">sigma</span> <span class="o">=</span> <span class="n">IPTSolver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">g_weiss</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">U</span><span class="p">)</span>
+            <span class="c1"># Enforce particle-hole symmetry (see the notes above)</span>
+            <span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">ph_symmetrize</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">mix</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigma</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">mix</span><span class="p">)</span>
 
             <span class="c1"># Set new Green function and Weiss field</span>
@@ -745,70 +756,70 @@ Z = \frac{1}{1-\frac{\partial \mathrm{Re} \Sigma(\omega+\mathrm{i}0^+)}{\partial
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1.0
-1 0.4526747668336243
-2 0.2649359506410652
-3 0.1771286064974239
-4 0.1250608609621385
-5 0.09230256725264961
-6 0.06979019823464418
-7 0.05393486791342737
-8 0.04227192248431613
-9 0.03357001205305849
-10 0.026918490396746732
-11 0.02178060640451254
-12 0.017753397702789817
-13 0.014569540519804032
-14 0.01202758603339827
-15 0.00998339259685956
-16 0.008327397213775303
-17 0.0069775784289325925
-18 0.0058707829422164435
-19 0.0049584079971285305
-20 0.004202509930751749
-21 0.0035733390830013866
-22 0.0030473652027623063
-23 0.0026058772221248367
-24 0.002233899366016063
-25 0.0019193817067255279
-26 0.0016525753516394863
-27 0.0014255535425501716
-28 0.0012318393774383015
-29 0.001066115941672675
-30 0.0009239988579876499
-31 0.0008018571118818825
-32 0.0006966711221954869
-33 0.0006059198206882264
-34 0.0005274903829997913
-35 0.000459605749823096
-36 0.00040076617305628
-37 0.0003497018696906492
-38 0.00030533450830567906
-39 0.00026674574865550714
-40 0.00023315143612390627
-41 0.00020388034851001778
-42 0.000178356622350314
-43 0.00015608516530647503
-44 0.00013663950154753856
-45 0.00011965160738324106
-46 0.00010480338139742926
-47 9.181946214507473e-05
-48 8.046116110158326e-05
-49 7.052132206408361e-05
-50 6.181995298993713e-05
-51 5.420050412491139e-05
-52 4.752668875182163e-05
-53 4.167976100453122e-05
-54 3.655617990122256e-05
-55 3.206560072543082e-05
-56 2.8129144670757295e-05
-57 2.4677905730367752e-05
-58 2.1651660520160265e-05
-59 1.8997752456714495e-05
-60 1.6670126880607306e-05
-61 1.4628498955203266e-05
-62 1.2837642705993143e-05
-63 1.126679998069608e-05
-64 9.889228345166333e-06
+1 0.45267476683362445
+2 0.26493595064106473
+3 0.17712860649742396
+4 0.12506086096213875
+5 0.09230256725264957
+6 0.06979019823464438
+7 0.0539348679134275
+8 0.04227192248431609
+9 0.03357001205305856
+10 0.026918490396746857
+11 0.02178060640451257
+12 0.017753397702789726
+13 0.014569540519803716
+14 0.01202758603339807
+15 0.009983392596859686
+16 0.008327397213775522
+17 0.006977578428932544
+18 0.005870782942216337
+19 0.004958407997128695
+20 0.004202509930752009
+21 0.003573339083001508
+22 0.0030473652027620027
+23 0.0026058772221248493
+24 0.0022338993660158167
+25 0.0019193817067255608
+26 0.0016525753516395635
+27 0.0014255535425500797
+28 0.0012318393774382883
+29 0.0010661159416729855
+30 0.0009239988579874221
+31 0.0008018571118818415
+32 0.0006966711221955544
+33 0.000605919820688267
+34 0.00052749038299995
+35 0.0004596057498230946
+36 0.00040076617305610335
+37 0.00034970186969055325
+38 0.00030533450830591265
+39 0.0002667457486553967
+40 0.0002331514361239975
+41 0.00020388034851012845
+42 0.00017835662234995655
+43 0.00015608516530646622
+44 0.00013663950154745456
+45 0.00011965160738278942
+46 0.00010480338139665915
+47 9.18194621435337e-05
+48 8.046116109788482e-05
+49 7.052132205578616e-05
+50 6.18199529704878e-05
+51 5.420050408101041e-05
+52 4.752668865234666e-05
+53 4.167976077948825e-05
+54 3.6556179390291074e-05
+55 3.206559956733245e-05
+56 2.8129142044532442e-05
+57 2.4677899776758364e-05
+58 2.1651647020831535e-05
+59 1.899772185218478e-05
+60 1.6670057498499578e-05
+61 1.462834166194288e-05
+62 1.2837286096104038e-05
+63 1.1265991334961695e-05
+64 9.88739367996339e-06
 DMFT loop converged at desired accuracy of 1e-05
 </pre></div>
 </div>
@@ -849,7 +860,7 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0c4f1285ed6ec084bfc4e6212b78d76c5cbb1fb0c67416d3f9feb9fc6bb09da9.png" src="../_images/0c4f1285ed6ec084bfc4e6212b78d76c5cbb1fb0c67416d3f9feb9fc6bb09da9.png" />
+<img alt="../_images/c430d7c6fcd5cd69d9a6cd3368f2af022429944509327b37e73dfbe4e8b662cb.png" src="../_images/c430d7c6fcd5cd69d9a6cd3368f2af022429944509327b37e73dfbe4e8b662cb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -866,7 +877,7 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/17d89d1a494d42985be4839be0e038d1924d28646bf3d5b26ae720ccf6cf2b1b.png" src="../_images/17d89d1a494d42985be4839be0e038d1924d28646bf3d5b26ae720ccf6cf2b1b.png" />
+<img alt="../_images/0d69f75cf2e154885cceb343424c5a9a76c2feead72213c4c630d60bf1903607.png" src="../_images/0d69f75cf2e154885cceb343424c5a9a76c2feead72213c4c630d60bf1903607.png" />
 </div>
 </div>
 </section>
@@ -926,7 +937,7 @@ DMFT loop converged at desired accuracy of 1e-05
     <span class="n">Z</span> <span class="o">=</span> <span class="n">CalcRenormalizationZ</span><span class="p">(</span><span class="n">solver</span><span class="p">)</span>
     <span class="n">Z_arr</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">Z</span>
 
-    <span class="k">if</span> <span class="n">it</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">40</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">it</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">60</span><span class="p">]:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">iwn_f</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">:]),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">sigma</span><span class="p">[</span><span class="n">mesh</span><span class="o">.</span><span class="n">iw0_f</span><span class="p">:]),</span><span class="s1">'-o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'$U$=</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">U</span><span class="p">))</span>
 
 
@@ -950,15 +961,15 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5319/5493488.py:34: RuntimeWarning: invalid value encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5602/1063916292.py:36: RuntimeWarning: invalid value encountered in scalar divide
   sfc_check = np.sum(abs(self.sigma-sigma_old))/np.sum(abs(self.sigma))
 </pre></div>
 </div>
-<img alt="../_images/f0ae8980242ab4dea65aaf0e69b0778854823e2667b1ae3d9dc00972e48553cd.png" src="../_images/f0ae8980242ab4dea65aaf0e69b0778854823e2667b1ae3d9dc00972e48553cd.png" />
-<img alt="../_images/195e31996c9a29364a3ececb9d8426cf59861bb568c9ac37d873ba894361edf6.png" src="../_images/195e31996c9a29364a3ececb9d8426cf59861bb568c9ac37d873ba894361edf6.png" />
+<img alt="../_images/da9a77d4a478fb749d8541da5d6f9519b65a9bc5ab0300e8fd02f39a15fa1ab6.png" src="../_images/da9a77d4a478fb749d8541da5d6f9519b65a9bc5ab0300e8fd02f39a15fa1ab6.png" />
+<img alt="../_images/05ade93d572b6b6cb63bbdeee4397247b71bb5f659a5c34ca12c65743fd51cbc.png" src="../_images/05ade93d572b6b6cb63bbdeee4397247b71bb5f659a5c34ca12c65743fd51cbc.png" />
 </div>
 </div>
-<p>You can quite well see a jump of <span class="math notranslate nohighlight">\(Z\)</span> between <span class="math notranslate nohighlight">\(U/t_\star=3\)</span> and 4 which is accompanied by the low-frequency part of the self-energy diverging instead of going to zero.</p>
+<p>You can quite well see a jump of <span class="math notranslate nohighlight">\(Z\)</span> between <span class="math notranslate nohighlight">\(U/t_\star=5.7\)</span> and 5.8 which is accompanied by the low-frequency part of the self-energy diverging instead of going to zero.</p>
 <p>In a last step, we want to map out the metastable coexistence region. In order to do this, we have to start every new <span class="math notranslate nohighlight">\(U\)</span> calculation from the previous converged solution. If we start from small <span class="math notranslate nohighlight">\(U\)</span>, we start from the metallic region, whereas starting from large <span class="math notranslate nohighlight">\(U\)</span> corresponds to starting from the insulating solution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1000,14 +1011,15 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5319/5493488.py:34: RuntimeWarning: invalid value encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5602/1063916292.py:36: RuntimeWarning: invalid value encountered in scalar divide
   sfc_check = np.sum(abs(self.sigma-sigma_old))/np.sum(abs(self.sigma))
 </pre></div>
 </div>
-<img alt="../_images/0555c4ff44030981de5438a46ee8942668fdcb201d2de0d4515cfb456121da28.png" src="../_images/0555c4ff44030981de5438a46ee8942668fdcb201d2de0d4515cfb456121da28.png" />
+<img alt="../_images/d9de5c77d4a19fb7c180943972db75e48044a407a7d2c162a9841500a54bc1e7.png" src="../_images/d9de5c77d4a19fb7c180943972db75e48044a407a7d2c162a9841500a54bc1e7.png" />
 </div>
 </div>
-<p>For comparison, we also plotted the transition line where we always start from the non-interacting Green function <span class="math notranslate nohighlight">\(G_0\)</span>. Since we do only a few iteration steps, we do not have completetly converged solutions, so that the <span class="math notranslate nohighlight">\(G_0\)</span> line has a slightly larger critical <span class="math notranslate nohighlight">\(U\)</span> value compared to the line which starts from the metallic solution. Try increasinging the parameter <code class="docutils literal notranslate"><span class="pre">maxiter</span></code> (to 1000 or so) and decreasing the parameter <code class="docutils literal notranslate"><span class="pre">sfc_tol</span></code> (to 1e-14 or so) and look at the results! (The lines should become equal.)</p>
+<p>The metallic solution exists up to <span class="math notranslate nohighlight">\(U/t_\star = 5.7\)</span> (<span class="math notranslate nohighlight">\(U_{c2}\)</span> lies between 5.7 and 5.8), while the insulating solution survives down to <span class="math notranslate nohighlight">\(U/t_\star = 5.5\)</span> (<span class="math notranslate nohighlight">\(U_{c1}\)</span> lies between 5.4 and 5.5). In between, both solutions are stable and which one is obtained depends on the starting point: this is the coexistence region of the first-order Mott transition. For comparison, we also plotted the line where we always start from the non-interacting Green function <span class="math notranslate nohighlight">\(G_0\)</span>. It coincides with the line starting from the metallic solution, since <span class="math notranslate nohighlight">\(G_0\)</span> lies in the basin of the metal wherever the metal exists; a scan from <span class="math notranslate nohighlight">\(G_0\)</span> alone therefore only finds <span class="math notranslate nohighlight">\(U_{c2}\)</span>.</p>
+<p>Try also removing the line <code class="docutils literal notranslate"><span class="pre">sigma</span> <span class="pre">=</span> <span class="pre">self.mesh.ph_symmetrize(sigma)</span></code> in <code class="docutils literal notranslate"><span class="pre">DMFT_loop.solve</span></code>: rounding errors then drive the loop away from the particle-hole symmetric solution, and the scan shows a spurious “transition” near <span class="math notranslate nohighlight">\(U/t_\star \approx 3.5\)</span>.</p>
 <p>Often the energy unit is not the hopping <span class="math notranslate nohighlight">\(t_\star\)</span> but the half-bandwidth <span class="math notranslate nohighlight">\(D\)</span>, so we can also plot the results in this convention:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1028,7 +1040,7 @@ DMFT loop converged at desired accuracy of 1e-05
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bbf922d0a27f419cb72090107d82adccfde3674f5ccd93c7ff087fa1f7e210e8.png" src="../_images/bbf922d0a27f419cb72090107d82adccfde3674f5ccd93c7ff087fa1f7e210e8.png" />
+<img alt="../_images/429bb4475dd7dfbd2bd5aef429eb898b35f1d09a09b30092be5c034cb39eff1e.png" src="../_images/429bb4475dd7dfbd2bd5aef429eb898b35f1d09a09b30092be5c034cb39eff1e.png" />
 </div>
 </div>
 </section>
